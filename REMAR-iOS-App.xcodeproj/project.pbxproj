@@ -11,6 +11,7 @@
 		A98684BB269B62A700A72459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BA269B62A700A72459 /* Assets.xcassets */; };
 		A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BD269B62A700A72459 /* Preview Assets.xcassets */; };
 		A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */; };
+		A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998F0EA26AB3CFC000A026D /* splashscreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A98684BD269B62A700A72459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A98684C4269B635000A72459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REMAR_iOS_App.swift; sourceTree = "<group>"; };
+		A998F0EA26AB3CFC000A026D /* splashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				A98684B8269B62A600A72459 /* ContentView.swift */,
 				A98684BA269B62A700A72459 /* Assets.xcassets */,
 				A98684BC269B62A700A72459 /* Preview Content */,
+				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
 			);
 			path = "REMAR-iOS-App";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,
 				A98684B9269B62A600A72459 /* ContentView.swift in Sources */,
 			);
