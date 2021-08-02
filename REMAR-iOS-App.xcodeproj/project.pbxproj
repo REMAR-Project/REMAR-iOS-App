@@ -11,6 +11,8 @@
 		A98684BB269B62A700A72459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BA269B62A700A72459 /* Assets.xcassets */; };
 		A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BD269B62A700A72459 /* Preview Assets.xcassets */; };
 		A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */; };
+		A990294826B757DB00A83582 /* uiViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990294726B757DB00A83582 /* uiViews.swift */; };
+		A990294A26B76B7900A83582 /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990294926B76B7900A83582 /* menuView.swift */; };
 		A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998F0EA26AB3CFC000A026D /* splashscreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +23,8 @@
 		A98684BD269B62A700A72459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A98684C4269B635000A72459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REMAR_iOS_App.swift; sourceTree = "<group>"; };
+		A990294726B757DB00A83582 /* uiViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiViews.swift; sourceTree = "<group>"; };
+		A990294926B76B7900A83582 /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		A998F0EA26AB3CFC000A026D /* splashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,8 @@
 				A98684BA269B62A700A72459 /* Assets.xcassets */,
 				A98684BC269B62A700A72459 /* Preview Content */,
 				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
+				A990294726B757DB00A83582 /* uiViews.swift */,
+				A990294926B76B7900A83582 /* menuView.swift */,
 			);
 			path = "REMAR-iOS-App";
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A990294A26B76B7900A83582 /* menuView.swift in Sources */,
+				A990294826B757DB00A83582 /* uiViews.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,
 				A98684B9269B62A600A72459 /* ContentView.swift in Sources */,
@@ -273,6 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"REMAR-iOS-App/Preview Content\"";
@@ -309,6 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"REMAR-iOS-App/Preview Content\"";
