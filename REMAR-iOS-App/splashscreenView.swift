@@ -15,15 +15,8 @@ struct splashscreenView: View {
                 .edgesIgnoringSafeArea(.top)
                 .foregroundColor(Color("REMAR_GREEN"))
             VStack{
-                HStack(spacing: 0.0){
-                    Text("REMAR_")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                    Text("CITIZEN")
-                }
-                .foregroundColor(.black)
-                .padding(.top, 20.0)
-                .font(.title)
+                remarLogoView(size: 35)
+                    .padding()
                 
                 Spacer()
                 Text("Monitoring Mass Mating Events of Mangrove Crabs")
