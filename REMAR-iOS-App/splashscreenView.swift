@@ -10,37 +10,40 @@ import SwiftUI
 //  This view will be temporarily shown as the app loads.
 struct splashscreenView: View {
     var body: some View {
-        ZStack{
-            Rectangle()
-                .edgesIgnoringSafeArea(.top)
-                .foregroundColor(Color("REMAR_GREEN"))
-            VStack{
-                remarLogoView(size: 35)
-                    .padding()
-                
-                Spacer()
-                Text("Monitoring Mass Mating Events of Mangrove Crabs")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                Image("splashscreen_crabs")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(10.0)
-                Spacer()
-                ZStack{
-                    VStack{
-                        Image("splashscreen_logos1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Image("splashscreen_logos2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+        GeometryReader{ geom in
+            ZStack{
+                Rectangle()
+                    .edgesIgnoringSafeArea(.top)
+                    .foregroundColor(Color("REMAR_GREEN"))
+                VStack{
+                    remarLogoView()
+                        .frame(maxHeight: 50)
+                        .padding()
+                    
+                    Spacer()
+                    Text("Monitoring Mass Mating Events of Mangrove Crabs")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                    Image("splashscreen_crabs")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(10.0)
+                    Spacer()
+                    ZStack{
+                        VStack{
+                            Image("splashscreen_logos1")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Image("splashscreen_logos2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                        .padding(.top, 15.0)
+                        .background(Color(.white))
+                        .preferredColorScheme(.light)
                     }
-                    .padding(.top, 15.0)
-                    .background(Color(.white))
-                    .preferredColorScheme(.light)
                 }
             }
         }

@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct menuView: View {
-    
-    @State private var showingPrivacyPolicy = false
-    
     var body: some View {
         ZStack{
             uiBackgroundView()
             
+            // Question View
+            versionQuestion()
+        }
+    }
+}
+
+struct versionQuestion: View {
+    
+    @State private var showingPrivacyPolicy = false
+    
+    var body: some View {
+        GeometryReader { geom in
             VStack{
                 
                 Text("Choose one of the below options by tapping with finger.")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
+                    .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                     .multilineTextAlignment(.center)
                 
                 HStack{
@@ -59,6 +67,7 @@ struct menuView: View {
                 Spacer()
                 
             } .padding(.top, 115)
+                .position(x: geom.size.width / 2, y: geom.size.height / 2)
                 .alert(isPresented:$showingPrivacyPolicy) {
                     Alert(
                         title: Text("Privacy Policy"),
