@@ -55,3 +55,83 @@ struct uiBackgroundView: View {
         }
     }
 }
+
+//  Custom Button View for full
+struct fullMenuButton: View {
+    var body: some View {
+        Button(action: {print("Full Version")}, label: {
+            GeometryReader { geom in
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color("REMAR_GREEN"))
+                        .aspectRatio(1, contentMode: .fit)
+                    //.frame(width: 170, height: 170)
+                    VStack(spacing: 0.0){
+                        Text("Full\nVersion")
+                            .foregroundColor(Color.black)
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                        Image("downArrow")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: 100)
+                        Text("Advanced\n14 clicks")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                            .padding(3.0)
+                            .border(.black, width: 3)
+                    }
+                    .minimumScaleFactor(0.1)
+                    .frame(width: geom.size.width, height: geom.size.height * 0.9)
+                    
+                }
+            }.frame(maxWidth: 150, maxHeight: 150)
+        })
+    }
+}
+
+//  Custom Button View for full
+struct simpleMenuButton: View {
+    var body: some View {
+        Button(action: {print("Basic Version")}, label: {
+            GeometryReader { geom in
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color("REMAR_GREEN"))
+                        .aspectRatio(1, contentMode: .fit)
+                    //.frame(width: 170, height: 170)
+                    VStack(spacing: 0.0){
+                        Text("Simple\nVersion")
+                            .foregroundColor(Color.black)
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                        Image("downArrow")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: 100)
+                        Text("Basic\n10 clicks")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                            .padding(3.0)
+                            .border(.black, width: 3)
+                    }
+                    .minimumScaleFactor(0.1)
+                    .frame(width: geom.size.width, height: geom.size.height * 0.9)
+                    
+                }
+            }.frame(maxWidth: 150, maxHeight: 150)
+        })
+    }
+}
+
+
+
+struct mainMenuButton_Previews: PreviewProvider {
+    static var previews: some View {
+        uiBackgroundView()
+    }
+}

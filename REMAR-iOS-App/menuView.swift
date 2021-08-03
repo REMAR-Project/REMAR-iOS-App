@@ -15,35 +15,24 @@ struct menuView: View {
             VStack{
                 
                 Text("Choose one of the below options by tapping with finger.")
+                    .font(.subheadline)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
                 HStack{
-                    Button(action: {print("Full Version")}, label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color("REMAR_GREEN"))
-                                .frame(width: 170, height: 170)
-                            Text("#Full#").foregroundColor(Color.pink).fontWeight(.heavy)
-                        }
-                    })
-                    Button(action: {print("Simple Version")}, label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color("REMAR_GREEN"))
-                                .frame(width: 170, height: 170)
-                            Text("#Simple#").foregroundColor(Color.pink).fontWeight(.heavy)
-                        }
-                    })
+                    fullMenuButton()
+                    simpleMenuButton()
                 }
-                .padding(.top)
+                .padding()
                 
                 
                 Text("For more information, click on the green button below.")
                     .multilineTextAlignment(.center)
-                    .padding(.top, 70.0)
+                    //.padding(.top, 70.0)
                 
-                Button(action: {print("More Info Button Pressed")}, label: {
+                Button(action: {
+                    print("More Info Button Pressed")
+                }, label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 5)
                             .fill(Color("REMAR_GREEN"))
