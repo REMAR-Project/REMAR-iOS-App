@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct menuView: View {
+    
+    @State private var showingPrivacyPolicy = false
+    
     var body: some View {
         ZStack{
             uiBackgroundView()
@@ -28,7 +31,7 @@ struct menuView: View {
                 
                 Text("For more information, click on the green button below.")
                     .multilineTextAlignment(.center)
-                    //.padding(.top, 70.0)
+                //.padding(.top, 70.0)
                 
                 Button(action: {
                     print("More Info Button Pressed")
@@ -43,7 +46,10 @@ struct menuView: View {
                     }.padding(.top)
                 })
                 
-                Button(action: {print("Privacy Policy Selected")}, label: {
+                Button(action: {
+                    print("Privacy Policy Selected")
+                    showingPrivacyPolicy.toggle()
+                }, label: {
                     Text("Privacy Policy")
                         .foregroundColor(Color("REMAR_GREEN"))
                         .fontWeight(.semibold)
@@ -53,6 +59,13 @@ struct menuView: View {
                 Spacer()
                 
             } .padding(.top, 115)
+                .alert(isPresented:$showingPrivacyPolicy) {
+                    Alert(
+                        title: Text("Privacy Policy"),
+                        message: Text("Edinburgh Napier University complies with the data protection law. This application does not specifically collect any personal data and we ask that you do not provide any personal data in the free text fields. However, if you inadvertently provide any personal data, we will protect this data in accordance with the General Data Protection Regulation (GDPR) and other relevant data protection laws."),
+                        dismissButton: .default(Text("Ok"))
+                    )
+                }
         }
     }
 }
