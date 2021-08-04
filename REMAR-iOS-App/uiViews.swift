@@ -75,15 +75,16 @@ struct fullMenuButton: View {
                     VStack(spacing: 0.0){
                         Text("Full\nVersion")
                             .foregroundColor(Color.black)
-                            .font(.largeTitle)
+                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
                             .fontWeight(.heavy)
                         Image("downArrow")
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
+                            .frame(width: geom.size.width*0.5)
                             .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
                         //.frame(maxWidth: 100)
                         Text("Advanced\n14 clicks")
-                            .font(.largeTitle)
+                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
                             .fontWeight(.bold)
                             .foregroundColor(Color.black)
                             .padding(3.0)
@@ -93,7 +94,7 @@ struct fullMenuButton: View {
                     .frame(width: geom.size.width, height: geom.size.height * 0.9)
                     
                 }
-            }.frame(maxWidth: 150, maxHeight: 150)
+            } //.background(Color.red)
         })
     }
 }
@@ -101,7 +102,7 @@ struct fullMenuButton: View {
 //  Custom Button View for full
 struct simpleMenuButton: View {
     var body: some View {
-        Button(action: {print("Basic Version")}, label: {
+        Button(action: {print("Simple Version")}, label: {
             GeometryReader { geom in
                 ZStack{
                     RoundedRectangle(cornerRadius: 15)
@@ -111,15 +112,16 @@ struct simpleMenuButton: View {
                     VStack(spacing: 0.0){
                         Text("Simple\nVersion")
                             .foregroundColor(Color.black)
-                            .font(.largeTitle)
+                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
                             .fontWeight(.heavy)
                         Image("downArrow")
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
+                            .frame(width: geom.size.width*0.5)
                             .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
-                            .frame(maxWidth: 100)
+                        //.frame(maxWidth: 100)
                         Text("Basic\n10 clicks")
-                            .font(.largeTitle)
+                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
                             .fontWeight(.bold)
                             .foregroundColor(Color.black)
                             .padding(3.0)
@@ -129,7 +131,7 @@ struct simpleMenuButton: View {
                     .frame(width: geom.size.width, height: geom.size.height * 0.9)
                     
                 }
-            }.frame(maxWidth: 150, maxHeight: 150)
+            } 
         })
     }
 }
@@ -138,6 +140,7 @@ struct simpleMenuButton: View {
 
 struct mainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
-        uiBackgroundView()
+        //menuView()
+        simpleMenuButton()
     }
 }

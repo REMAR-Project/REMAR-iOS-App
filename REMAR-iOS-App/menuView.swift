@@ -34,25 +34,34 @@ struct versionQuestion: View {
                     fullMenuButton()
                     simpleMenuButton()
                 }
-                .padding()
+                .frame(width: geom.size.width * 0.9, height: geom.size.height/3)
                 
                 
                 Text("For more information, click on the green button below.")
+                    .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.05: geom.size.height * 0.05))
                     .multilineTextAlignment(.center)
                 //.padding(.top, 70.0)
                 
                 Button(action: {
                     print("More Info Button Pressed")
                 }, label: {
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color("REMAR_GREEN"))
-                            .frame(maxWidth: 120, maxHeight: 50)
+                    GeometryReader { g in
                         Text("READ MORE")
+                            .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
-                    }.padding(.top)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color("REMAR_GREEN"))
+                                    .frame(width: g.size.width, height: 50)
+                            )
+                            .padding(.top)
+                            .position(x: g.size.width / 2, y: g.size.height / 2)
+                    } .frame(width: geom.size.width/2, height: geom.size.height/10)
+                        
                 })
+                
+                Spacer()
                 
                 Button(action: {
                     print("Privacy Policy Selected")
@@ -60,6 +69,7 @@ struct versionQuestion: View {
                 }, label: {
                     Text("Privacy Policy")
                         .foregroundColor(Color("REMAR_GREEN"))
+                        .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.04: geom.size.height * 0.04))
                         .fontWeight(.semibold)
                         .padding(.top)
                 })
