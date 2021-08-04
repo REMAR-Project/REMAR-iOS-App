@@ -40,9 +40,12 @@ struct uiBackgroundView: View {
                         .padding(.bottom, 7.0)
                         .background(Color("REMAR_GREEN"))
                         .frame(maxHeight: geom.size.height * 0.07)
-                    HStack(spacing: geom.size.width * 0.05){
+                    HStack{
                         remarLogoView()
+                            .frame(width: geom.size.width/2.5)
                         
+                        Spacer()
+                            
                         HStack(spacing: 0.0){
                             Image("banner_ufsb")
                                 .resizable()
@@ -51,8 +54,8 @@ struct uiBackgroundView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         }
-                        //.padding(.leading)
-                    }.padding(.horizontal, 10.0)
+                        .frame(width: geom.size.width/2.5)
+                    }.padding(.horizontal, 20.0)
                         .offset(y: -10)
                         .frame(height: geom.size.height * 0.07)
                 }
@@ -141,6 +144,7 @@ struct simpleMenuButton: View {
 struct mainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
         //menuView()
-        simpleMenuButton()
+        //simpleMenuButton()
+        uiBackgroundView()
     }
 }
