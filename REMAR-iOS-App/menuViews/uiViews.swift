@@ -45,7 +45,7 @@ struct uiBackgroundView: View {
                             .frame(width: geom.size.width/2.5)
                         
                         Spacer()
-                            
+                        
                         HStack(spacing: 0.0){
                             Image("banner_ufsb")
                                 .resizable()
@@ -68,74 +68,70 @@ struct uiBackgroundView: View {
 //  Custom Button View for full
 struct fullMenuButton: View {
     var body: some View {
-        Button(action: {print("Full Version")}, label: {
-            GeometryReader { geom in
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(Color("REMAR_GREEN"))
+        GeometryReader { geom in
+            ZStack{
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color("REMAR_GREEN"))
+                    .aspectRatio(1, contentMode: .fit)
+                //.frame(width: 170, height: 170)
+                VStack(spacing: 0.0){
+                    Text("Full\nVersion")
+                        .foregroundColor(Color.black)
+                        .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
+                        .fontWeight(.heavy)
+                    Image("downArrow")
+                        .resizable()
                         .aspectRatio(1, contentMode: .fit)
-                    //.frame(width: 170, height: 170)
-                    VStack(spacing: 0.0){
-                        Text("Full\nVersion")
-                            .foregroundColor(Color.black)
-                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
-                            .fontWeight(.heavy)
-                        Image("downArrow")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .frame(width: geom.size.width*0.5)
-                            .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
-                        //.frame(maxWidth: 100)
-                        Text("Advanced\n14 clicks")
-                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                            .padding(3.0)
-                            .border(.black, width: 3)
-                    }
-                    .minimumScaleFactor(0.1)
-                    .frame(width: geom.size.width, height: geom.size.height * 0.9)
-                    
+                        .frame(width: geom.size.width*0.5)
+                        .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
+                    //.frame(maxWidth: 100)
+                    Text("Advanced\n14 clicks")
+                        .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(3.0)
+                        .border(.black, width: 3)
                 }
-            } //.background(Color.red)
-        })
+                .minimumScaleFactor(0.1)
+                .frame(width: geom.size.width, height: geom.size.height * 0.9)
+                
+            }
+        } //.background(Color.red)
     }
 }
 
 //  Custom Button View for full
 struct simpleMenuButton: View {
     var body: some View {
-        Button(action: {print("Simple Version")}, label: {
-            GeometryReader { geom in
-                ZStack{
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(Color("REMAR_GREEN"))
+        GeometryReader { geom in
+            ZStack{
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color("REMAR_GREEN"))
+                    .aspectRatio(1, contentMode: .fit)
+                //.frame(width: 170, height: 170)
+                VStack(spacing: 0.0){
+                    Text("Simple\nVersion")
+                        .foregroundColor(Color.black)
+                        .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
+                        .fontWeight(.heavy)
+                    Image("downArrow")
+                        .resizable()
                         .aspectRatio(1, contentMode: .fit)
-                    //.frame(width: 170, height: 170)
-                    VStack(spacing: 0.0){
-                        Text("Simple\nVersion")
-                            .foregroundColor(Color.black)
-                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
-                            .fontWeight(.heavy)
-                        Image("downArrow")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .frame(width: geom.size.width*0.5)
-                            .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
-                        //.frame(maxWidth: 100)
-                        Text("Basic\n10 clicks")
-                            .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                            .padding(3.0)
-                            .border(.black, width: 3)
-                    }
-                    .minimumScaleFactor(0.1)
-                    .frame(width: geom.size.width, height: geom.size.height * 0.9)
-                    
+                        .frame(width: geom.size.width*0.5)
+                        .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
+                    //.frame(maxWidth: 100)
+                    Text("Basic\n10 clicks")
+                        .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.09: geom.size.height * 0.09))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(3.0)
+                        .border(.black, width: 3)
                 }
-            } 
-        })
+                .minimumScaleFactor(0.1)
+                .frame(width: geom.size.width, height: geom.size.height * 0.9)
+                
+            }
+        }
     }
 }
 

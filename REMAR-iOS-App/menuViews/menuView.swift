@@ -38,8 +38,10 @@ struct versionQuestion: View {
                     .multilineTextAlignment(.center)
                 
                 HStack{
-                    fullMenuButton()
-                    simpleMenuButton()
+                    
+                    NavigationLink(destination: speciesSelectionView(), label: {fullMenuButton()})
+                    NavigationLink(destination: speciesSelectionView(), label: {simpleMenuButton()})
+                    
                 }
                 .frame(width: geom.size.width * 0.9, height: geom.size.height/3)
                 
