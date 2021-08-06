@@ -22,7 +22,6 @@
 /* Begin PBXFileReference section */
 		A919176426BCBD1E00F8B9E8 /* faqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqView.swift; sourceTree = "<group>"; };
 		A919177926BCD58B00F8B9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/about_us.json; sourceTree = "<group>"; };
-		A919177B26BCD58D00F8B9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/about_us.json; sourceTree = "<group>"; };
 		A919177E26BCDCC600F8B9E8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/about_us.json"; sourceTree = "<group>"; };
 		A919178226BCE25C00F8B9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A919178426BCE26200F8B9E8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -187,7 +186,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A919177926BCD58B00F8B9E8 /* en */,
-				A919177B26BCD58D00F8B9E8 /* Base */,
 				A919177E26BCDCC600F8B9E8 /* pt-BR */,
 			);
 			name = about_us.json;

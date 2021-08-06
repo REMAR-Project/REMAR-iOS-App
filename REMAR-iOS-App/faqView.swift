@@ -14,24 +14,9 @@ import SwiftUI
 struct faqItem: Codable, Hashable {
     var title: String
     var content: String
-    //var id = UUID()
 }
 
-//  List of all faqItem structs - should FAQs need to be added this should be done so here.
-//private var faqs = [
-    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    //faqItem(title: "What is andada?", content: "Sample Data 3"),
-    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    //faqItem(title: "What is andada?", content: "Sample Data 3"),
-    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    //faqItem(title: "What is andada?", content: "Sample Data 3"),
-    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    //faqItem(title: "What is andada?", content: "Sample Data 3")
-//]
-
+//  Function to decode FAQs from JSON file
 func parseFAQs() -> [faqItem] {
     let url = Bundle.main.url(forResource: "about_us", withExtension: "json")!
     let data = try! Data(contentsOf: url)
@@ -42,6 +27,7 @@ func parseFAQs() -> [faqItem] {
 
 struct faqView: View {
     
+    //  Parse FAQs from JSON file
     let faqs = parseFAQs()
     
     //  This is used to dismiss the view to return back to the main menu as needed
@@ -70,9 +56,8 @@ struct faqView: View {
                     //  Go back button - Uses geometry reader to scale dynamically with screen size.
                     Button(action: {
                         print("Read More Button Pressed")
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()  //  
                     }, label: {
-                        
                         GeometryReader { g in
                             Text("Go Back")
                                 .font(.title3)
@@ -100,6 +85,6 @@ struct faqView: View {
 struct faqView_Previews: PreviewProvider {
     static var previews: some View {
         faqView()
-            .environment(\.locale, .init(identifier: "pt-BR"))
+            //.environment(\.locale, .init(identifier: "pt-BR"))
     }
 }
