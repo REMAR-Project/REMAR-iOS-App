@@ -9,11 +9,18 @@ import SwiftUI
 
 struct menuView: View {
     var body: some View {
-        ZStack{
-            uiBackgroundView()
-            
-            // Question View
-            versionQuestion()
+        NavigationView {
+            ZStack{
+                //  Background View
+                uiBackgroundView()
+                
+                //  Question View
+                versionQuestion()
+            }
+            //  Removing top padding from navigation bar - Must be in NavView (not outside)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -42,9 +49,7 @@ struct versionQuestion: View {
                     .multilineTextAlignment(.center)
                 //.padding(.top, 70.0)
                 
-                Button(action: {
-                    print("More Info Button Pressed")
-                }, label: {
+                NavigationLink(destination: faqView(), label: {
                     GeometryReader { g in
                         Text("READ MORE")
                             .font(.title3)
@@ -58,7 +63,7 @@ struct versionQuestion: View {
                             .padding(.top)
                             .position(x: g.size.width / 2, y: g.size.height / 2)
                     } .frame(width: geom.size.width/2, height: geom.size.height/10)
-                        
+                    
                 })
                 
                 Spacer()
