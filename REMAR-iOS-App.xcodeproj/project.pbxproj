@@ -56,6 +56,23 @@
 			path = localised_files;
 			sourceTree = "<group>";
 		};
+		A919178526BD4D2C00F8B9E8 /* questionViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = questionViews;
+			sourceTree = "<group>";
+		};
+		A919178626BD4D6000F8B9E8 /* menuViews */ = {
+			isa = PBXGroup;
+			children = (
+				A990294726B757DB00A83582 /* uiViews.swift */,
+				A990294926B76B7900A83582 /* menuView.swift */,
+				A919176426BCBD1E00F8B9E8 /* faqView.swift */,
+			);
+			path = menuViews;
+			sourceTree = "<group>";
+		};
 		A98684AA269B62A600A72459 = {
 			isa = PBXGroup;
 			children = (
@@ -77,14 +94,13 @@
 			children = (
 				A98684C4269B635000A72459 /* Info.plist */,
 				A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */,
+				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
 				A98684B8269B62A600A72459 /* ContentView.swift */,
 				A98684BA269B62A700A72459 /* Assets.xcassets */,
-				A98684BC269B62A700A72459 /* Preview Content */,
-				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
-				A990294726B757DB00A83582 /* uiViews.swift */,
-				A919176426BCBD1E00F8B9E8 /* faqView.swift */,
+				A919178526BD4D2C00F8B9E8 /* questionViews */,
+				A919178626BD4D6000F8B9E8 /* menuViews */,
 				A919176826BCCFFE00F8B9E8 /* localised_files */,
-				A990294926B76B7900A83582 /* menuView.swift */,
+				A98684BC269B62A700A72459 /* Preview Content */,
 			);
 			path = "REMAR-iOS-App";
 			sourceTree = "<group>";
