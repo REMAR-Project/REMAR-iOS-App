@@ -11,29 +11,38 @@
 import SwiftUI
 
 //  Struct for faq item
-struct faqItem: Identifiable {
-    let id = UUID()
+struct faqItem: Codable, Hashable {
     var title: String
     var content: String
+    //var id = UUID()
 }
 
 //  List of all faqItem structs - should FAQs need to be added this should be done so here.
-private var faqs = [
-    faqItem(title: "Version 2.0", content: "Sample Data 1 Sample Data 1Sample Data 1Sample Data 1Sample Data 1Sample Data 1Sample Data 1Sample Data 1"),
-    faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    faqItem(title: "What is andada?", content: "Sample Data 3"),
-    faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    faqItem(title: "What is andada?", content: "Sample Data 3"),
-    faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    faqItem(title: "What is andada?", content: "Sample Data 3"),
-    faqItem(title: "Version 2.0", content: "Sample Data 1"),
-    faqItem(title: "What is REMAR?", content: "Sample Data 2"),
-    faqItem(title: "What is andada?", content: "Sample Data 3")
-]
+//private var faqs = [
+    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
+    //faqItem(title: "What is andada?", content: "Sample Data 3"),
+    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
+    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
+    //faqItem(title: "What is andada?", content: "Sample Data 3"),
+    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
+    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
+    //faqItem(title: "What is andada?", content: "Sample Data 3"),
+    //faqItem(title: "Version 2.0", content: "Sample Data 1"),
+    //faqItem(title: "What is REMAR?", content: "Sample Data 2"),
+    //faqItem(title: "What is andada?", content: "Sample Data 3")
+//]
+
+func parseFAQs() -> [faqItem] {
+    let url = Bundle.main.url(forResource: "about_us", withExtension: "json")!
+    let data = try! Data(contentsOf: url)
+    let decoder = JSONDecoder()
+    let faqs = try? decoder.decode([faqItem].self, from: data)
+    return faqs!
+}
 
 struct faqView: View {
+    
+    let faqs = parseFAQs()
     
     //  This is used to dismiss the view to return back to the main menu as needed
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -47,7 +56,7 @@ struct faqView: View {
                 VStack{
                     
                     //  List all FAQs from faq list
-                    List(faqs) { faq in
+                    List(faqs, id: \.self) { faq in
                         VStack{
                             DisclosureGroup(faq.title, content: {
                                 Text(faq.content)
@@ -91,5 +100,6 @@ struct faqView: View {
 struct faqView_Previews: PreviewProvider {
     static var previews: some View {
         faqView()
+            .environment(\.locale, .init(identifier: "pt-BR"))
     }
 }
