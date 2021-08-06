@@ -47,13 +47,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A919176826BCCFFE00F8B9E8 /* data */ = {
+		A919176826BCCFFE00F8B9E8 /* localised_files */ = {
 			isa = PBXGroup;
 			children = (
 				A919178326BCE25C00F8B9E8 /* Localizable.strings */,
 				A919177A26BCD58B00F8B9E8 /* about_us.json */,
 			);
-			path = data;
+			path = localised_files;
 			sourceTree = "<group>";
 		};
 		A98684AA269B62A600A72459 = {
@@ -83,7 +83,7 @@
 				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
 				A990294726B757DB00A83582 /* uiViews.swift */,
 				A919176426BCBD1E00F8B9E8 /* faqView.swift */,
-				A919176826BCCFFE00F8B9E8 /* data */,
+				A919176826BCCFFE00F8B9E8 /* localised_files */,
 				A990294926B76B7900A83582 /* menuView.swift */,
 			);
 			path = "REMAR-iOS-App";
