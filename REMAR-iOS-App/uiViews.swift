@@ -15,11 +15,11 @@ struct remarLogoView: View {
     var body: some View {
         GeometryReader { geom in
             HStack(spacing: 0.0){
-                Text("REMAR")
+                Text(NSLocalizedString("REMAR", comment: ""))
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .minimumScaleFactor(0.1)
-                Text("_CITIZEN")
+                Text(NSLocalizedString("_CITIZEN", comment: ""))
                     .font(.title)
                     .minimumScaleFactor(0.1)
             }.frame(
