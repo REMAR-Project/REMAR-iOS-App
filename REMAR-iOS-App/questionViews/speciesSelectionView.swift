@@ -45,7 +45,8 @@ struct speciesSelectionView: View {
                     .frame(width: geom.size.width * 0.9, height: geom.size.height/3)
                     
                     Spacer()
-                    Button(action: {self.presentationMode.wrappedValue.dismiss()}, label: {Text("TMP BACK BTN")})
+                    //Button(action: {self.presentationMode.wrappedValue.dismiss()}, label: {Text("TMP BACK BTN")})
+                    questionToolBarView()
                     
                 } .padding(.top,70)
             }
@@ -95,25 +96,6 @@ struct crabSelectionButton: View {
 
 
 /// MARK -- Misc
-
-//  Question page template
-struct cleanSlateView: View {
-    
-    //  This is used to dismiss the view to return back to the main menu as needed
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var body: some View {
-        GeometryReader { geom in
-            ZStack {
-                uiBackgroundView()
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            }
-        }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-    }
-}
 
 struct speciesSelectionView_Previews: PreviewProvider {
     static var previews: some View {
