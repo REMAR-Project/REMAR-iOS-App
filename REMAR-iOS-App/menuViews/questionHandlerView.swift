@@ -17,6 +17,8 @@ struct questionHandlerView: View {
 
         if (QuestionManager.currentQuestion == 2) {
             yearSelectionView()
+        } else if (QuestionManager.currentQuestion == 3) {
+            monthSelectionView()
         }
         
     }
