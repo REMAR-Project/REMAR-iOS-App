@@ -14,9 +14,14 @@ let splashscreen_time = 2.0
 
 struct ContentView: View {
     @State var showSplash = true
+    
+    //  Initialises the questionManager
+    var QuestionManager = questionManager()
+    
     var body: some View {
         ZStack {
             menuView()
+                .environmentObject(QuestionManager)
             splashscreenView()
                 .opacity(showSplash ? 1 : 0)
                 .onAppear {

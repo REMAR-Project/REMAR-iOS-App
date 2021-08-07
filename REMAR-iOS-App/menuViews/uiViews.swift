@@ -10,7 +10,6 @@
 import SwiftUI
 
 //  REMAR Logo View
-//      size - Sets Size of REMAR Logo
 struct remarLogoView: View {
     var body: some View {
         GeometryReader { geom in
@@ -31,6 +30,7 @@ struct remarLogoView: View {
 }
 
 struct uiBackgroundView: View {
+    
     var body: some View {
         VStack{
             GeometryReader { geom in
@@ -41,6 +41,7 @@ struct uiBackgroundView: View {
                         .background(Color("REMAR_GREEN"))
                         .frame(maxHeight: geom.size.height * 0.07)
                     HStack{
+                        
                         remarLogoView()
                             .frame(width: geom.size.width/2.5)
                         
@@ -61,6 +62,16 @@ struct uiBackgroundView: View {
                 }
             }
             Spacer()
+        }
+    }
+}
+
+struct uiBackgroundQuestionView: View {
+    var body: some View {
+        VStack {
+            uiBackgroundView()
+            Spacer()
+            questionToolBarView()
         }
     }
 }

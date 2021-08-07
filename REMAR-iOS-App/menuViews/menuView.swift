@@ -16,6 +16,7 @@ struct menuView: View {
                 
                 //  Question View
                 versionQuestion()
+                //cleanSlateView()  //  Uncomment for testing cleanSlate updates.
             }
             //  Removing top padding from navigation bar - Must be in NavView (not outside)
             .navigationBarTitle("")
@@ -29,6 +30,7 @@ struct menuView: View {
 struct versionQuestion: View {
     
     @State private var showingPrivacyPolicy = false
+    @EnvironmentObject var QuestionManager: questionManager
     
     var body: some View {
         GeometryReader { geom in
@@ -40,8 +42,15 @@ struct versionQuestion: View {
                 
                 HStack{
                     
-                    NavigationLink(destination: speciesSelectionView(), label: {fullMenuButton()})
-                    NavigationLink(destination: speciesSelectionView(), label: {simpleMenuButton()})
+                    NavigationButton(action: {
+                        QuestionManager.questionCount = 14
+                        QuestionManager.currentQuestion = 1
+                    }, destination: {speciesSelectionView()}, label: {fullMenuButton()})
+                    
+                    NavigationButton(action: {
+                        QuestionManager.questionCount = 10
+                        QuestionManager.currentQuestion = 1
+                    }, destination: {speciesSelectionView()}, label: {simpleMenuButton()})
                     
                 }
                 .frame(width: geom.size.width * 0.9, height: geom.size.height/3)

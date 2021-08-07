@@ -12,13 +12,15 @@ struct speciesSelectionView: View {
     //  This is used to dismiss the view to return back to the main menu as needed
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    @EnvironmentObject var QuestionManager: questionManager
+    
     @State var UCSelected = false
     @State var CGSelected = false
     
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundView()
+                uiBackgroundQuestionView()
                 
                 VStack {
                     
@@ -46,7 +48,7 @@ struct speciesSelectionView: View {
                     
                     Spacer()
                     //Button(action: {self.presentationMode.wrappedValue.dismiss()}, label: {Text("TMP BACK BTN")})
-                    questionToolBarView()
+                    //questionToolBarView()
                     
                 } .padding(.top,70)
             }
@@ -84,11 +86,9 @@ struct crabSelectionButton: View {
                             .frame(width: geom.size.width*0.7)
                             .padding(/*@START_MENU_TOKEN@*/.all, -3.0/*@END_MENU_TOKEN@*/)
                     }
-                    
                 }
                 .minimumScaleFactor(0.1)
                 .frame(width: geom.size.width, height: geom.size.height * 0.9)
-                
             }
         }
     }

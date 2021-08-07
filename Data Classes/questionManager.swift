@@ -8,9 +8,9 @@
 import Foundation
 
 class questionManager: ObservableObject {
-    private var questionCount: Int
-    private var currentQuestion: Int
-    private var answers: Answers
+    @Published var questionCount: Int
+    @Published var currentQuestion: Int
+    @Published var answers: Answers
     
     init() {
         answers = Answers();
@@ -18,8 +18,12 @@ class questionManager: ObservableObject {
         currentQuestion = 0
     }
     
+    func qmToString() {
+        print("\(currentQuestion) out of \(questionCount)")
+    }
+    
     func answersToString() -> String {
-        let string = "Species: \(answers.species) \n Year: \(answers.year) \n Month: \(answers.month)"
+        let string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)"
         print(string)
         return string
     }
