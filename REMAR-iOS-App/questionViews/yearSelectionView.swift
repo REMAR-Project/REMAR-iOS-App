@@ -1,17 +1,13 @@
 //
-//  cleanSlateView.swift
+//  yearSelectionView.swift
 //  REMAR-iOS-App
-//
-//  This is just a template view for quick testing and recreation of the standard question page.
 //
 //  Created by Lewis Watson on 07/08/2021.
 //
 
 import SwiftUI
 
-//  Question page template
-struct cleanSlateView: View {
-    
+struct yearSelectionView: View {
     @EnvironmentObject var QuestionManager: questionManager
     
     var body: some View {
@@ -21,9 +17,7 @@ struct cleanSlateView: View {
                 
                 VStack{
                     
-                    Button(action: {
-                        print(QuestionManager.answersToString())
-                    }, label: {Text("Send Questions-to-string to console")})
+                    Text("Year Selection View")
                     
                 }
                 .padding(.bottom)
@@ -37,9 +31,8 @@ struct cleanSlateView: View {
     }
 }
 
-
-struct cleanSlateView_Previews: PreviewProvider {
+struct yearSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        cleanSlateView()
+        yearSelectionView()
     }
 }

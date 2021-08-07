@@ -56,7 +56,7 @@ struct questionToolBarView: View {
                     NavigationButton(action: {
                         QuestionManager.currentQuestion += 1
                         QuestionManager.nextDisabled.toggle()
-                    }, destination: {cleanSlateView()}, label: {
+                    }, destination: {questionHandlerView()}, label: {
                         Image(systemName: "chevron.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
