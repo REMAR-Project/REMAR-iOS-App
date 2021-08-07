@@ -23,7 +23,7 @@ struct cleanSlateView: View {
                     
                     Button(action: {
                         print(QuestionManager.answersToString())
-                    }, label: {Text("Apple")})
+                    }, label: {Text("Send Questions-to-string to console")})
                     
                     
                 }

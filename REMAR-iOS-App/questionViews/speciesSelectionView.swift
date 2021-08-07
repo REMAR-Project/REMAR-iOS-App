@@ -17,6 +17,11 @@ struct speciesSelectionView: View {
     @State var UCSelected = false
     @State var CGSelected = false
     
+    func checkNextValid() {
+        if CGSelected == UCSelected {QuestionManager.nextDisabled = true}
+            else {QuestionManager.nextDisabled = false}
+    }
+    
     var body: some View {
         GeometryReader { geom in
             ZStack {
@@ -32,15 +37,23 @@ struct speciesSelectionView: View {
                     HStack{
                         
                         Button(action: {
+                            
                             print("Ucides cordatus selected")
                             UCSelected.toggle()
                             CGSelected = false
+                            
+                            checkNextValid() //  Checks and Updates if the 'next' button should be enabled
+
                         }, label: {crabSelectionButton(type: 0, selected: UCSelected)})
                         
                         Button(action: {
+                            
                             print("Cardisoma guanhumi selected")
                             CGSelected.toggle()
                             UCSelected = false
+                            
+                            checkNextValid() //  Checks and Updates if the 'next' button should be enabled
+                            
                         }, label: {crabSelectionButton(type: 1, selected: CGSelected)})
                         
                     }
@@ -56,6 +69,7 @@ struct speciesSelectionView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
+        .onAppear(perform: {checkNextValid()})
     }
 }
 

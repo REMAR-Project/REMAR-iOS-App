@@ -14,8 +14,6 @@ struct questionToolBarView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
-    @State var nextDisabled = false
-    
     var body: some View {
         GeometryReader { geom in
             VStack{
@@ -34,7 +32,7 @@ struct questionToolBarView: View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(Color("REMAR_GREEN"))
                             .frame(width: geom.size.width/8)
-                            .padding(.horizontal)
+                            .padding()
                     })
                     
                     Text("Press to go back")
@@ -55,14 +53,17 @@ struct questionToolBarView: View {
                         .lineLimit(2)
                         .frame(width: geom.size.width/6)
                     
-                    NavigationButton(action: {QuestionManager.currentQuestion += 1}, destination: {cleanSlateView()}, label: {
+                    NavigationButton(action: {
+                        QuestionManager.currentQuestion += 1
+                        QuestionManager.nextDisabled.toggle()
+                    }, destination: {cleanSlateView()}, label: {
                         Image(systemName: "chevron.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .foregroundColor( nextDisabled ? Color(.gray) : Color("REMAR_GREEN") )
+                            .foregroundColor( QuestionManager.nextDisabled ? Color(.gray) : Color("REMAR_GREEN") )
                             .frame(width: geom.size.width/8)
-                            .padding(.horizontal)
-                    }).disabled(nextDisabled)
+                            .padding()
+                    }).disabled(QuestionManager.nextDisabled)
                 }
             }.frame(width: geom.size.width, height: geom.size.height)
         }.frame(height: 100)
@@ -71,6 +72,7 @@ struct questionToolBarView: View {
 
 struct questionToolBarView_Previews: PreviewProvider {
     static var previews: some View {
-        questionToolBarView()
+        uiBackgroundQuestionView()
+            .environmentObject(questionManager())
     }
 }

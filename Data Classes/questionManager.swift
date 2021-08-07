@@ -10,12 +10,14 @@ import Foundation
 class questionManager: ObservableObject {
     @Published var questionCount: Int
     @Published var currentQuestion: Int
+    @Published var nextDisabled: Bool
     @Published var answers: Answers
     
     init() {
         answers = Answers();
         questionCount = 0
         currentQuestion = 0
+        nextDisabled = true
     }
     
     func qmToString() {
