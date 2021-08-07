@@ -61,7 +61,8 @@ struct questionToolBarView: View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor( nextDisabled ? Color(.gray) : Color("REMAR_GREEN") )
                             .frame(width: geom.size.width/8)
-                        .padding(.horizontal)}).disabled(nextDisabled)
+                            .padding(.horizontal)
+                    }).disabled(nextDisabled)
                 }
             }.frame(width: geom.size.width, height: geom.size.height)
         }.frame(height: 100)
