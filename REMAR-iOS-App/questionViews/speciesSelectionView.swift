@@ -39,6 +39,7 @@ struct speciesSelectionView: View {
                         Button(action: {
                             
                             print("Ucides cordatus selected")
+                            QuestionManager.tmpAnswer = "Ucides cordatus"
                             UCSelected.toggle()
                             CGSelected = false
                             
@@ -49,6 +50,7 @@ struct speciesSelectionView: View {
                         Button(action: {
                             
                             print("Cardisoma guanhumi selected")
+                            QuestionManager.tmpAnswer = "Cardisoma guanhumi"
                             CGSelected.toggle()
                             UCSelected = false
                             
@@ -114,6 +116,7 @@ struct crabSelectionButton: View {
 struct speciesSelectionView_Previews: PreviewProvider {
     static var previews: some View {
         speciesSelectionView()
+            .environmentObject(questionManager())
         //menuView()
     }
 }

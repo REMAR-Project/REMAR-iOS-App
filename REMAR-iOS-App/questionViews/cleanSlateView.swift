@@ -21,12 +21,12 @@ struct cleanSlateView: View {
                 
                 VStack{
                     
-                    Button(action: {
-                        print(QuestionManager.answersToString())
-                    }, label: {Text("Send Questions-to-string to console")})
+                    Text("This is the x selection area... Select those x's")
+                    selectionList(listItems: ["2016","2017","2018","2019","2020","2021","2022"])
                     
                 }
                 .padding(.bottom)
+                .padding(.top, 150)
                 .ignoresSafeArea()
                 
             }
@@ -41,5 +41,6 @@ struct cleanSlateView: View {
 struct cleanSlateView_Previews: PreviewProvider {
     static var previews: some View {
         cleanSlateView()
+            .environmentObject(questionManager())
     }
 }
