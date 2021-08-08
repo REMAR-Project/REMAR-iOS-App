@@ -26,7 +26,7 @@ struct questionToolBarView: View {
                         print("Go Back Selected")
                         QuestionManager.reverseAction()
                         print(QuestionManager.answersToString())
-                        presentationMode.wrappedValue.dismiss() //  Dismiss current subpage
+                        //presentationMode.wrappedValue.dismiss() //  Dismiss current subpage
                     }, label: {
                         Image(systemName: "chevron.left.circle.fill")
                             .resizable()
@@ -54,10 +54,12 @@ struct questionToolBarView: View {
                         .lineLimit(2)
                         .frame(width: geom.size.width/6)
                     
+                    //Button(action: <#T##() -> Void#>, label: <#T##() -> _#>)
+                    
                     NavigationButton(action: {
                         QuestionManager.logAnswer()
                         print(QuestionManager.answersToString())
-                    }, destination: {questionHandlerView()}, label: {
+                    }, destination: {questionHandler(currentQuestion: QuestionManager.currentQuestion)}, label: {
                         Image(systemName: "chevron.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

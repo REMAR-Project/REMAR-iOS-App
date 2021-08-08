@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct monthSelectionView: View {
+    
     @EnvironmentObject var QuestionManager: questionManager
     
     var body: some View {

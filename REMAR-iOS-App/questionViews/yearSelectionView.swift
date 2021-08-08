@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct yearSelectionView: View {
+    
     @EnvironmentObject var QuestionManager: questionManager
     
     @State var selectedDate = Date()
