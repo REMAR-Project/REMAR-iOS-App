@@ -14,7 +14,7 @@
 		A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8326BEFF9B00920F36 /* questionManager.swift */; };
 		A9322A8626BF0E5D00920F36 /* questionToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8526BF0E5D00920F36 /* questionToolBarView.swift */; };
 		A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8726BF16C800920F36 /* NavigationButton.swift */; };
-		A9322A8A26BF2AD800920F36 /* questionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8926BF2AD800920F36 /* questionHandler.swift */; };
+		A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8926BF2AD800920F36 /* questionHandlerView.swift */; };
 		A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */; };
 		A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */; };
 		A98684B9269B62A600A72459 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98684B8269B62A600A72459 /* ContentView.swift */; };
@@ -37,7 +37,7 @@
 		A9322A8326BEFF9B00920F36 /* questionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionManager.swift; sourceTree = "<group>"; };
 		A9322A8526BF0E5D00920F36 /* questionToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionToolBarView.swift; sourceTree = "<group>"; };
 		A9322A8726BF16C800920F36 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
-		A9322A8926BF2AD800920F36 /* questionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionHandler.swift; sourceTree = "<group>"; };
+		A9322A8926BF2AD800920F36 /* questionHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionHandlerView.swift; sourceTree = "<group>"; };
 		A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yearSelectionView.swift; sourceTree = "<group>"; };
 		A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthSelectionView.swift; sourceTree = "<group>"; };
 		A98684B3269B62A600A72459 /* REMAR-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REMAR-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +91,7 @@
 				A919176426BCBD1E00F8B9E8 /* faqView.swift */,
 				A9322A8526BF0E5D00920F36 /* questionToolBarView.swift */,
 				A9322A8726BF16C800920F36 /* NavigationButton.swift */,
-				A9322A8926BF2AD800920F36 /* questionHandler.swift */,
+				A9322A8926BF2AD800920F36 /* questionHandlerView.swift */,
 			);
 			path = menuViews;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 				A990294826B757DB00A83582 /* uiViews.swift in Sources */,
 				A9322A8626BF0E5D00920F36 /* questionToolBarView.swift in Sources */,
 				A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */,
-				A9322A8A26BF2AD800920F36 /* questionHandler.swift in Sources */,
+				A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */,
 				A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */,

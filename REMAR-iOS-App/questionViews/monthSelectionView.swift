@@ -20,6 +20,9 @@ struct monthSelectionView: View {
                     
                     Text("Month Selection View")
                     
+                    Button(action: {QuestionManager.currentQuestion = 0}, label: {Text("HOME")})
+                        .padding()
+                    
                 }
                 .padding(.bottom)
                 .ignoresSafeArea()

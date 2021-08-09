@@ -46,7 +46,7 @@ class questionManager: ObservableObject {
         
         // Either Way Execute...
         currentQuestion -= 1
-        nextDisabled.toggle()
+        nextDisabled = true
     }
     
     func answersToString() -> String {

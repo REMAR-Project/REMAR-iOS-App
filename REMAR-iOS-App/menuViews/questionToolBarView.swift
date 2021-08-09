@@ -24,9 +24,14 @@ struct questionToolBarView: View {
                     
                     Button(action: {
                         print("Go Back Selected")
+                        
+                        if ((QuestionManager.currentQuestion == 1)){
+                            presentationMode.wrappedValue.dismiss()
+                        } //  Dismiss subpage
+                        
                         QuestionManager.reverseAction()
                         print(QuestionManager.answersToString())
-                        //presentationMode.wrappedValue.dismiss() //  Dismiss current subpage
+                        
                     }, label: {
                         Image(systemName: "chevron.left.circle.fill")
                             .resizable()
@@ -54,19 +59,13 @@ struct questionToolBarView: View {
                         .lineLimit(2)
                         .frame(width: geom.size.width/6)
                     
-                    //Button(action: <#T##() -> Void#>, label: <#T##() -> _#>)
-                    
-                    NavigationButton(action: {
-                        QuestionManager.logAnswer()
-                        print(QuestionManager.answersToString())
-                    }, destination: {questionHandler(currentQuestion: QuestionManager.currentQuestion)}, label: {
+                    Button(action: {QuestionManager.logAnswer()}, label: {
                         Image(systemName: "chevron.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor( QuestionManager.nextDisabled ? Color(.gray) : Color("REMAR_GREEN") )
                             .frame(width: geom.size.width/8)
-                            .padding()
-                    }).disabled(QuestionManager.nextDisabled)
+                        .padding()}).disabled(QuestionManager.nextDisabled)
                 }
             }.frame(width: geom.size.width, height: geom.size.height)
         }.frame(height: 100)

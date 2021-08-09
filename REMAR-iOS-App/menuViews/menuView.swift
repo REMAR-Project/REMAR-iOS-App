@@ -45,12 +45,12 @@ struct versionQuestion: View {
                     NavigationButton(action: {
                         QuestionManager.questionCount = 14
                         QuestionManager.currentQuestion = 1
-                    }, destination: {speciesSelectionView()}, label: {fullMenuButton()})
+                    }, destination: {questionHandlerView()}, label: {fullMenuButton()})
                     
                     NavigationButton(action: {
                         QuestionManager.questionCount = 10
                         QuestionManager.currentQuestion = 1
-                    }, destination: {speciesSelectionView()}, label: {simpleMenuButton()})
+                    }, destination: {questionHandlerView()}, label: {simpleMenuButton()})
                     
                 }
                 .frame(width: geom.size.width * 0.9, height: geom.size.height/3)
