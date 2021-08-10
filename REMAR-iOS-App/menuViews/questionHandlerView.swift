@@ -2,13 +2,12 @@
 //  questionHandlerView.swift
 //  REMAR-iOS-App
 //
-//  This view will handle which view should be displayed depending on the current question variable in the questionManager.
-//
 //  Created by Lewis Watson on 07/08/2021.
 //
 
 import SwiftUI
 
+/// This view handles the current question being displayed to the user, this will depend on the value of the currentQuestion property in the questionManager class.
 struct questionHandlerView: View {
     
     //  This is used to dismiss the view to return back to the main menu as needed
@@ -25,6 +24,7 @@ struct questionHandlerView: View {
             monthSelectionView()
         }
         
+        // This should never have to run however, should none of the if statements above be true the questionView will simple return to the menuView.
         else { Spacer().onAppear(perform: {presentationMode.wrappedValue.dismiss()}) }
     }
 }

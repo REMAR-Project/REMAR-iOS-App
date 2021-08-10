@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//  This view will be temporarily shown as the app loads.
+///  This view will be temporarily shown as the application loads.
 struct splashscreenView: View {
     var body: some View {
         GeometryReader{ geom in

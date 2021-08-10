@@ -12,6 +12,7 @@ import SwiftUI
 //  Splash Screen Diaplay Time (in seconds)
 let splashscreen_time = 2.0
 
+/// The ContentView is a View that displays the splashscreen then the content of the app. It also initialises the Question Manager object and adds it to the environment of the menuView.
 struct ContentView: View {
     @State var showSplash = true
     
@@ -35,6 +36,7 @@ struct ContentView: View {
     }
 }
 
+/// _Preview Views are used for previewing the current view whilst developing.
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

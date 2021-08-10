@@ -7,7 +7,10 @@
 
 import Foundation
 
+
+/// Class for storing the current and temporary state for the questions being answered by the user.
 class questionManager: ObservableObject {
+    
     @Published var questionCount: Int
     @Published var currentQuestion: Int
     @Published var nextDisabled: Bool

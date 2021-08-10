@@ -16,7 +16,6 @@ struct menuView: View {
                 
                 //  Question View
                 versionQuestion()
-                //cleanSlateView()  //  Uncomment for testing cleanSlate updates.
             }
             //  Removing top padding from navigation bar - Must be in NavView (not outside)
             .navigationBarTitle("")
