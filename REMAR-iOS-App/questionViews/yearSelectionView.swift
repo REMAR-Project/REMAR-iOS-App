@@ -7,11 +7,21 @@
 
 import SwiftUI
 
+func getYearList() -> [String] {
+    let currentYear = Calendar.current.component(.year, from: Date())
+    let yearListInt = Array(currentYear-10...currentYear)
+    let yearListString = yearListInt.map { String($0) }
+    return yearListString.reversed()
+}
+
 struct yearSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
-    var yearList = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"]
+    
+    var yearList = getYearList()
+    //var yearList = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"]
+    //var yearList = ["2022","2021","2020","2019","2018","2017","2016","2015","2014","2013"] // Reverse order?
     
     var body: some View {
         GeometryReader { geom in
