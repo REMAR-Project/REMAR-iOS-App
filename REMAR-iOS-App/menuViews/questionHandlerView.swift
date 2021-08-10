@@ -22,6 +22,8 @@ struct questionHandlerView: View {
             yearSelectionView()
         } else if (QuestionManager.currentQuestion == 3) {
             monthSelectionView()
+        } else if (QuestionManager.currentQuestion == 4) {
+            daySelectionView()
         }
         
         // This should never have to run however, should none of the if statements above be true the questionView will simple return to the menuView.

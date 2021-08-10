@@ -11,6 +11,8 @@ struct monthSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
+    var monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    
     var body: some View {
         GeometryReader { geom in
             ZStack {
@@ -18,13 +20,15 @@ struct monthSelectionView: View {
                 
                 VStack{
                     
+                    speciesDetailView().padding()
+                    
                     Text("Month Selection View")
-                    
-                    Button(action: {QuestionManager.currentQuestion = 0}, label: {Text("HOME")})
-                        .padding()
-                    
+                        .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                    selectionList(listItems: monthList)
                 }
                 .padding(.bottom)
+                .padding(.top, 120)
                 .ignoresSafeArea()
                 
             }
@@ -37,6 +41,7 @@ struct monthSelectionView: View {
 
 struct monthSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        yearSelectionView()
+        monthSelectionView()
+            .environmentObject(questionManager())
     }
 }

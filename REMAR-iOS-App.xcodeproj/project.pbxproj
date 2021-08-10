@@ -17,6 +17,7 @@
 		A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8926BF2AD800920F36 /* questionHandlerView.swift */; };
 		A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */; };
 		A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */; };
+		A965750A26C201B200375A51 /* daySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965750926C201B200375A51 /* daySelectionView.swift */; };
 		A98684B9269B62A600A72459 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98684B8269B62A600A72459 /* ContentView.swift */; };
 		A98684BB269B62A700A72459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BA269B62A700A72459 /* Assets.xcassets */; };
 		A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BD269B62A700A72459 /* Preview Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		A9322A8926BF2AD800920F36 /* questionHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionHandlerView.swift; sourceTree = "<group>"; };
 		A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yearSelectionView.swift; sourceTree = "<group>"; };
 		A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthSelectionView.swift; sourceTree = "<group>"; };
+		A965750926C201B200375A51 /* daySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daySelectionView.swift; sourceTree = "<group>"; };
 		A98684B3269B62A600A72459 /* REMAR-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REMAR-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98684B8269B62A600A72459 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A98684BA269B62A700A72459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */,
 				A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */,
 				A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */,
+				A965750926C201B200375A51 /* daySelectionView.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				A919176526BCBD1E00F8B9E8 /* faqView.swift in Sources */,
 				A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */,
 				A919178B26BD88D500F8B9E8 /* speciesSelectionView.swift in Sources */,
+				A965750A26C201B200375A51 /* daySelectionView.swift in Sources */,
 				A990294826B757DB00A83582 /* uiViews.swift in Sources */,
 				A9322A8626BF0E5D00920F36 /* questionToolBarView.swift in Sources */,
 				A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */,

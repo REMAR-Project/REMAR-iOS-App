@@ -11,8 +11,7 @@ struct yearSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
-    @State var selectedDate = Date()
-    var yearList = ["2016","2017","2018","2019","2020","2021","2022"]
+    var yearList = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"]
     
     var body: some View {
         GeometryReader { geom in
@@ -21,11 +20,15 @@ struct yearSelectionView: View {
                 
                 VStack{
                     
+                    speciesDetailView().padding()
+                    
                     Text("Year Selection View")
+                        .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
                     selectionList(listItems: yearList)
                 }
                 .padding(.bottom)
-                .padding(.top, 150)
+                .padding(.top, 120)
                 .ignoresSafeArea()
                 
             }
@@ -33,6 +36,20 @@ struct yearSelectionView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
+    }
+}
+
+struct speciesDetailView: View {
+    @EnvironmentObject var QuestionManager: questionManager
+    var body: some View {
+        HStack{
+            Image((QuestionManager.answers.species == "Ucides cordatus") ? "crabUC" : "crabCG")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 130)
+            Text("Monitoring \(QuestionManager.answers.species)")
+                .multilineTextAlignment(.center)
+        }
     }
 }
 
@@ -71,7 +88,7 @@ struct selectionList: View {
                             }
                         })
                     }
-                }
+                }.border(Color(.gray))
             }.frame(width: geom.size.width, height: geom.size.height/2)
         }
     }

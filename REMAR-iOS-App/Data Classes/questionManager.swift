@@ -14,8 +14,8 @@ class questionManager: ObservableObject {
     @Published var questionCount: Int
     @Published var currentQuestion: Int
     @Published var nextDisabled: Bool
-    @Published var answers: Answers
     @Published var tmpAnswer: String
+    @Published var answers: Answers
     
     init() {
         answers = Answers();
