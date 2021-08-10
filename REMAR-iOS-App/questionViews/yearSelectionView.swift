@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Function returns a list of strings from Current Year to Current Year-10
 func getYearList() -> [String] {
     let currentYear = Calendar.current.component(.year, from: Date())
     let yearListInt = Array(currentYear-10...currentYear)
@@ -20,8 +21,6 @@ struct yearSelectionView: View {
     
     
     var yearList = getYearList()
-    //var yearList = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"]
-    //var yearList = ["2022","2021","2020","2019","2018","2017","2016","2015","2014","2013"] // Reverse order?
     
     var body: some View {
         GeometryReader { geom in
@@ -63,21 +62,29 @@ struct speciesDetailView: View {
     }
 }
 
+/// Return true if month is on or after current month
+func validateMonth(month: Int) -> Bool {
+    @EnvironmentObject var QuestionManager: questionManager
+        let currentMonth = Calendar.current.component(.month, from: Date())
+        return (currentMonth <= month) ? true : false
+}
+
 struct selectionList: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
     var listItems: [String]
     @State var selectedItem: String = ""
-    
+
     var body: some View {
+        
         GeometryReader {geom in
             VStack{
                 ScrollView{
-                    ForEach(listItems, id: \.self){ item in
+                    ForEach(Array(listItems.enumerated()), id: \.offset){ item in
                         Button(action: {
-                            if (selectedItem != item) {
-                                selectedItem = item
+                            if (selectedItem != item.element) {
+                                selectedItem = item.element
                                 QuestionManager.tmpAnswer = selectedItem
                                 QuestionManager.nextDisabled = false
                                 print("\(item) Selected")
@@ -90,13 +97,13 @@ struct selectionList: View {
                         }, label: {
                             ZStack {
                                 Rectangle()
-                                    .fill((item == selectedItem) ? Color("REMAR_GREEN") : .white)
+                                    .fill((item.element == selectedItem) ? Color("REMAR_GREEN") : .white)
                                     .border(Color.gray)
                                     .frame(width: geom.size.width*0.9, height: 30)
-                                Text(item)
+                                Text("\(item.element)")
                                     .foregroundColor(.black)
                             }
-                        })
+                        }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
                     }
                 }.border(Color(.gray))
             }.frame(width: geom.size.width, height: geom.size.height/2)
