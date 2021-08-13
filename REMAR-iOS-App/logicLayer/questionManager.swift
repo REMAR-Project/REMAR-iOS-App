@@ -16,6 +16,7 @@ class questionManager: ObservableObject {
     @Published var nextDisabled: Bool
     @Published var tmpAnswer: String
     @Published var tmpOffset: Int
+    @Published var tmpDayList: [dayItem]
     @Published var answers: Answers
     
     init() {
@@ -25,6 +26,7 @@ class questionManager: ObservableObject {
         nextDisabled = true
         tmpAnswer = ""
         tmpOffset = 1
+        tmpDayList = []
     }
     
     func qmToString() {
@@ -42,6 +44,9 @@ class questionManager: ObservableObject {
             answers.month = tmpOffset+1 // Offset starts at 0
             tmpOffset = 0
             tmpAnswer = ""
+        } else if currentQuestion == 4 {
+            answers.days = tmpDayList
+            tmpDayList = []
         }
         
         // Either Way Execute...
@@ -59,7 +64,10 @@ class questionManager: ObservableObject {
     }
     
     func answersToString() -> String {
-        let string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)"
+        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\n\n\n"
+        for day in answers.days {
+            string = "\(string)\n\(day)\n\n"
+        }
         return string
     }
     
@@ -71,11 +79,13 @@ class Answers {
     public var species: String
     public var year: String
     public var month: Int
+    public var days: [dayItem]
     
     init() {
         year = "0"
         month = 0
         species = ""
+        days = []
     }
     
 }

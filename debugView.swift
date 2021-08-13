@@ -10,14 +10,19 @@ import SwiftUI
 struct debugView: View {
     @EnvironmentObject var QuestionManager: questionManager
     var body: some View {
-        VStack{
-            Text("\(QuestionManager.answersToString())")
-            Spacer()
-            Text("Current Question: \(QuestionManager.currentQuestion)")
-            Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
-            Text("Temporary Offset: \(QuestionManager.tmpOffset)")
-            Spacer()
-        }.accentColor(Color("REMAR_GREEN"))
+        ScrollView {
+            VStack{
+                Text("Current Question: \(QuestionManager.currentQuestion)")
+                Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
+                Text("Temporary Offset: \(QuestionManager.tmpOffset)")
+                Text("--------")
+                //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")
+                Spacer()
+                Text("\(QuestionManager.answersToString())")
+                Spacer()
+            }.accentColor(Color("REMAR_GREEN"))
+            //.onAppear(perform: {print(QuestionManager.tmpDayList)})
+        }.padding()
     }
 }
 

@@ -40,6 +40,7 @@ func calculateDates(year: Int, month: Int) -> [dayItem] {
     var counterBuffer = firstDay-1
     while counterBuffer > 0 {
         dayList.append(dayItem.init(dayNumber: (rangePrev+1)-counterBuffer,
+                                    monthOffset: -1,
                                     isNewMoon: isNewMoon(day: (rangePrev+1)-counterBuffer, month: month-1, year: year),
                                     isFullMoon: isFullMoon(day: (rangePrev+1)-counterBuffer, month: month-1, year: year)))
         counterBuffer-=1
@@ -61,6 +62,7 @@ func calculateDates(year: Int, month: Int) -> [dayItem] {
     while (dayList.count != 42) {
         overflowBuffer += 1
         dayList.append(dayItem.init(dayNumber: overflowBuffer,
+                                    monthOffset: 1,
                                     isNewMoon: isNewMoon(day: overflowBuffer, month: month+1, year: year),
                                     isFullMoon: isFullMoon(day: overflowBuffer, month: month+1, year: year)))
     }
@@ -105,4 +107,21 @@ func isNewMoon(day: Int, month: Int, year: Int) -> Bool {
     
     
     return isInFile
+}
+
+func removeDay(target: UUID, selectedDays: [dayItem]) -> [dayItem] {
+    
+    var newSelectedDays: [dayItem] = []
+    
+    for day in selectedDays {
+        if !(day.id.uuidString==target.uuidString){
+            newSelectedDays.append(day)
+        }
+    }
+    return newSelectedDays
+}
+
+func getMonthName(month: Int) -> String {
+    let monthStrings = [1 : "January",  2 : "February", 3 : "March", 4 : "April", 5 : "May", 6 : "June", 7 : "July", 8 : "August", 9 : "September", 10 : "October", 11 : "November", 12 : "December"]
+    return monthStrings[month]!
 }

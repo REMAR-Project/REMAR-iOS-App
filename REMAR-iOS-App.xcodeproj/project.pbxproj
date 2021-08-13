@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9100C6226C44003000BF34E /* moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9100C6126C44003000BF34E /* moon.swift */; };
+		A9100C6226C44003000BF34E /* calendarLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9100C6126C44003000BF34E /* calendarLogic.swift */; };
 		A919176526BCBD1E00F8B9E8 /* faqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919176426BCBD1E00F8B9E8 /* faqView.swift */; };
 		A919177826BCD58B00F8B9E8 /* about_us.json in Resources */ = {isa = PBXBuildFile; fileRef = A919177A26BCD58B00F8B9E8 /* about_us.json */; };
 		A919178126BCE25C00F8B9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A919178326BCE25C00F8B9E8 /* Localizable.strings */; };
@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A9100C6126C44003000BF34E /* moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moon.swift; sourceTree = "<group>"; };
+		A9100C6126C44003000BF34E /* calendarLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarLogic.swift; sourceTree = "<group>"; };
 		A919176426BCBD1E00F8B9E8 /* faqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqView.swift; sourceTree = "<group>"; };
 		A919177926BCD58B00F8B9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/about_us.json; sourceTree = "<group>"; };
 		A919177E26BCDCC600F8B9E8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/about_us.json"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A9322A8326BEFF9B00920F36 /* questionManager.swift */,
-				A9100C6126C44003000BF34E /* moon.swift */,
+				A9100C6126C44003000BF34E /* calendarLogic.swift */,
 			);
 			path = logicLayer;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,
 				A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */,
-				A9100C6226C44003000BF34E /* moon.swift in Sources */,
+				A9100C6226C44003000BF34E /* calendarLogic.swift in Sources */,
 				A98684B9269B62A600A72459 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
