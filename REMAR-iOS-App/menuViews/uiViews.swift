@@ -12,20 +12,23 @@ import SwiftUI
 //  REMAR Logo View
 struct remarLogoView: View {
     var body: some View {
-        GeometryReader { geom in
-            HStack(spacing: 0.0){
-                Text(NSLocalizedString("REMAR", comment: ""))
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .minimumScaleFactor(0.1)
-                Text(NSLocalizedString("_CITIZEN", comment: ""))
-                    .font(.title)
-                    .minimumScaleFactor(0.1)
-            }.frame(
-                width: geom.size.width,
-                height: geom.size.height
-            )
-        }
+        NavigationLink(destination: debugView(), label: {
+            GeometryReader { geom in
+                HStack(spacing: 0.0){
+                    Text(NSLocalizedString("REMAR", comment: ""))
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .minimumScaleFactor(0.1)
+                    Text(NSLocalizedString("_CITIZEN", comment: ""))
+                        .font(.title)
+                        .minimumScaleFactor(0.1)
+                }.frame(
+                    width: geom.size.width,
+                    height: geom.size.height
+                )
+            }
+        }).foregroundColor(.black)
+
     }
 }
 
