@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9100C6226C44003000BF34E /* moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9100C6126C44003000BF34E /* moon.swift */; };
 		A919176526BCBD1E00F8B9E8 /* faqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919176426BCBD1E00F8B9E8 /* faqView.swift */; };
 		A919177826BCD58B00F8B9E8 /* about_us.json in Resources */ = {isa = PBXBuildFile; fileRef = A919177A26BCD58B00F8B9E8 /* about_us.json */; };
 		A919178126BCE25C00F8B9E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A919178326BCE25C00F8B9E8 /* Localizable.strings */; };
@@ -26,9 +27,13 @@
 		A990294A26B76B7900A83582 /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990294926B76B7900A83582 /* menuView.swift */; };
 		A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998F0EA26AB3CFC000A026D /* splashscreenView.swift */; };
 		A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */; };
+		A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B67026C44ACF002B18CE /* debugView.swift */; };
+		A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98926C6EDD500CC29C3 /* moons_new.csv */; };
+		A9ECF98C26C6EDD500CC29C3 /* moons_full.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9100C6126C44003000BF34E /* moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moon.swift; sourceTree = "<group>"; };
 		A919176426BCBD1E00F8B9E8 /* faqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqView.swift; sourceTree = "<group>"; };
 		A919177926BCD58B00F8B9E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/about_us.json; sourceTree = "<group>"; };
 		A919177E26BCDCC600F8B9E8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/about_us.json"; sourceTree = "<group>"; };
@@ -52,6 +57,9 @@
 		A990294926B76B7900A83582 /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		A998F0EA26AB3CFC000A026D /* splashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreenView.swift; sourceTree = "<group>"; };
 		A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanSlateView.swift; sourceTree = "<group>"; };
+		A9E5B67026C44ACF002B18CE /* debugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugView.swift; sourceTree = "<group>"; };
+		A9ECF98926C6EDD500CC29C3 /* moons_new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_new.csv; sourceTree = "<group>"; };
+		A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_full.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,17 +107,19 @@
 			path = menuViews;
 			sourceTree = "<group>";
 		};
-		A9322A8226BEFDAC00920F36 /* Data Classes */ = {
+		A9322A8226BEFDAC00920F36 /* logicLayer */ = {
 			isa = PBXGroup;
 			children = (
 				A9322A8326BEFF9B00920F36 /* questionManager.swift */,
+				A9100C6126C44003000BF34E /* moon.swift */,
 			);
-			path = "Data Classes";
+			path = logicLayer;
 			sourceTree = "<group>";
 		};
 		A98684AA269B62A600A72459 = {
 			isa = PBXGroup;
 			children = (
+				A9E5B67026C44ACF002B18CE /* debugView.swift */,
 				A98684B5269B62A600A72459 /* REMAR-iOS-App */,
 				A98684B4269B62A600A72459 /* Products */,
 			);
@@ -126,7 +136,8 @@
 		A98684B5269B62A600A72459 /* REMAR-iOS-App */ = {
 			isa = PBXGroup;
 			children = (
-				A9322A8226BEFDAC00920F36 /* Data Classes */,
+				A9ECF98826C6ED8300CC29C3 /* moonData */,
+				A9322A8226BEFDAC00920F36 /* logicLayer */,
 				A98684C4269B635000A72459 /* Info.plist */,
 				A98684C5269B63C000A72459 /* REMAR_iOS_App.swift */,
 				A998F0EA26AB3CFC000A026D /* splashscreenView.swift */,
@@ -146,6 +157,15 @@
 				A98684BD269B62A700A72459 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9ECF98826C6ED8300CC29C3 /* moonData */ = {
+			isa = PBXGroup;
+			children = (
+				A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */,
+				A9ECF98926C6EDD500CC29C3 /* moons_new.csv */,
+			);
+			path = moonData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +227,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9ECF98C26C6EDD500CC29C3 /* moons_full.csv in Resources */,
 				A919178126BCE25C00F8B9E8 /* Localizable.strings in Resources */,
 				A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */,
+				A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */,
 				A98684BB269B62A700A72459 /* Assets.xcassets in Resources */,
 				A919177826BCD58B00F8B9E8 /* about_us.json in Resources */,
 			);
@@ -231,10 +253,12 @@
 				A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */,
 				A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
+				A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */,
 				A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */,
 				A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,
 				A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */,
+				A9100C6226C44003000BF34E /* moon.swift in Sources */,
 				A98684B9269B62A600A72459 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

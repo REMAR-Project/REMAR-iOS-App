@@ -15,6 +15,7 @@ class questionManager: ObservableObject {
     @Published var currentQuestion: Int
     @Published var nextDisabled: Bool
     @Published var tmpAnswer: String
+    @Published var tmpOffset: Int
     @Published var answers: Answers
     
     init() {
@@ -23,6 +24,7 @@ class questionManager: ObservableObject {
         currentQuestion = 0
         nextDisabled = true
         tmpAnswer = ""
+        tmpOffset = 1
     }
     
     func qmToString() {
@@ -35,6 +37,10 @@ class questionManager: ObservableObject {
             tmpAnswer = ""
         } else if currentQuestion == 2 {
             answers.year = tmpAnswer
+            tmpAnswer = ""
+        } else if currentQuestion == 3 {
+            answers.month = tmpOffset+1 // Offset starts at 0
+            tmpOffset = 0
             tmpAnswer = ""
         }
         
@@ -56,6 +62,7 @@ class questionManager: ObservableObject {
         let string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)"
         return string
     }
+    
     
 }
 

@@ -65,8 +65,8 @@ struct speciesDetailView: View {
 /// Return true if month is on or after current month
 func validateMonth(month: Int) -> Bool {
     @EnvironmentObject var QuestionManager: questionManager
-        let currentMonth = Calendar.current.component(.month, from: Date())
-        return (currentMonth <= month) ? true : false
+    let currentMonth = Calendar.current.component(.month, from: Date())
+    return (currentMonth <= month) ? true : false
 }
 
 struct selectionList: View {
@@ -75,7 +75,7 @@ struct selectionList: View {
     
     var listItems: [String]
     @State var selectedItem: String = ""
-
+    
     var body: some View {
         
         GeometryReader {geom in
@@ -85,12 +85,15 @@ struct selectionList: View {
                         Button(action: {
                             if (selectedItem != item.element) {
                                 selectedItem = item.element
+                                
+                                QuestionManager.tmpOffset = item.offset
                                 QuestionManager.tmpAnswer = selectedItem
                                 QuestionManager.nextDisabled = false
-                                print("\(item) Selected")
+                                print("\(selectedItem) Selected")
                             } else {
                                 selectedItem = ""
                                 QuestionManager.tmpAnswer = ""
+                                QuestionManager.tmpOffset = 0
                                 QuestionManager.nextDisabled = true
                                 print("Selected item cleared")
                             }
@@ -99,7 +102,7 @@ struct selectionList: View {
                                 Rectangle()
                                     .fill((item.element == selectedItem) ? Color("REMAR_GREEN") : .white)
                                     .border(Color.gray)
-                                    .frame(width: geom.size.width*0.9, height: 30)
+                                    .frame(width: geom.size.width*0.9, height: 35)
                                 Text("\(item.element)")
                                     .foregroundColor(.black)
                             }
