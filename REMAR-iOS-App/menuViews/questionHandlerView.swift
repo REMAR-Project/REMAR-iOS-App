@@ -25,6 +25,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 4) {
             daySelectionView()
         } else if (QuestionManager.currentQuestion == 5) {
+            strongestDayView()
+        } else if (QuestionManager.currentQuestion == 6) {
             cleanSlateView()
         }
         

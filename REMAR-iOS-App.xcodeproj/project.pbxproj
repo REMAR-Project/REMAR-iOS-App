@@ -30,6 +30,7 @@
 		A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B67026C44ACF002B18CE /* debugView.swift */; };
 		A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98926C6EDD500CC29C3 /* moons_new.csv */; };
 		A9ECF98C26C6EDD500CC29C3 /* moons_full.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */; };
+		A9ECF98E26C729A200CC29C3 /* strongestDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		A9E5B67026C44ACF002B18CE /* debugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugView.swift; sourceTree = "<group>"; };
 		A9ECF98926C6EDD500CC29C3 /* moons_new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_new.csv; sourceTree = "<group>"; };
 		A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_full.csv; sourceTree = "<group>"; };
+		A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strongestDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */,
 				A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */,
 				A965750926C201B200375A51 /* daySelectionView.swift */,
+				A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				A9322A8626BF0E5D00920F36 /* questionToolBarView.swift in Sources */,
 				A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */,
 				A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */,
+				A9ECF98E26C729A200CC29C3 /* strongestDayView.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */,
 				A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */,

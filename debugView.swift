@@ -15,14 +15,15 @@ struct debugView: View {
                 Text("Current Question: \(QuestionManager.currentQuestion)")
                 Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
                 Text("Temporary Offset: \(QuestionManager.tmpOffset)")
+                Text("Tmp Strongest Day: \(QuestionManager.tmpStrongestDay.dayNumber)")
                 Text("--------")
+                Text("Strongest Day: \(QuestionManager.answers.strongestDay.dayNumber)")
                 //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")
                 Spacer()
                 Text("\(QuestionManager.answersToString())")
                 Spacer()
             }.accentColor(Color("REMAR_GREEN"))
-            //.onAppear(perform: {print(QuestionManager.tmpDayList)})
-        }.padding()
+        }.padding().navigationTitle("Debug View")
     }
 }
 

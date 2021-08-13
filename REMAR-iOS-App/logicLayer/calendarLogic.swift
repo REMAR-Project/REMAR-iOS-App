@@ -121,6 +121,16 @@ func removeDay(target: UUID, selectedDays: [dayItem]) -> [dayItem] {
     return newSelectedDays
 }
 
+func isInAnswers(day: dayItem, dayList: [dayItem]) -> Bool {
+    
+    for dayStored in dayList {
+        if (dayStored.monthOffset == day.monthOffset && dayStored.dayNumber==day.dayNumber) {
+            return true
+        }
+    }
+    return false
+}
+
 func getMonthName(month: Int) -> String {
     let monthStrings = [1 : "January",  2 : "February", 3 : "March", 4 : "April", 5 : "May", 6 : "June", 7 : "July", 8 : "August", 9 : "September", 10 : "October", 11 : "November", 12 : "December"]
     return monthStrings[month]!

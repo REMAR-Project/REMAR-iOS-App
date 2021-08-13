@@ -17,6 +17,7 @@ class questionManager: ObservableObject {
     @Published var tmpAnswer: String
     @Published var tmpOffset: Int
     @Published var tmpDayList: [dayItem]
+    @Published var tmpStrongestDay: dayItem
     @Published var answers: Answers
     
     init() {
@@ -27,6 +28,7 @@ class questionManager: ObservableObject {
         tmpAnswer = ""
         tmpOffset = 1
         tmpDayList = []
+        tmpStrongestDay = dayItem.init(dayNumber: 0)
     }
     
     func qmToString() {
@@ -47,6 +49,8 @@ class questionManager: ObservableObject {
         } else if currentQuestion == 4 {
             answers.days = tmpDayList
             tmpDayList = []
+        } else if currentQuestion == 5 {
+            answers.strongestDay = tmpStrongestDay
         }
         
         // Either Way Execute...
@@ -80,12 +84,14 @@ class Answers {
     public var year: String
     public var month: Int
     public var days: [dayItem]
+    public var strongestDay: dayItem
     
     init() {
         year = "0"
         month = 0
         species = ""
         days = []
+        strongestDay = dayItem.init(dayNumber: 0)
     }
     
 }
