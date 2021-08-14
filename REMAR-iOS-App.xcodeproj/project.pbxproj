@@ -27,6 +27,7 @@
 		A990294A26B76B7900A83582 /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990294926B76B7900A83582 /* menuView.swift */; };
 		A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998F0EA26AB3CFC000A026D /* splashscreenView.swift */; };
 		A9BE94DB26C80C620067C65C /* intensityObservedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94DA26C80C620067C65C /* intensityObservedView.swift */; };
+		A9BE94DD26C810320067C65C /* whenObservationQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */; };
 		A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */; };
 		A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B67026C44ACF002B18CE /* debugView.swift */; };
 		A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98926C6EDD500CC29C3 /* moons_new.csv */; };
@@ -59,6 +60,7 @@
 		A990294926B76B7900A83582 /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		A998F0EA26AB3CFC000A026D /* splashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreenView.swift; sourceTree = "<group>"; };
 		A9BE94DA26C80C620067C65C /* intensityObservedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intensityObservedView.swift; sourceTree = "<group>"; };
+		A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whenObservationQuestion.swift; sourceTree = "<group>"; };
 		A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanSlateView.swift; sourceTree = "<group>"; };
 		A9E5B67026C44ACF002B18CE /* debugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugView.swift; sourceTree = "<group>"; };
 		A9ECF98926C6EDD500CC29C3 /* moons_new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_new.csv; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				A965750926C201B200375A51 /* daySelectionView.swift */,
 				A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */,
 				A9BE94DA26C80C620067C65C /* intensityObservedView.swift */,
+				A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				A919178B26BD88D500F8B9E8 /* speciesSelectionView.swift in Sources */,
 				A965750A26C201B200375A51 /* daySelectionView.swift in Sources */,
 				A990294826B757DB00A83582 /* uiViews.swift in Sources */,
+				A9BE94DD26C810320067C65C /* whenObservationQuestion.swift in Sources */,
 				A9322A8626BF0E5D00920F36 /* questionToolBarView.swift in Sources */,
 				A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */,
 				A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */,

@@ -29,6 +29,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 6) {
             intensityObservedView()
         } else if (QuestionManager.currentQuestion == 7) {
+            whenObservationQuestion()
+        } else if (QuestionManager.currentQuestion == 8) {
             cleanSlateView()
         }
         
