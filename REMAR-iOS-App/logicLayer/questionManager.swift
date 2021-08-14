@@ -55,6 +55,8 @@ class questionManager: ObservableObject {
             answers.intensity = tmpAnswer
         } else if currentQuestion == 7 {
             answers.when = tmpAnswer
+        } else if currentQuestion == 8 {
+            answers.berried = tmpAnswer
         }
         
         // Either Way Execute...
@@ -72,7 +74,7 @@ class questionManager: ObservableObject {
     }
     
     func answersToString() -> String {
-        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\n\n\n"
+        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\n\n\n"
         for day in answers.days {
             string = "\(string)\n\(day)\n\n"
         }
@@ -91,6 +93,7 @@ class Answers {
     public var strongestDay: dayItem
     public var intensity: String
     public var when: String
+    public var berried: String
     
     init() {
         year = "0"
@@ -100,6 +103,7 @@ class Answers {
         strongestDay = dayItem.init(dayNumber: 0)
         intensity = ""
         when = ""
+        berried = ""
     }
     
 }

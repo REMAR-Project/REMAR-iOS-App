@@ -28,6 +28,7 @@
 		A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998F0EA26AB3CFC000A026D /* splashscreenView.swift */; };
 		A9BE94DB26C80C620067C65C /* intensityObservedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94DA26C80C620067C65C /* intensityObservedView.swift */; };
 		A9BE94DD26C810320067C65C /* whenObservationQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */; };
+		A9BE94DF26C812680067C65C /* berriedQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94DE26C812680067C65C /* berriedQView.swift */; };
 		A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */; };
 		A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B67026C44ACF002B18CE /* debugView.swift */; };
 		A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98926C6EDD500CC29C3 /* moons_new.csv */; };
@@ -61,6 +62,7 @@
 		A998F0EA26AB3CFC000A026D /* splashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashscreenView.swift; sourceTree = "<group>"; };
 		A9BE94DA26C80C620067C65C /* intensityObservedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intensityObservedView.swift; sourceTree = "<group>"; };
 		A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whenObservationQuestion.swift; sourceTree = "<group>"; };
+		A9BE94DE26C812680067C65C /* berriedQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = berriedQView.swift; sourceTree = "<group>"; };
 		A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanSlateView.swift; sourceTree = "<group>"; };
 		A9E5B67026C44ACF002B18CE /* debugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugView.swift; sourceTree = "<group>"; };
 		A9ECF98926C6EDD500CC29C3 /* moons_new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_new.csv; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */,
 				A9BE94DA26C80C620067C65C /* intensityObservedView.swift */,
 				A9BE94DC26C810320067C65C /* whenObservationQuestion.swift */,
+				A9BE94DE26C812680067C65C /* berriedQView.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				A9BE94DB26C80C620067C65C /* intensityObservedView.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */,
+				A9BE94DF26C812680067C65C /* berriedQView.swift in Sources */,
 				A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */,
 				A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,

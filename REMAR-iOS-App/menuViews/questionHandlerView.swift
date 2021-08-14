@@ -31,6 +31,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 7) {
             whenObservationQuestion()
         } else if (QuestionManager.currentQuestion == 8) {
+            berriedQView()
+        } else if (QuestionManager.currentQuestion == 9) {
             cleanSlateView()
         }
         
