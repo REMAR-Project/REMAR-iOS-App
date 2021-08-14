@@ -59,6 +59,8 @@ class questionManager: ObservableObject {
             answers.berried = tmpAnswer
         } else if currentQuestion == 9 {
             answers.habitat = tmpAnswer
+        } else if currentQuestion == 10 {
+            answers.state = tmpAnswer
         }
         
         // Either Way Execute...
@@ -76,7 +78,7 @@ class questionManager: ObservableObject {
     }
     
     func answersToString() -> String {
-        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\nHabitat: \(answers.habitat)\n\n\n"
+        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\nHabitat: \(answers.habitat)\nState: \(answers.state)\n\n\n"
         for day in answers.days {
             string = "\(string)\n\(day)\n\n"
         }
@@ -97,6 +99,7 @@ class Answers {
     public var when: String
     public var berried: String
     public var habitat: String
+    public var state: String
     
     init() {
         year = "0"
@@ -108,6 +111,7 @@ class Answers {
         when = ""
         berried = ""
         habitat = ""
+        state = ""
     }
     
 }

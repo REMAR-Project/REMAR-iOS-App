@@ -35,6 +35,10 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 9) {
             habitatSelectionView()
         } else if (QuestionManager.currentQuestion == 10) {
+            stateSelectionView()
+        } else if (QuestionManager.currentQuestion == 11) {
+            cleanSlateView()
+        } else if (QuestionManager.currentQuestion == 12) {
             cleanSlateView()
         }
         
