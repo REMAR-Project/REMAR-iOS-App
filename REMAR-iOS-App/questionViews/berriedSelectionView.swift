@@ -1,5 +1,5 @@
 //
-//  berriedQView.swift
+//  berriedSelectionView.swift
 //  REMAR-iOS-App
 //
 //  Created by Lewis Watson on 14/08/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct berriedQView: View {
+struct berriedSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     var berriedOptions = ["Yes, I saw berried females","No, there were no berried females","I did not look"]
@@ -37,7 +37,7 @@ struct berriedQView: View {
 
 struct berriedQView_Previews: PreviewProvider {
     static var previews: some View {
-        berriedQView()
+        berriedSelectionView()
             .environmentObject(questionManager())
     }
 }
