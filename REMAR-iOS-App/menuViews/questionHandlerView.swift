@@ -27,6 +27,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 5) {
             strongestDayView()
         } else if (QuestionManager.currentQuestion == 6) {
+            intensityObservedView()
+        } else if (QuestionManager.currentQuestion == 7) {
             cleanSlateView()
         }
         

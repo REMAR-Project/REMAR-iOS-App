@@ -1,16 +1,13 @@
 //
-//  cleanSlateView.swift
+//  intensityObservedView.swift
 //  REMAR-iOS-App
 //
-//  This is just a template view for quick testing and recreation of the standard question page.
-//
-//  Created by Lewis Watson on 07/08/2021.
+//  Created by Lewis Watson on 14/08/2021.
 //
 
 import SwiftUI
 
-//  Question page template
-struct cleanSlateView: View {
+struct intensityObservedView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     var intensityOptions = ["Very Low","Low","Medium","High","Very High","I Don't Know"]
@@ -38,10 +35,9 @@ struct cleanSlateView: View {
     }
 }
 
-
-struct cleanSlateView_Previews: PreviewProvider {
+struct intensityObservedView_Previews: PreviewProvider {
     static var previews: some View {
-        cleanSlateView()
+        intensityObservedView()
             .environmentObject(questionManager())
     }
 }

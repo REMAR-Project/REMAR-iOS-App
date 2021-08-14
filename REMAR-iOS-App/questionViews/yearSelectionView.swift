@@ -37,7 +37,7 @@ struct yearSelectionView: View {
                     selectionList(listItems: yearList)
                 }
                 .padding(.bottom)
-                .padding(.top, 120)
+                .padding(.top, 110)
                 .ignoresSafeArea()
                 
             }
