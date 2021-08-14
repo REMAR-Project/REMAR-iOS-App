@@ -19,7 +19,7 @@ struct countySelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("This is the x selection area... Select those x's")
+                    Text("COUNTY?")
                     selectionList(listItems: countyOptions)
                     
                 }

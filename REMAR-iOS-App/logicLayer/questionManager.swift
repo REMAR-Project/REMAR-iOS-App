@@ -73,6 +73,15 @@ class questionManager: ObservableObject {
     func reverseAction() {
         if currentQuestion == 2 {answers.species = ""}
         else if currentQuestion == 3 {answers.year = ""}
+        else if currentQuestion == 4 {answers.month = 0}
+        else if currentQuestion == 5 {answers.days = []}
+        else if currentQuestion == 6 {answers.strongestDay = dayItem.init(dayNumber: 0)}
+        else if currentQuestion == 7 {answers.intensity = ""}
+        else if currentQuestion == 8 {answers.when = ""}
+        else if currentQuestion == 9 {answers.berried = ""}
+        else if currentQuestion == 10 {answers.habitat = ""}
+        else if currentQuestion == 11 {answers.state = ""}
+        else if currentQuestion == 12 {answers.county = ""}
         
         // Either Way Execute...
         currentQuestion -= 1

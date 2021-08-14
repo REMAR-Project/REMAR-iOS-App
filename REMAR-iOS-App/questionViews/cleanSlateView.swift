@@ -22,7 +22,7 @@ struct cleanSlateView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("This is the x selection area... Select those x's")
+                    Text("CLEAN SLATE")
                     selectionList(listItems: intensityOptions)
                     
                 }
