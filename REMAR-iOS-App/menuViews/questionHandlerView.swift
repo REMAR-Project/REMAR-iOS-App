@@ -33,6 +33,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 8) {
             berriedSelectionView()
         } else if (QuestionManager.currentQuestion == 9) {
+            habitatSelectionView()
+        } else if (QuestionManager.currentQuestion == 10) {
             cleanSlateView()
         }
         
