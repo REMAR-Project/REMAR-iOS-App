@@ -49,20 +49,28 @@ class questionManager: ObservableObject {
         } else if currentQuestion == 4 {
             answers.days = tmpDayList
             tmpDayList = []
+            tmpAnswer = ""
         } else if currentQuestion == 5 {
             answers.strongestDay = tmpStrongestDay
+            tmpAnswer = ""
         } else if currentQuestion == 6 {
             answers.intensity = tmpAnswer
+            tmpAnswer = ""
         } else if currentQuestion == 7 {
             answers.when = tmpAnswer
+            tmpAnswer = ""
         } else if currentQuestion == 8 {
             answers.berried = tmpAnswer
+            tmpAnswer = ""
         } else if currentQuestion == 9 {
             answers.habitat = tmpAnswer
+            tmpAnswer = ""
         } else if currentQuestion == 10 {
             answers.state = tmpAnswer
+            tmpAnswer = ""
         } else if currentQuestion == 11 {
             answers.county = tmpAnswer
+            tmpAnswer = ""
         }
         
         // Either Way Execute...
