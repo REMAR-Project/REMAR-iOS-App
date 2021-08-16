@@ -9,7 +9,7 @@ import SwiftUI
 
 struct stateSelectionView: View {
     @EnvironmentObject var QuestionManager: questionManager
-    var stateOptions = ["List","States","Here","Using","Localised","Strings"]
+    @State var stateOptions:[String] = []
     
     var body: some View {
         GeometryReader { geom in
@@ -27,7 +27,7 @@ struct stateSelectionView: View {
                 .ignoresSafeArea()
                 
             }
-        }
+        }.onAppear(perform: {stateOptions = generateStateList(species: QuestionManager.answers.species)})
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)

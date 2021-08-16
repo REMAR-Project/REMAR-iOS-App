@@ -10,7 +10,7 @@ import SwiftUI
 struct countySelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var countyOptions = ["List","Counties","Here","Using","Localised","Strings"]
+    @State var countyOptions: [String] = []
     
     var body: some View {
         GeometryReader { geom in
@@ -28,7 +28,7 @@ struct countySelectionView: View {
                 .ignoresSafeArea()
                 
             }
-        }
+        }.onAppear(perform: {countyOptions = generateCountyList(species: QuestionManager.answers.species)})
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)

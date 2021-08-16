@@ -15,6 +15,7 @@ class questionManager: ObservableObject {
     @Published var currentQuestion: Int
     @Published var nextDisabled: Bool
     @Published var tmpAnswer: String
+    @Published var tmpAnswerList: [String]
     @Published var tmpOffset: Int
     @Published var tmpDayList: [dayItem]
     @Published var tmpStrongestDay: dayItem
@@ -29,6 +30,7 @@ class questionManager: ObservableObject {
         tmpOffset = 1
         tmpDayList = []
         tmpStrongestDay = dayItem.init(dayNumber: 0)
+        tmpAnswerList = []
     }
     
     func qmToString() {
@@ -63,8 +65,8 @@ class questionManager: ObservableObject {
             answers.berried = tmpAnswer
             tmpAnswer = ""
         } else if currentQuestion == 9 {
-            answers.habitat = tmpAnswer
-            tmpAnswer = ""
+            answers.habitat = tmpAnswerList
+            tmpAnswerList = []
         } else if currentQuestion == 10 {
             answers.state = tmpAnswer
             tmpAnswer = ""
@@ -87,7 +89,7 @@ class questionManager: ObservableObject {
         else if currentQuestion == 7 {answers.intensity = ""}
         else if currentQuestion == 8 {answers.when = ""}
         else if currentQuestion == 9 {answers.berried = ""}
-        else if currentQuestion == 10 {answers.habitat = ""}
+        else if currentQuestion == 10 {answers.habitat = []}
         else if currentQuestion == 11 {answers.state = ""}
         else if currentQuestion == 12 {answers.county = ""}
         
@@ -117,7 +119,7 @@ class Answers {
     public var intensity: String
     public var when: String
     public var berried: String
-    public var habitat: String
+    public var habitat: [String]
     public var state: String
     public var county: String
     
@@ -130,7 +132,7 @@ class Answers {
         intensity = ""
         when = ""
         berried = ""
-        habitat = ""
+        habitat = []
         state = ""
         county = ""
     }

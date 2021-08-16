@@ -10,7 +10,7 @@ import SwiftUI
 struct habitatSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var habitatOptions = ["Mangrove","Forest","Beach","Road","Other"]
+    @State var habitatOptions:[String] = []
     
     var body: some View {
         GeometryReader { geom in
@@ -20,7 +20,7 @@ struct habitatSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text("Habitat?")
-                    selectionList(listItems: habitatOptions)
+                    selectionList_multiple(listItems: habitatOptions)
                     
                 }
                 .padding(.bottom)
@@ -28,7 +28,7 @@ struct habitatSelectionView: View {
                 .ignoresSafeArea()
                 
             }
-        }
+        }.onAppear(perform: {habitatOptions = generateHabitatList(species: QuestionManager.answers.species)})
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
