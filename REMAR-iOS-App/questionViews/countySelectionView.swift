@@ -11,6 +11,7 @@ struct countySelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     @State var countyOptions: [String] = []
+    @State var NotInList: Bool = false
     
     var body: some View {
         GeometryReader { geom in
@@ -20,18 +21,21 @@ struct countySelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text("COUNTY?")
+                    
                     selectionList(listItems: countyOptions)
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                .padding(.top, 80)
                 .ignoresSafeArea()
                 
             }
+            
+            
         }.onAppear(perform: {countyOptions = generateCountyList(species: QuestionManager.answers.species)})
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
     }
 }
 

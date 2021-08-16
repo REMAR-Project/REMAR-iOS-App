@@ -39,6 +39,8 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 11) {
             countySelectionView()
         } else if (QuestionManager.currentQuestion == 12) {
+            protectedAreaSelection()
+        } else if (QuestionManager.currentQuestion == 13) {
             cleanSlateView()
         }
         

@@ -22,6 +22,7 @@
 		A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */; };
 		A9689B1326C9E96B00E46CF5 /* selectionLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1226C9E96B00E46CF5 /* selectionLists.swift */; };
 		A9689B1526C9EB8F00E46CF5 /* questionsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1426C9EB8F00E46CF5 /* questionsLogic.swift */; };
+		A9689B1726C9FC2200E46CF5 /* protectedAreaSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1626C9FC2200E46CF5 /* protectedAreaSelection.swift */; };
 		A98684B9269B62A600A72459 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98684B8269B62A600A72459 /* ContentView.swift */; };
 		A98684BB269B62A700A72459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BA269B62A700A72459 /* Assets.xcassets */; };
 		A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98684BD269B62A700A72459 /* Preview Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionOptionsLists.swift; sourceTree = "<group>"; };
 		A9689B1226C9E96B00E46CF5 /* selectionLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectionLists.swift; sourceTree = "<group>"; };
 		A9689B1426C9EB8F00E46CF5 /* questionsLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionsLogic.swift; sourceTree = "<group>"; };
+		A9689B1626C9FC2200E46CF5 /* protectedAreaSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protectedAreaSelection.swift; sourceTree = "<group>"; };
 		A98684B3269B62A600A72459 /* REMAR-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REMAR-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98684B8269B62A600A72459 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A98684BA269B62A700A72459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A9BE94E026C814620067C65C /* habitatSelectionView.swift */,
 				A9BE94E226C816ED0067C65C /* stateSelectionView.swift */,
 				A9BE94E426C8181D0067C65C /* countySelectionView.swift */,
+				A9689B1626C9FC2200E46CF5 /* protectedAreaSelection.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				A9ECF98E26C729A200CC29C3 /* strongestDayView.swift in Sources */,
 				A9BE94E326C816ED0067C65C /* stateSelectionView.swift in Sources */,
 				A9689B1326C9E96B00E46CF5 /* selectionLists.swift in Sources */,
+				A9689B1726C9FC2200E46CF5 /* protectedAreaSelection.swift in Sources */,
 				A9BE94DB26C80C620067C65C /* intensityObservedView.swift in Sources */,
 				A998F0EB26AB3CFC000A026D /* splashscreenView.swift in Sources */,
 				A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */,
