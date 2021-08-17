@@ -22,7 +22,12 @@ struct debugView: View {
                 //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")
                 Spacer()
                 Text("\(QuestionManager.answersToString())")
-                Spacer()
+                VStack{
+                    Spacer()
+                    Button(action: {QuestionManager.currentQuestion = 0}, label: {
+                        Text("Exit Question Handler")
+                    })
+                }
             }.accentColor(Color("REMAR_GREEN"))
         }.padding().navigationTitle("Debug View")
     }
