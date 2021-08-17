@@ -36,20 +36,29 @@ struct selectionList: View {
                                 print("Selected item cleared")
                             }
                         }, label: {
-                            ZStack {
-                                Rectangle()
-                                    .fill((item.element == selectedItem) ? Color("REMAR_GREEN") : .white)
-                                    .border(Color.gray)
-                                    .frame(width: geom.size.width*0.9, height: 35)
+                            GeometryReader { g in
+                                //ZStack {
                                 Text("\(item.element)")
+                                    .font(.system(size: g.size.width/22))
+                                    .fixedSize(horizontal: false, vertical: true)
                                     .foregroundColor(.black)
+                                    .lineLimit(2)
+                                    .frame(width: g.size.width, height: g.size.height)
                                     .minimumScaleFactor(0.5)
-                                    //.frame(width: geom.size.width*0.8)
+                                    .background(
+                                        Rectangle()
+                                            .fill((item.element == selectedItem) ? Color("REMAR_GREEN") : .white)
+                                            .frame(width: g.size.width, height: g.size.height)
+                                            .border(Color.gray)
+                                    ).scaledToFit()
+                                //}
                             }
+                            .frame(width: geom.size.width*0.92, height: 45)
+                            //.border(Color.red)
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
                     }
                 }//.border(Color(.gray))
-            }.frame(width: geom.size.width, height: geom.size.height/2)
+            }.frame(width: geom.size.width, height: geom.size.height/1.5)
         }
     }
 }
@@ -99,5 +108,24 @@ struct selectionList_multiple: View {
                 }.border(Color(.gray))
             }.frame(width: geom.size.width, height: geom.size.height/2)
         }
+    }
+}
+
+
+struct selectionList_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            uiBackgroundQuestionView()
+            
+            VStack{
+                speciesDetailView().padding()
+                Text("PREVIEW")
+                selectionList(listItems: ["Parba dos Lencois Maranhenses","Resex de Cururupu","APA Delta do Parnaiba","APA da Foz do Rio das Preguicas - Pequenos Lencois - Regiao Lagunar Adjacente","APA das Reentrancias Maranhenses","APA de Upaon-acu / Miritiba / Alto Preguicas","PE da ilha do Cardoso","Name not in list"])
+            }
+            .padding(.bottom)
+            .padding(.top, 90)
+            .ignoresSafeArea()
+            
+        }.environmentObject(questionManager())
     }
 }

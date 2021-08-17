@@ -152,5 +152,4 @@ class Answers {
         protectedZone = ""
         occupation = ""
     }
-    
 }

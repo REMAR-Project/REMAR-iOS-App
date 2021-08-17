@@ -105,8 +105,12 @@ struct standardButtonView: View {
                 RoundedRectangle(cornerRadius: 20).foregroundColor( selected ? Color("REMAR_GREEN") : Color.white)
                 VStack {
                     Text(text).font(.system(size: geom.size.width*0.15))
-                    Image(systemName: icon).font(.system(size: geom.size.width*0.5))
-                        .foregroundColor(colour)
+                    Image(systemName: icon)
+                        .renderingMode(.original)
+                        .font(.system(size: geom.size.width*0.5))
+                        
+                    .foregroundColor(colour)
+                       
                 }
             }
         }
