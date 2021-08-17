@@ -1,19 +1,16 @@
 //
-//  cleanSlateView.swift
+//  additionalObservationSelectionView.swift
 //  REMAR-iOS-App
 //
-//  This is just a template view for quick testing and recreation of the standard question page.
-//
-//  Created by Lewis Watson on 07/08/2021.
+//  Created by Lewis Watson on 17/08/2021.
 //
 
 import SwiftUI
 
-//  Question page template
-struct cleanSlateView: View {
+struct additionalObservationSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var intensityOptions = ["Very Low","Low","Medium","High","Very High","I Don't Know"]
+    var xOptions = ["No","Yes"]
     
     var body: some View {
         GeometryReader { geom in
@@ -22,12 +19,12 @@ struct cleanSlateView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("CLEAN SLATE Page Template\nEnd of questions (so far).")
-                    //selectionList(listItems: intensityOptions)
+                    Text("Any additional observations you want to share?")
+                    selectionList(listItems: xOptions)
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 50)
+                .padding(.top, 80)
                 .ignoresSafeArea()
                 
             }
@@ -38,10 +35,9 @@ struct cleanSlateView: View {
     }
 }
 
-
-struct cleanSlateView_Previews: PreviewProvider {
+struct additionalObservationSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        cleanSlateView()
+        additionalObservationSelectionView()
             .environmentObject(questionManager())
     }
 }

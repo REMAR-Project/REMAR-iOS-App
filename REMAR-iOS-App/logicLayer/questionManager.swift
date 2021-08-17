@@ -15,6 +15,7 @@ class questionManager: ObservableObject {
     @Published var currentQuestion: Int
     @Published var nextDisabled: Bool
     @Published var tmpAnswer: String
+    @Published var tmpStateAnswer: String
     @Published var tmpAnswerList: [String]
     @Published var tmpOffset: Int
     @Published var tmpDayList: [dayItem]
@@ -31,6 +32,7 @@ class questionManager: ObservableObject {
         tmpDayList = []
         tmpStrongestDay = dayItem.init(dayNumber: 0)
         tmpAnswerList = []
+        tmpStateAnswer = ""
     }
     
     func qmToString() {
@@ -73,6 +75,14 @@ class questionManager: ObservableObject {
         } else if currentQuestion == 11 {
             answers.county = tmpAnswer
             tmpAnswer = ""
+        } else if currentQuestion == 12 {
+            if (tmpStateAnswer == "Yes") {
+                answers.protectedZone = tmpAnswer
+            } else {
+                answers.protectedZone = tmpStateAnswer
+            }
+        } else if currentQuestion == 13 {
+            answers.occupation = tmpAnswer
         }
         
         // Either Way Execute...
@@ -92,6 +102,8 @@ class questionManager: ObservableObject {
         else if currentQuestion == 10 {answers.habitat = []}
         else if currentQuestion == 11 {answers.state = ""}
         else if currentQuestion == 12 {answers.county = ""}
+        else if currentQuestion == 13 {answers.protectedZone = ""}
+        else if currentQuestion == 14 {answers.occupation = ""}
         
         // Either Way Execute...
         currentQuestion -= 1
@@ -99,7 +111,7 @@ class questionManager: ObservableObject {
     }
     
     func answersToString() -> String {
-        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\nHabitat: \(answers.habitat)\nState: \(answers.state)\nCounty: \(answers.county)\n\n\n"
+        var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\nHabitat: \(answers.habitat)\nState: \(answers.state)\nCounty: \(answers.county)\nProtected Zone: \(answers.protectedZone)\nOccupation: \(answers.occupation)\n\n\n"
         for day in answers.days {
             string = "\(string)\n\(day)\n\n"
         }
@@ -122,6 +134,8 @@ class Answers {
     public var habitat: [String]
     public var state: String
     public var county: String
+    public var protectedZone: String
+    public var occupation: String
     
     init() {
         year = "0"
@@ -135,6 +149,8 @@ class Answers {
         habitat = []
         state = ""
         county = ""
+        protectedZone = ""
+        occupation = ""
     }
     
 }

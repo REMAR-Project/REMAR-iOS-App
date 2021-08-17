@@ -16,6 +16,7 @@ struct debugView: View {
                 Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
                 Text("Temporary Offset: \(QuestionManager.tmpOffset)")
                 Text("Tmp Strongest Day: \(QuestionManager.tmpStrongestDay.dayNumber)")
+                Text("Tmp State Answer: \(QuestionManager.tmpStateAnswer)")
                 Text("--------")
                 Text("Strongest Day: \(QuestionManager.answers.strongestDay.dayNumber)")
                 //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")

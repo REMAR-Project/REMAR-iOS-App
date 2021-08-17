@@ -43,10 +43,12 @@ struct selectionList: View {
                                     .frame(width: geom.size.width*0.9, height: 35)
                                 Text("\(item.element)")
                                     .foregroundColor(.black)
+                                    .minimumScaleFactor(0.5)
+                                    //.frame(width: geom.size.width*0.8)
                             }
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
                     }
-                }.border(Color(.gray))
+                }//.border(Color(.gray))
             }.frame(width: geom.size.width, height: geom.size.height/2)
         }
     }

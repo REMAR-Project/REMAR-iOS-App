@@ -41,6 +41,10 @@ struct questionHandlerView: View {
         } else if (QuestionManager.currentQuestion == 12) {
             protectedAreaSelection()
         } else if (QuestionManager.currentQuestion == 13) {
+            occupationSelectionView()
+        } else if (QuestionManager.currentQuestion == 14) {
+            additionalObservationSelectionView()
+        } else if (QuestionManager.currentQuestion == 15) {
             cleanSlateView()
         }
         

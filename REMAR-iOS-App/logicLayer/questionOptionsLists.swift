@@ -26,3 +26,29 @@ func generateCountyList(species: String) -> [String] {
         return ["Alcantara","Apicum-Acu","Araioses","Bacuri","Barreirinhas","Carutapera","Cedral","Cururupu","Candido Mendes","Godofredo Viana","Guimaraes","Humberto de Campos","Icatu","Luis Domingues","Paulino Neves","Paco do Lumiar","Porto Rico do Maranhao","Primeria Cruz","Raposa","Santo Amaro do Maranhao","Sao Jose de Ribamar","Sao Luis","Tutoia","Not in list"]
     }
 }
+
+func generateProtectedList() -> [String] {
+    return ["Parba dos Lencois Maranhenses","Resex de Cururupu","APA Delta do Parnaiba","APA da Foz do Rio das Preguicas - Pequenos Lencois - Regiao Lagunar Adjacente","APA das Reentrancias Maranhenses","APA de Upaon-acu / Miritiba / Alto Preguicas","PE da ilha do Cardoso","Name not in list"]
+}
+
+func generateOccupationList() -> [String] {
+    return [
+        "• I catch crabs and depend on them for my living",
+        "• I catch crabs only occasionally for my own consumption",
+        "• I work with crab meat processing",
+        "• I work with crab commercialization",
+        "• I am a local villager and do not normally catch mangrove crabs",
+        "• I work for ICMBio and observed the andada myself",
+        "• I work for ICMBio and report results of a crab fisher",
+        "• I work for IBAMA and observed the andada myself",
+        "• I work for IBAMA and report results of a crab fisher",
+        "• I work in the city hall and observed the andada myself",
+        "• I work in the city hall and report results of a crab fisher",
+        "• I am a researcher and observed the andada myself",
+        "• I am a researcher and report results of a crab fisher",
+        "• I am a tourist",
+        "• I work in tourism",
+        "• Other",
+        "• I do not want to specify"
+      ]
+}
