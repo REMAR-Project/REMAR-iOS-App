@@ -17,6 +17,7 @@ struct speciesSelectionView: View {
     @State var UCSelected = false
     @State var CGSelected = false
     
+    // If both options are false, disable next button
     func checkNextValid() {
         if CGSelected == UCSelected {QuestionManager.nextDisabled = true}
             else {QuestionManager.nextDisabled = false}
@@ -72,7 +73,10 @@ struct speciesSelectionView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .onAppear(perform: {checkNextValid()})
+        .onAppear(perform: {
+            checkNextValid()
+            QuestionManager.clearAnswers()
+        })
     }
 }
 

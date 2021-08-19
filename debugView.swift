@@ -29,7 +29,8 @@ struct debugView: View {
                     })
                 }
             }.accentColor(Color("REMAR_GREEN"))
-        }.padding().navigationTitle("Debug View")
+        }.padding()
+            .navigationTitle("Debug View")
     }
 }
 

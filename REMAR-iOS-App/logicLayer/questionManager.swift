@@ -55,22 +55,53 @@ class questionManager: ObservableObject {
             tmpDayList = []
             tmpAnswer = ""
         } else if currentQuestion == 5 {
-            answers.strongestDay = tmpStrongestDay
+            if !(questionCount == 10) {
+                answers.intensity = tmpAnswer
+            } else {
+                answers.strongestDay = tmpStrongestDay
+            }
             tmpAnswer = ""
         } else if currentQuestion == 6 {
-            answers.intensity = tmpAnswer
+            if !(questionCount == 10) {
+                answers.intensity = tmpAnswer
+            } else {
+                answers.state = tmpAnswer
+            }
             tmpAnswer = ""
         } else if currentQuestion == 7 {
-            answers.when = tmpAnswer
+            if !(questionCount==10) {
+                answers.when = tmpAnswer
+            } else {
+                answers.county = tmpAnswer
+            }
             tmpAnswer = ""
         } else if currentQuestion == 8 {
-            answers.berried = tmpAnswer
+            if !(questionCount==10) {
+                answers.berried = tmpAnswer
+            } else {
+                if (tmpStateAnswer == "Yes") {
+                    answers.protectedZone = tmpAnswer
+                } else {
+                    answers.protectedZone = tmpStateAnswer
+                }
+                tmpStateAnswer = ""
+            }
             tmpAnswer = ""
         } else if currentQuestion == 9 {
-            answers.habitat = tmpAnswerList
-            tmpAnswerList = []
+            if !(questionCount==10) {
+                answers.habitat = tmpAnswerList
+                tmpAnswerList = []
+            } else {
+                answers.occupation = tmpAnswer
+                tmpAnswer = ""
+            }
         } else if currentQuestion == 10 {
-            answers.state = tmpAnswer
+            if !(questionCount==10){
+                answers.state = tmpAnswer
+            }
+            else {
+                answers.additional = tmpAnswer
+            }
             tmpAnswer = ""
         } else if currentQuestion == 11 {
             answers.county = tmpAnswer
@@ -81,8 +112,14 @@ class questionManager: ObservableObject {
             } else {
                 answers.protectedZone = tmpStateAnswer
             }
+            tmpAnswer = ""
+            tmpStateAnswer = ""
         } else if currentQuestion == 13 {
             answers.occupation = tmpAnswer
+        } else if currentQuestion == 14 {
+            if !(questionCount == 10) {
+                answers.additional = tmpAnswer
+            }
         }
         
         // Either Way Execute...
@@ -118,6 +155,23 @@ class questionManager: ObservableObject {
         return string
     }
     
+    func clearAnswers() {
+        answers.year = "0"
+        answers.month = 0
+        answers.species = ""
+        answers.days = []
+        answers.strongestDay = dayItem.init(dayNumber: 0)
+        answers.intensity = ""
+        answers.when = ""
+        answers.berried = ""
+        answers.habitat = []
+        answers.state = ""
+        answers.county = ""
+        answers.protectedZone = ""
+        answers.occupation = ""
+        answers.additional = ""
+    }
+    
     
 }
 
@@ -136,6 +190,7 @@ class Answers {
     public var county: String
     public var protectedZone: String
     public var occupation: String
+    public var additional: String
     
     init() {
         year = "0"
@@ -151,5 +206,6 @@ class Answers {
         county = ""
         protectedZone = ""
         occupation = ""
+        additional = ""
     }
 }
