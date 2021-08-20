@@ -17,10 +17,14 @@ struct intensityObservedView: View {
             ZStack {
                 uiBackgroundQuestionView()
                 
-                VStack{
+                VStack(spacing: 0.0){
                     speciesDetailView().padding()
-                    Text("This is the x selection area... Select those x's")
-                    selectionList(listItems: intensityOptions)
+                    Text("Intensity Selection").padding(.bottom)
+                    selectionList(listItems: intensityOptions)//.frame(width: geom.size.width, height: geom.size.height/2)
+                        .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        //.border(Color.red)
+                    Text("Test")
+                    Spacer()
                     
                 }
                 .padding(.bottom)

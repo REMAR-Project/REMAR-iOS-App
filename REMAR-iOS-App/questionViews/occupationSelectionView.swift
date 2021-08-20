@@ -18,9 +18,10 @@ struct occupationSelectionView: View {
                 uiBackgroundQuestionView()
                 
                 VStack{
-                    speciesDetailView().padding()
+                    speciesDetailView().padding([.leading, .bottom, .trailing])
                     Text("Please can you let us know what you do? Touch screen and move finger to select.")
-                    selectionList(listItems: occupationOptions)
+                    selectionList(listItems: occupationOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
                     
                 }
                 .padding(.bottom)

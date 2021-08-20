@@ -20,6 +20,7 @@ class questionManager: ObservableObject {
     @Published var tmpOffset: Int
     @Published var tmpDayList: [dayItem]
     @Published var tmpStrongestDay: dayItem
+    @Published var otherHidden: Bool = true
     @Published var answers: Answers
     
     init() {

@@ -11,7 +11,7 @@ struct countySelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     @State var countyOptions: [String] = []
-    @State var NotInList: Bool = false
+    @State var NotInList: Bool = true
     
     var body: some View {
         GeometryReader { geom in
@@ -22,7 +22,9 @@ struct countySelectionView: View {
                     speciesDetailView().padding()
                     Text("COUNTY?")
                     
-                    selectionList(listItems: countyOptions)
+                    selectionList(listItems: countyOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    //otherTextPrompt().padding()
+                    Spacer()
                     
                 }
                 .padding(.bottom)

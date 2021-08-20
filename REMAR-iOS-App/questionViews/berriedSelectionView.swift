@@ -20,7 +20,8 @@ struct berriedSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text("Berried Females?")
-                    selectionList(listItems: berriedOptions)
+                    selectionList(listItems: berriedOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
                     
                 }
                 .padding(.bottom)

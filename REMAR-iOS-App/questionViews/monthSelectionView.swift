@@ -25,7 +25,8 @@ struct monthSelectionView: View {
                     Text("Month Selection View")
                         .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
-                    selectionList(listItems: monthList)
+                    selectionList(listItems: monthList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
                 }
                 .padding(.bottom)
                 .padding(.top, 120)

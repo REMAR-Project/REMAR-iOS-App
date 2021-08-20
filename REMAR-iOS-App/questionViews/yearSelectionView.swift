@@ -34,7 +34,8 @@ struct yearSelectionView: View {
                     Text("Year Selection View")
                         .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
-                    selectionList(listItems: yearList)
+                    selectionList(listItems: yearList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
                 }
                 .padding(.bottom)
                 .padding(.top, 110)

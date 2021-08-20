@@ -19,7 +19,8 @@ struct stateSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text("State?")
-                    selectionList(listItems: stateOptions)
+                    selectionList(listItems: stateOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
                     
                 }
                 .padding(.bottom)

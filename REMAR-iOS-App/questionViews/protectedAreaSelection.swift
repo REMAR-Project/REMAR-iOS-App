@@ -17,7 +17,7 @@ struct protectedAreaSelection: View {
                 uiBackgroundQuestionView()
                 
                 VStack{
-                    Text("Is the monitored locality in a protected area?")
+                    Text("Is the monitored locality in a protected area?").padding(.top)
                     HStack {
                         tickButton_ProtectedArea(text: "Yes")
                         tickButton_ProtectedArea(text: "No")
@@ -25,7 +25,8 @@ struct protectedAreaSelection: View {
                     }
                     .frame(width: geom.size.width*0.85, height: geom.size.height/20)
                     
-                    vanishingList_ProtectedArea()
+                    vanishingList_ProtectedArea().frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.6).padding(.top)
+                    Spacer()
                     
                 }
                 .padding(.bottom)

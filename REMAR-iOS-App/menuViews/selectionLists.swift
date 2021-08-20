@@ -35,6 +35,15 @@ struct selectionList: View {
                                 QuestionManager.nextDisabled = true
                                 print("Selected item cleared")
                             }
+                            
+                            // If is an 'other' selection then notify qmanager
+                            if (item.element == "Not in list") {
+                                QuestionManager.otherHidden = false
+                                QuestionManager.tmpAnswer = ""
+                            } else {
+                                QuestionManager.otherHidden = true
+                            }
+                            
                         }, label: {
                             GeometryReader { g in
                                 //ZStack {
@@ -54,11 +63,12 @@ struct selectionList: View {
                                 //}
                             }
                             .frame(width: geom.size.width*0.92, height: 45)
-                            //.border(Color.red)
+                            //.border(Color.blue)
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
                     }
                 }//.border(Color(.gray))
-            }.frame(width: geom.size.width, height: geom.size.height/1.5)
+            }//.frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height)
+            .frame(width: geom.size.width)
         }
     }
 }
@@ -88,7 +98,7 @@ struct selectionList_multiple: View {
                                 selectedItemList = removeListSelection(target: item.element, list: selectedItemList)
                                 QuestionManager.tmpAnswer = ""
                                 QuestionManager.tmpOffset = 0
-                                QuestionManager.nextDisabled = true
+                                if (selectedItemList.isEmpty) { QuestionManager.nextDisabled = true }
                                 print("Selected item cleared")
                             }
                         }, label: {
@@ -123,16 +133,17 @@ struct selectionList_multiple: View {
 struct selectionList_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            uiBackgroundQuestionView()
-            
-            VStack{
-                speciesDetailView().padding()
-                Text("PREVIEW")
-                selectionList_multiple(listItems: ["Parba dos Lencois Maranhenses","Resex de Cururupu","APA Delta do Parnaiba","APA da Foz do Rio das Preguicas - Pequenos Lencois - Regiao Lagunar Adjacente","APA das Reentrancias Maranhenses","APA de Upaon-acu / Miritiba / Alto Preguicas","PE da ilha do Cardoso","Name not in list"])
-            }
-            .padding(.bottom)
-            .padding(.top, 90)
-            .ignoresSafeArea()
+            intensityObservedView()
+//            uiBackgroundQuestionView()
+//
+//            VStack{
+//                speciesDetailView().padding()
+//                Text("PREVIEW")
+//                selectionList_multiple(listItems: ["Parba dos Lencois Maranhenses","Resex de Cururupu","APA Delta do Parnaiba","APA da Foz do Rio das Preguicas - Pequenos Lencois - Regiao Lagunar Adjacente","APA das Reentrancias Maranhenses","APA de Upaon-acu / Miritiba / Alto Preguicas","PE da ilha do Cardoso","Name not in list"])
+//            }
+//            .padding(.bottom)
+//            .padding(.top, 90)
+//            .ignoresSafeArea()
             
         }.environmentObject(questionManager())
     }

@@ -149,12 +149,28 @@ struct simpleMenuButton: View {
     }
 }
 
+struct otherTextPrompt: View {
+    @EnvironmentObject var QuestionManager: questionManager
+    var body: some View {
+        ZStack{
+            TextField("Other", text: $QuestionManager.tmpAnswer)
+        }
+        .opacity(QuestionManager.otherHidden ? 0:1)
+        .disabled(QuestionManager.otherHidden)
+        .onAppear(perform: {
+            QuestionManager.tmpAnswer=""
+        })
+    }
+}
+
 
 
 struct mainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
         //menuView()
         //simpleMenuButton()
-        uiBackgroundView()
+        //uiBackgroundView()
+        countySelectionView()
+            .environmentObject(questionManager.init())
     }
 }
