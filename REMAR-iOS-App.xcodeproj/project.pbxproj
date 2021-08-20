@@ -158,7 +158,6 @@
 		A98684AA269B62A600A72459 = {
 			isa = PBXGroup;
 			children = (
-				A9E5B67026C44ACF002B18CE /* debugView.swift */,
 				A98684B5269B62A600A72459 /* REMAR-iOS-App */,
 				A98684B4269B62A600A72459 /* Products */,
 			);
@@ -175,6 +174,7 @@
 		A98684B5269B62A600A72459 /* REMAR-iOS-App */ = {
 			isa = PBXGroup;
 			children = (
+				A9E5B67026C44ACF002B18CE /* debugView.swift */,
 				A9ECF98826C6ED8300CC29C3 /* moonData */,
 				A9322A8226BEFDAC00920F36 /* logicLayer */,
 				A98684C4269B635000A72459 /* Info.plist */,
