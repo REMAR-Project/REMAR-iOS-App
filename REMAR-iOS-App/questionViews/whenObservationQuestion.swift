@@ -106,7 +106,7 @@ struct standardButtonView: View {
                 VStack {
                     Text(text).font(.system(size: geom.size.width*0.15))
                     Image(systemName: icon)
-                        .renderingMode(.original)
+                        //.renderingMode(.original)
                         .font(.system(size: geom.size.width*0.5))
                         
                     .foregroundColor(colour)

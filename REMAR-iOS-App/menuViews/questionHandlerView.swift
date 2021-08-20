@@ -30,7 +30,7 @@ struct fullQuestions: View {
     var body: some View {
         if (QuestionManager.currentQuestion == 1) {
             speciesSelectionView()
-        }else if (QuestionManager.currentQuestion == 2) {
+        } else if (QuestionManager.currentQuestion == 2) {
             yearSelectionView()
         } else if (QuestionManager.currentQuestion == 3) {
             monthSelectionView()
