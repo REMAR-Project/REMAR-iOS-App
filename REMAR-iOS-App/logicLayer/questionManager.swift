@@ -144,6 +144,7 @@ class questionManager: ObservableObject {
         else if currentQuestion == 12 {answers.county = ""}
         else if currentQuestion == 13 {answers.protectedZone = ""}
         else if currentQuestion == 14 {answers.occupation = ""}
+        else if currentQuestion == 15 {answers.additional = ""}
         
         // Either Way Execute...
         currentQuestion -= 1

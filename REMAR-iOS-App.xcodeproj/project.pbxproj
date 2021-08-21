@@ -44,6 +44,7 @@
 		A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98926C6EDD500CC29C3 /* moons_new.csv */; };
 		A9ECF98C26C6EDD500CC29C3 /* moons_full.csv in Resources */ = {isa = PBXBuildFile; fileRef = A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */; };
 		A9ECF98E26C729A200CC29C3 /* strongestDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */; };
+		A9F461C726D1B24600D92B0B /* finalSubmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F461C626D1B24600D92B0B /* finalSubmissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		A9ECF98926C6EDD500CC29C3 /* moons_new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_new.csv; sourceTree = "<group>"; };
 		A9ECF98A26C6EDD500CC29C3 /* moons_full.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moons_full.csv; sourceTree = "<group>"; };
 		A9ECF98D26C729A200CC29C3 /* strongestDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strongestDayView.swift; sourceTree = "<group>"; };
+		A9F461C626D1B24600D92B0B /* finalSubmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalSubmissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				A9DB5E7F26CB453B006D0E62 /* occupationSelectionView.swift */,
 				A9DB5E8126CB47DC006D0E62 /* additionalObservationSelectionView.swift */,
 				A9CEFEB126D17DAF001EC7B7 /* SubmissionCheckView.swift */,
+				A9F461C626D1B24600D92B0B /* finalSubmissionView.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				A919176526BCBD1E00F8B9E8 /* faqView.swift in Sources */,
 				A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */,
 				A919178B26BD88D500F8B9E8 /* speciesSelectionView.swift in Sources */,
+				A9F461C726D1B24600D92B0B /* finalSubmissionView.swift in Sources */,
 				A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */,
 				A9CEFEB226D17DAF001EC7B7 /* SubmissionCheckView.swift in Sources */,
 				A965750A26C201B200375A51 /* daySelectionView.swift in Sources */,

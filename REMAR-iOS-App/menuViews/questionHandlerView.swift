@@ -59,7 +59,7 @@ struct fullQuestions: View {
         } else if (QuestionManager.currentQuestion == 15) {
             SubmissionCheckView()
         } else if (QuestionManager.currentQuestion == 16) {
-            cleanSlateView()
+            finalSubmissionView()
         }
 
         // This should never have to run however, should none of the if statements above be true the questionView will simple return to the menuView.
@@ -93,7 +93,9 @@ struct simpleQuestions: View {
         } else if (QuestionManager.currentQuestion == 10) {
             additionalObservationSelectionView()
         } else if (QuestionManager.currentQuestion == 11) {
-            cleanSlateView()
+            SubmissionCheckView()
+        } else if (QuestionManager.currentQuestion == 12) {
+            finalSubmissionView()
         }
 
         // This should never have to run however, should none of the if statements above be true the questionView will simple return to the menuView.

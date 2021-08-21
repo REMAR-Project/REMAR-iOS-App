@@ -18,8 +18,11 @@ struct SubmissionCheckView: View {
                     
                     VStack(spacing: 20){
                         Button(action: {}, label: {standardButtonView_Text(text: "I WANT TO SUBMIT MY ANSWERS")})
-                        Button(action: {}, label: {standardButtonView_Text(text: "I WANT TO GO BACK TO CHANGE ANSWERS")})
-                        Button(action: {}, label: {standardButtonView_Text(text: "I AM ONLY TESTING/SHOWING THE APP WITHOUT SENDING REAL DATA")})
+                        
+                        Button(action: {QuestionManager.reverseAction()}, label: {standardButtonView_Text(text: "I WANT TO GO BACK TO CHANGE ANSWERS")})
+                        
+                        Button(action: {QuestionManager.logAnswer()}, label: {standardButtonView_Text(text: "I AM ONLY TESTING/SHOWING THE APP WITHOUT SENDING REAL DATA")})
+                        
                     }
                       .frame(width: geom.size.width*0.9, height: geom.size.height*0.3)
                       .padding()
