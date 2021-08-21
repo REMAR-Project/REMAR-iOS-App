@@ -57,6 +57,8 @@ struct fullQuestions: View {
         } else if (QuestionManager.currentQuestion == 14) {
             additionalObservationSelectionView()
         } else if (QuestionManager.currentQuestion == 15) {
+            SubmissionCheckView()
+        } else if (QuestionManager.currentQuestion == 16) {
             cleanSlateView()
         }
 

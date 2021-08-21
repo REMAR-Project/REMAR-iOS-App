@@ -37,6 +37,7 @@
 		A9BE94E326C816ED0067C65C /* stateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94E226C816ED0067C65C /* stateSelectionView.swift */; };
 		A9BE94E526C8181D0067C65C /* countySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE94E426C8181D0067C65C /* countySelectionView.swift */; };
 		A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */; };
+		A9CEFEB226D17DAF001EC7B7 /* SubmissionCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEFEB126D17DAF001EC7B7 /* SubmissionCheckView.swift */; };
 		A9DB5E8026CB453C006D0E62 /* occupationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB5E7F26CB453B006D0E62 /* occupationSelectionView.swift */; };
 		A9DB5E8226CB47DC006D0E62 /* additionalObservationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB5E8126CB47DC006D0E62 /* additionalObservationSelectionView.swift */; };
 		A9E5B67126C44ACF002B18CE /* debugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B67026C44ACF002B18CE /* debugView.swift */; };
@@ -80,6 +81,7 @@
 		A9BE94E226C816ED0067C65C /* stateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stateSelectionView.swift; sourceTree = "<group>"; };
 		A9BE94E426C8181D0067C65C /* countySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countySelectionView.swift; sourceTree = "<group>"; };
 		A9CA6AE226BEDBAE00D376FE /* cleanSlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanSlateView.swift; sourceTree = "<group>"; };
+		A9CEFEB126D17DAF001EC7B7 /* SubmissionCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionCheckView.swift; sourceTree = "<group>"; };
 		A9DB5E7F26CB453B006D0E62 /* occupationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = occupationSelectionView.swift; sourceTree = "<group>"; };
 		A9DB5E8126CB47DC006D0E62 /* additionalObservationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = additionalObservationSelectionView.swift; sourceTree = "<group>"; };
 		A9E5B67026C44ACF002B18CE /* debugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				A9689B1626C9FC2200E46CF5 /* protectedAreaSelection.swift */,
 				A9DB5E7F26CB453B006D0E62 /* occupationSelectionView.swift */,
 				A9DB5E8126CB47DC006D0E62 /* additionalObservationSelectionView.swift */,
+				A9CEFEB126D17DAF001EC7B7 /* SubmissionCheckView.swift */,
 			);
 			path = questionViews;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */,
 				A919178B26BD88D500F8B9E8 /* speciesSelectionView.swift in Sources */,
 				A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */,
+				A9CEFEB226D17DAF001EC7B7 /* SubmissionCheckView.swift in Sources */,
 				A965750A26C201B200375A51 /* daySelectionView.swift in Sources */,
 				A990294826B757DB00A83582 /* uiViews.swift in Sources */,
 				A9BE94DD26C810320067C65C /* whenObservationQuestion.swift in Sources */,

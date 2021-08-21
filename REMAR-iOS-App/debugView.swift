@@ -27,6 +27,7 @@ struct debugView: View {
                     Button(action: {QuestionManager.currentQuestion = 0}, label: {
                         Text("Exit Question Handler")
                     })
+                    NavigationLink(destination: SubmissionCheckView(), label: {Text("SKIP TO SUBMISSION")})
                 }
             }.accentColor(Color("REMAR_GREEN"))
         }.padding()
