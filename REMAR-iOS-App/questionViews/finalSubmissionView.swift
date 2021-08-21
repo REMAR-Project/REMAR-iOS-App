@@ -16,12 +16,11 @@ struct finalSubmissionView: View {
                 uiBackgroundView()
                 
                 VStack{
-                    Spacer()
+                    Button(action: {QuestionManager.currentQuestion = 0}, label: {Text("BONK")})
                 }
                 .padding(.bottom)
                 .padding(.top, 50)
                 .ignoresSafeArea()
-                
             }
         }
         .navigationBarBackButtonHidden(true)
