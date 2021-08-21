@@ -18,15 +18,20 @@ struct protectedAreaSelection: View {
                 
                 VStack{
                     Text("Is the monitored locality in a protected area?").padding(.top)
-                    HStack {
-                        tickButton_ProtectedArea(text: "Yes")
-                        tickButton_ProtectedArea(text: "No")
-                        tickButton_ProtectedArea(text: "I don't know")
+                    if (QuestionManager.otherHidden) {
+                        HStack {
+                            tickButton_ProtectedArea(text: "Yes")
+                            tickButton_ProtectedArea(text: "No")
+                            tickButton_ProtectedArea(text: "I don't know")
+                        }
+                        .frame(width: geom.size.width*0.85, height: geom.size.height/20)
+                        
+                        vanishingList_ProtectedArea().frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.6).padding(.top)
+                        Spacer()
+                    } else {
+                        otherTextPrompt().padding(.horizontal)
+                        Spacer()
                     }
-                    .frame(width: geom.size.width*0.85, height: geom.size.height/20)
-                    
-                    vanishingList_ProtectedArea().frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.6).padding(.top)
-                    Spacer()
                     
                 }
                 .padding(.bottom)

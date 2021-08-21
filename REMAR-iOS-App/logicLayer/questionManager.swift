@@ -57,9 +57,9 @@ class questionManager: ObservableObject {
             tmpAnswer = ""
         } else if currentQuestion == 5 {
             if !(questionCount == 10) {
-                answers.intensity = tmpAnswer
-            } else {
                 answers.strongestDay = tmpStrongestDay
+            } else {
+                answers.intensity = tmpAnswer
             }
             tmpAnswer = ""
         } else if currentQuestion == 6 {
@@ -105,6 +105,7 @@ class questionManager: ObservableObject {
             }
             tmpAnswer = ""
         } else if currentQuestion == 11 {
+            otherHidden = true
             answers.county = tmpAnswer
             tmpAnswer = ""
         } else if currentQuestion == 12 {
@@ -126,6 +127,7 @@ class questionManager: ObservableObject {
         // Either Way Execute...
         currentQuestion += 1
         nextDisabled.toggle()
+        otherHidden = true
     }
     
     func reverseAction() {
@@ -146,6 +148,7 @@ class questionManager: ObservableObject {
         // Either Way Execute...
         currentQuestion -= 1
         nextDisabled = true
+        otherHidden = true
     }
     
     func answersToString() -> String {

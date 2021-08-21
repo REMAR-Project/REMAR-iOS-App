@@ -37,9 +37,11 @@ struct selectionList: View {
                             }
                             
                             // If is an 'other' selection then notify qmanager
-                            if (item.element == "Not in list") {
+                            if ((item.element == "Not in list")||(item.element == "• Other")||(QuestionManager.questionCount==QuestionManager.currentQuestion)&&(item.element == "Yes")) {
+                                
                                 QuestionManager.otherHidden = false
                                 QuestionManager.tmpAnswer = ""
+                                QuestionManager.nextDisabled = true
                             } else {
                                 QuestionManager.otherHidden = true
                             }

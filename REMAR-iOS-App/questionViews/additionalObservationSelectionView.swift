@@ -20,12 +20,16 @@ struct additionalObservationSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text("Any additional observations you want to share?")
-                    selectionList(listItems: xOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
-                    Spacer()
-                    
+                    if (QuestionManager.otherHidden){
+                        selectionList(listItems: xOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
+                        Spacer()
+                    } else {
+                        otherTextPrompt().padding(.horizontal)
+                        Spacer()
+                    }
                 }
                 .padding(.bottom)
-                .padding(.top, 80)
+                .padding(.top, 90)
                 .ignoresSafeArea()
                 
             }

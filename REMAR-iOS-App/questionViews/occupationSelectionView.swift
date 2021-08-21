@@ -20,8 +20,14 @@ struct occupationSelectionView: View {
                 VStack{
                     speciesDetailView().padding([.leading, .bottom, .trailing])
                     Text("Please can you let us know what you do? Touch screen and move finger to select.")
-                    selectionList(listItems: occupationOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
-                    Spacer()
+                    
+                    if (QuestionManager.otherHidden) {
+                        selectionList(listItems: occupationOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        Spacer()
+                    } else {
+                        otherTextPrompt().padding(.horizontal)
+                        Spacer()
+                    }
                     
                 }
                 .padding(.bottom)

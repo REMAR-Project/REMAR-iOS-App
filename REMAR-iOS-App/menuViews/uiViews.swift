@@ -28,7 +28,7 @@ struct remarLogoView: View {
                 )
             }
         }).foregroundColor(.black)
-
+        
     }
 }
 
@@ -151,15 +151,23 @@ struct simpleMenuButton: View {
 
 struct otherTextPrompt: View {
     @EnvironmentObject var QuestionManager: questionManager
+    @State var otherText: String = ""
     var body: some View {
         ZStack{
-            TextField("Other", text: $QuestionManager.tmpAnswer)
+            VStack(spacing: 5){
+                TextField("Other Answer", text: $otherText)
+                    .textFieldStyle(.roundedBorder)
+                    .padding([.top, .leading, .trailing])
+                    //.border(Color("REMAR_GREEN"), width: 5)
+                Button(action: {QuestionManager.nextDisabled = true
+                    QuestionManager.otherHidden.toggle()}, label: {Text("Back to list").foregroundColor(Color("REMAR_GREEN"))})
+            }.onChange(of: otherText) { newValue in
+                QuestionManager.nextDisabled = false
+                QuestionManager.tmpAnswer = otherText
+            }
         }
         .opacity(QuestionManager.otherHidden ? 0:1)
         .disabled(QuestionManager.otherHidden)
-        .onAppear(perform: {
-            QuestionManager.tmpAnswer=""
-        })
     }
 }
 
