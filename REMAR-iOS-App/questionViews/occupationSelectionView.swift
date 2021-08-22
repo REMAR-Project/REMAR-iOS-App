@@ -31,7 +31,7 @@ struct occupationSelectionView: View {
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                .padding(.top, 115)
                 .ignoresSafeArea()
                 
             }.onAppear(perform: {occupationOptions = generateOccupationList()})

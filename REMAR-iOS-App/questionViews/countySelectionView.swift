@@ -33,7 +33,7 @@ struct countySelectionView: View {
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 80)
+                .padding(.top, 110)
                 .ignoresSafeArea()
                 
             }

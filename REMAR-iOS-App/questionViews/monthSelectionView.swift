@@ -29,7 +29,7 @@ struct monthSelectionView: View {
                     Spacer()
                 }
                 .padding(.bottom)
-                .padding(.top, 120)
+                .padding(.top, 110)
                 .ignoresSafeArea()
                 
             }

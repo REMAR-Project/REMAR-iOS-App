@@ -29,7 +29,7 @@ struct additionalObservationSelectionView: View {
                     }
                 }
                 .padding(.bottom)
-                .padding(.top, 90)
+                .padding(.top, 100)
                 .ignoresSafeArea()
                 
             }

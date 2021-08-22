@@ -23,7 +23,7 @@ struct whenObservationQuestion: View {
                     whenSelectView().frame(width: geom.size.width*0.8, height: geom.size.height*0.4)
                     
                 }
-                .padding(.bottom, 100.0)
+                .padding(.bottom, 110.0)
                 .ignoresSafeArea()
                 
             }
