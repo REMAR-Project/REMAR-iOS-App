@@ -17,7 +17,7 @@ struct SubmissionCheckView: View {
                 VStack{
                     
                     VStack(spacing: 20){
-                        Button(action: {}, label: {standardButtonView_Text(text: "I WANT TO SUBMIT MY ANSWERS")})
+                        Button(action: {QuestionManager.logAnswer()}, label: {standardButtonView_Text(text: "I WANT TO SUBMIT MY ANSWERS")})
                         
                         Button(action: {QuestionManager.reverseAction()}, label: {standardButtonView_Text(text: "I WANT TO GO BACK TO CHANGE ANSWERS")})
                         
