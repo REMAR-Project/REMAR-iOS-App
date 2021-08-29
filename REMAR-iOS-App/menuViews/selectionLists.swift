@@ -37,7 +37,7 @@ struct selectionList: View {
                             }
                             
                             // If is an 'other' selection then notify qmanager
-                            if ((item.element == "Not in list")||(item.element == "• Other")||(QuestionManager.questionCount==QuestionManager.currentQuestion)&&(item.element == "Yes")) {
+                            if ((item.element == NSLocalizedString("NotInList", comment: ""))||(item.element == NSLocalizedString("O0", comment: ""))||(QuestionManager.questionCount==QuestionManager.currentQuestion)&&(item.element == NSLocalizedString("yes", comment: ""))) {
                                 
                                 QuestionManager.otherHidden = false
                                 QuestionManager.tmpAnswer = ""
