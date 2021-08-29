@@ -54,7 +54,7 @@ struct vanishingList_ProtectedArea: View {
             selectionList(listItems: areaLists)
                 .opacity((QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")) ? 1:0)
                 .disabled(!(QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")))
-        }.onAppear(perform: {areaLists = generateProtectedList()})
+        }.onAppear(perform: {areaLists = generateProtectedList(state: QuestionManager.answers.state)})
     }
 }
 
