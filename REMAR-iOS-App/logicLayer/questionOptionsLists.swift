@@ -77,39 +77,42 @@ func generateCountyList(state: String) -> [String] {
 
 func generateProtectedList(state: String) -> [String] {
     
-    if (state == "Alagoas"){
+    switch state {
+    case "Alagoas":
         return ["APA de Piaçabuçu","Resex Lagoa do Jequiá","APA Costa dos Corais","APA de Santa Rita",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Amapá"){
+    case "Amapá":
         return ["ESEC de Maracá-Jipioca","Parna do Cabo Orange","Rebio do Lago Piratuba",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Bahia"){
+    case "Bahia":
         return ["Parna do Monte Pascoal","Rebio de Una","Resex baia de Iguape","Resex Cassurubá","Resex do Corumbau","Resex de Canavieiras","Revis Rio dos Frades","Revis de Una","APA Baía de Camamu","APA Baía de Todos os Santos","APA Caraíva/Trancoso","APA Costa de Itacaré/Serra Grande","APA Lagoa Encantada","APA Lagoas de Guarajuba","APA Plataforma Continental do Litoral Norte","APA Ponta da Baleia/Abrolhos","APA Santo Antônio","PARNA do Descobrimento",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Ceará") {
+    case "Ceará":
         return ["Parna de Jericoacoara","Resex Batoque","APA Delta do Parnaíba","APA do Estuário do Rio Mundaú","APA do Manguezal da Barra Grande","APA do Rio Pacoti","APA Serra de Ibiapaba",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Espírito Santo") {
+    case "Espírito Santo":
         return ["APA Costa das Algas","Revis de Santa Cruz","APA Conceição da Barra","APA do Maciço Central","APA Municipal Manguezal Sul da Serra","ESEC Municipal Ilha do Lameirão","PE de Itaúnas","PNM de Jacarenema","PNM do Manguezal de Itanguá","PNM Dom Luiz Gonzaga Fernandes","RDS Municipal do Manguezal de Cariacica","RDS Municipal Papagaio","RDS Municipal Piraque-Açú e Piraque-Mirim",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Maranhão") {
+    case "Maranhão":
         return ["Parna dos Lençois Maranhenses","Resex de Cururupu","APA Delta do Parnaíba","APA da Baixada Maranhense","APA da Foz do Rio das Preguiças - Pequenos Lençóis - Região Lagunar Adjacente","APA das Reentrâncias Maranhenses","APA de Upaon-açu/Miritiba/Alto Preguiças","PE da Ilha do Cardoso",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Paraná") {
+    case "Paraná":
         return ["APA de Guaraqueçaba","ESEC de Guaraqueçaba","Parna do Superagui","APA Estadual de Guaratuba","ESEC do Guaraguaçu","PARNA de Saint-Hilaire/Lange","REBIO Bom Jesus",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Paraíba") {
+    case "Paraíba":
         return ["APA da Barra de Mamanguape","ARIE Manguezais da Foz do Rio Mamanguape","Flona da Restinga de Cabedelo","Resex Acaú- Goiana","ARIE da Barra do Rio Camaratuba","PE do Jacarapé",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Pará") {
+    case "Pará":
         return ["Resex de São João da Ponta","Resex Mãe Grande de Curuça","Resex Araí Peroba","Resex Chocoaré- Mato Grosso","Resex Gurupi-Piriá","Resex Maracanã","Resex Marinha Cuinarana","Resex Marinha de Tracuateua","Resex Marinha de Caeté-Taperaçú","Marinha Mestre Lucindo","RESEX Marinha Mocapajuba","Resex Soure","APA de Algodoal-Maiandeua","APA do Arquipélago do Marajó",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Pernambuco") {
+    case "Pernambuco":
         return ["Resex Acaú- Goiana","Parna Marinho de Fernando de Noronha","APA de Sirinhaém",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Piauí") {
+    case "Piauí":
         return ["Resex Delta do Parnaíba","APA Serra de Ibiapaba",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Rio Grande do Norte") {
+    case "Rio Grande do Norte":
         return ["APA Bonfim/Guaraíra","APA de Jenipabu","PE da Lagoa do Açu","RDS Estadual Ponta do Tubarão",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Rio de Janeiro") {
+    case "Rio de Janeiro":
         return ["APA de Cairuçu","APA de Guapi-Mirim","ESEC da Guanabara","APA da Bacia do Rio Macacu","APA da Bacia do Rio São João - Mico Leão","APA da Orla Marítima da Baía de Sepetiba","APA da Serra da Capoeira Grande","APA das Brisas","APA de Tamoios","APA do Morro do Silvério","APA da Estrela","APA Suruí","REBIO Estadual de Guaratiba",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Santa Catarina") {
+    case "Santa Catarina":
         return ["APA da Baleia Franca","APA de Anhatomirim","ESEC de Carijós","Resex do Pirajubaé","PE Acarai","PE da Serra do Tabuleiro","PNM da Caieira","RDS da Ilha do Morro do Amaral",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == "Sergipe") {
+    case "Sergipe":
         return ["Rebio de Santa Izabel","FLONA do Ibura","RPPN do Caju",NSLocalizedString("NotInList", comment: "")]
-    } else if (state == ""){
+    case "":
         return ["APA de Cananéia-Iguapé-Peruíbe","ARIE Ilha do Ameixal","Resex Mandira","APA Ilha Comprida","APA Marinha do Litoral Norte","ARIE do Guará","ESEC Juréia-Itatins","PE da Serra do Mar","PE do Itinguçu","PE Lagamar de Cananeia","PE Restinga de Bertioga","RDS da Barra do Una","RDS Itapanhapima","RESEX Ilha do Tumba","RESEX Taquari",NSLocalizedString("NotInList", comment: "")]
-    } else { return [NSLocalizedString("NotInList", comment: "")] }
+    default:
+        return [NSLocalizedString("NotInList", comment: "")]
+    }
 }
 
 func generateOccupationList() -> [String] {
