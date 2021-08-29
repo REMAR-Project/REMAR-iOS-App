@@ -10,7 +10,7 @@ import SwiftUI
 struct additionalObservationSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var xOptions = ["No","Yes"]
+    var xOptions = [NSLocalizedString("no", comment: ""),NSLocalizedString("yes", comment: "")]
     
     var body: some View {
         GeometryReader { geom in
@@ -19,7 +19,7 @@ struct additionalObservationSelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("Any additional observations you want to share?")
+                    Text(NSLocalizedString("AdditionalSelection", comment: ""))
                     if (QuestionManager.otherHidden){
                         selectionList(listItems: xOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
                         Spacer()

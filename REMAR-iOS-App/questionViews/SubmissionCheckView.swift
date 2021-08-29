@@ -17,17 +17,17 @@ struct SubmissionCheckView: View {
                 VStack{
                     
                     VStack(spacing: 20){
-                        Button(action: {QuestionManager.logAnswer()}, label: {standardButtonView_Text(text: "I WANT TO SUBMIT MY ANSWERS")})
+                        Button(action: {QuestionManager.submit()}, label: {standardButtonView_Text(text: NSLocalizedString("SubmitAnswers", comment: ""))})
                         
-                        Button(action: {QuestionManager.reverseAction()}, label: {standardButtonView_Text(text: "I WANT TO GO BACK TO CHANGE ANSWERS")})
+                        Button(action: {QuestionManager.reverseAction()}, label: {standardButtonView_Text(text: NSLocalizedString("ChangeAnswers", comment: ""))})
                         
-                        Button(action: {QuestionManager.logAnswer()}, label: {standardButtonView_Text(text: "I AM ONLY TESTING/SHOWING THE APP WITHOUT SENDING REAL DATA")})
+                        Button(action: {QuestionManager.logAnswer()}, label: {standardButtonView_Text(text: NSLocalizedString("TestingAnswers", comment: ""))})
                         
                     }
                       .frame(width: geom.size.width*0.9, height: geom.size.height*0.3)
                       .padding()
                     
-                    Text("If you want to contact REMAR, find out about ways to engage more with this research, ask or suggest something, please send a message to remar.quest@gmail.com")
+                    Text("\(NSLocalizedString("FindOutMore", comment: ""))\nremar.quest@gmail.com")
                         .font(.body)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)

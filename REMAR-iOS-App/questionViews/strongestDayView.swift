@@ -20,7 +20,7 @@ struct strongestDayView: View {
                     
                     Spacer()
                     
-                    Text("STRONGEST DAY QUESTION").foregroundColor(Color.red)
+                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color.red)
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
                         .font(.system(size: geom.size.width*0.08))
@@ -65,13 +65,13 @@ struct calendarStrongView: View {
         GeometryReader { geom in
             VStack(spacing: 0){
                 HStack(spacing: geom.size.width/26){
-                    Text("Sat")
-                    Text("Mon")
-                    Text("Tues")
-                    Text("Wed")
-                    Text("Thu")
-                    Text("Fri")
-                    Text("Sun")
+                    Text(NSLocalizedString("Sat", comment: ""))
+                    Text(NSLocalizedString("Mon", comment: ""))
+                    Text(NSLocalizedString("Tue", comment: ""))
+                    Text(NSLocalizedString("Wed", comment: ""))
+                    Text(NSLocalizedString("Thu", comment: ""))
+                    Text(NSLocalizedString("Fri", comment: ""))
+                    Text(NSLocalizedString("Sun", comment: ""))
                 }.lineLimit(1)
                     .minimumScaleFactor(0.9)
                 .font(.system(size: geom.size.width/16))

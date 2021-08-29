@@ -31,7 +31,7 @@ struct yearSelectionView: View {
                     
                     speciesDetailView().padding()
                     
-                    Text("Year Selection View")
+                    Text(NSLocalizedString("YearSelection", comment: ""))
                         .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
                     selectionList(listItems: yearList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
@@ -53,7 +53,7 @@ struct speciesDetailView: View {
     @EnvironmentObject var QuestionManager: questionManager
     var body: some View {
         HStack{
-            Image((QuestionManager.answers.species == "Ucides cordatus") ? "crabUC" : "crabCG")
+            Image((QuestionManager.answers.species == NSLocalizedString("UCCrab", comment: "")) ? "crabUC" : "crabCG")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 130)

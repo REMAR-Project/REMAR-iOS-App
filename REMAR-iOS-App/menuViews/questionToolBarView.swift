@@ -41,7 +41,7 @@ struct questionToolBarView: View {
                             .padding()
                     })
                     
-                    Text("Press to go back")
+                    Text(NSLocalizedString("goBack", comment: ""))
                         .font(.title)
                         .minimumScaleFactor(0.1)
                         .frame(width: geom.size.width/6)
@@ -53,7 +53,7 @@ struct questionToolBarView: View {
                         .bold()
                         .frame(width: geom.size.width/5)
                     
-                    Text("Press to proceed")
+                    Text(NSLocalizedString("goForward", comment: ""))
                         .font(.title)
                         .minimumScaleFactor(0.1)
                         .lineLimit(2)

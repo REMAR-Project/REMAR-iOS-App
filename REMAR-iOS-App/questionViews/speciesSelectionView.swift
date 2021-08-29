@@ -30,7 +30,7 @@ struct speciesSelectionView: View {
                 
                 VStack {
                     
-                    Text("**Become a citizen scientist** and help record mass mating events of commercially important Brazilian mangrove crabs.\n\nThis information will help improve Brazilian crab fisheries legislation and fishers' livelihoods.\n\nClick on one of the below species to share your observations.")
+                    Text(NSLocalizedString("speciesText", comment: ""))
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
                         .multilineTextAlignment(.center)
                         .padding()
@@ -40,7 +40,7 @@ struct speciesSelectionView: View {
                         Button(action: {
                             
                             print("Ucides cordatus selected")
-                            QuestionManager.tmpAnswer = "Ucides cordatus"
+                            QuestionManager.tmpAnswer = NSLocalizedString("UCCrab", comment: "")
                             UCSelected.toggle()
                             CGSelected = false
                             
@@ -51,7 +51,7 @@ struct speciesSelectionView: View {
                         Button(action: {
                             
                             print("Cardisoma guanhumi selected")
-                            QuestionManager.tmpAnswer = "Cardisoma guanhumi"
+                            QuestionManager.tmpAnswer = NSLocalizedString("CGCrab", comment: "")
                             CGSelected.toggle()
                             UCSelected = false
                             
@@ -91,7 +91,7 @@ struct crabSelectionButton: View {
                     .fill(Color("REMAR_GREEN"))
                     .aspectRatio(1, contentMode: .fit)
                 VStack(spacing: 10.0){
-                    Text(type == 0 ? "Ucides cordatus" : "Cardisoma guanhumi")
+                    Text(type == 0 ? NSLocalizedString("UCCrab", comment: "") : NSLocalizedString("CGCrab", comment: ""))
                         .foregroundColor(Color.black)
                         .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.08: geom.size.height * 0.08))
                         .fontWeight(.heavy)

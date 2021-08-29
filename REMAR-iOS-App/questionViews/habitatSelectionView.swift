@@ -19,7 +19,7 @@ struct habitatSelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("Habitat?")
+                    Text(NSLocalizedString("HabitatSelection", comment: ""))
                     selectionList_multiple(listItems: habitatOptions)
                     
                 }

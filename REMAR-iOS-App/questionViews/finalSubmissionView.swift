@@ -18,14 +18,14 @@ struct finalSubmissionView: View {
                     
                     
                     
-                    Text("To view analyses of the information we receive from you and other citizen scientists, please see the REMAR website at\n https://ufsb.edu.br/remar/o-remar-cidadao \n OR \n http://crabdata.napier.ac.uk/public")
+                    Text("\(NSLocalizedString("FinalView", comment: ""))\n https://ufsb.edu.br/remar/o-remar-cidadao \n \(NSLocalizedString("Or", comment: "")) \n http://crabdata.napier.ac.uk/public")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .accentColor(Color("REMAR_GREEN"))
                     
                     VStack(spacing: 20){
-                        Button(action: {QuestionManager.currentQuestion=0}, label: {standardButtonView_Text(text: "RETURN TO FIRST PAGE")})
+                        Button(action: {QuestionManager.currentQuestion=0}, label: {standardButtonView_Text(text: NSLocalizedString("ReturnRoot", comment: ""))})
                     }
                       .frame(width: geom.size.width*0.9, height: geom.size.height*0.07)
                       .padding()

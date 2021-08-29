@@ -6,5 +6,136 @@
   
 */
 
+
+//MARK: Logo and Main Menu
 "REMAR" = "REMAR";
 "_CITIZEN" = "_CITIZEN";
+"appDescription" = "Monitoring Mass Mating Events of Mangrove Crabs";
+
+"chooseOneByTapping" = "Choose one of the below options by tapping with finger.";
+"forMoreInfo" = "For more information, click on the green button below.";
+
+"fullVersion" = "Full\nVersion";
+"fullClicks" = "Advanced\n14 clicks";
+
+"simpleVersion" = "Simple\nVersion";
+"simpleClicks" = "Basic\n10 clicks";
+
+"privacyPolicy" = "Privacy Policy";
+"privacyPolicyDetails" = "Edinburgh Napier University complies with the data protection law. This application does not specifically collect any personal data and we ask that you do not provide any personal data in the free text fields. However, if you inadvertently provide any personal data, we will protect this data in accordance with the General Data Protection Regulation (GDPR) and other relevant data protection laws.";
+
+//MARK: Toolbar
+"goBack" = "Press to go back";
+"goForward" = "Press to proceed";
+
+
+//MARK: Multiuse
+"readMore" = "READ MORE";
+"yes" = "Yes";
+"no" = "No";
+"maybe" = "I don't know";
+"NotInList" = "Not in list";
+
+//MARK: Species
+"speciesText" = "**Become a citizen scientist** and help record mass mating events of commercially important Brazilian mangrove crabs.\n\nThis information will help improve Brazilian crab fisheries legislation and fishers' livelihoods.\n\nClick on one of the below species to share your observations.";
+"UCCrab" = "Ucides cordatus";
+"CGCrab" = "Cardisoma guanhumi";
+
+//MARK: Questions
+"YearSelection" = "Year Selection View";
+"MonthSelection" = "Month Selection View";
+"DaySelection" = "Day Selection View";
+"StrongestDaySelection" = "Strongest Day Selection View";
+"TimeOfDaySelection" = "When did you observe andada? Touch the correct symbol with finger.";
+"BerriedSelection" = "Berried Females?";
+"HabitatSelection" = "Select Habitat(s)";
+"StateSelection" = "Please Select State";
+"CountySelection" = "Please select county";
+"ProtectedSelection" = "Is the monitored locality in a protected area?";
+"OccupationSelection" = "Please can you let us know what you do? Touch screen and move finger to select.";
+"AdditionalSelection" = "Any additional observations you want to share?";
+
+
+//MARK: MONTHS
+"January" = "January";
+"Febuary" = "Febuary";
+"March" = "March";
+"April" = "April";
+"May" = "May";
+"June" = "June";
+"July" = "July";
+"August" = "August";
+"September" = "September";
+"October" = "October";
+"November" = "November";
+"December" = "December";
+
+//MARK: ShortDay
+"Sat" = "Sat";
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
+"Sun" = "Sun";
+
+//MARK: Intensities
+"VeryLow" = "Very Low";
+"Low" = "Low";
+"Medium" = "Medium";
+"High" = "High";
+"VeryHigh" = "Very High";
+"NotSure" = "I Don't Know";
+
+//MARK: Times of Day (whens)
+"OnlyD" = "Only at Day";
+"OnlyN" = "Only at Night";
+"AtD&N" = "At Day and Night";
+"DidNotLook" = "I Did Not Look";
+
+
+//MARK: Berried?
+"YesBerried" = "Yes, I saw berried females";
+"NoBerried" = "No, there were no berried females";
+"DidNotLook" = "I Did Not Look";
+
+//MARK: Habitats
+"Mangrove" = "Mangrove";
+"Saltmarsh" = "Saltmarsh";
+"Forest" = "Forest";
+"Beach" = "Beach";
+"Road" = "Road";
+"RiverBed" = "River Bed";
+"RockyShore" = "Rocky Shore";
+"House" = "House";
+"Other" = "Other";
+
+//MARK: Occupations
+"O1" = "• I catch crabs and depend on them for my living";
+"O2" = "• I catch crabs only occasionally for my own consumption";
+"O3" = "• I work with crab meat processing";
+"O4" = "• I work with crab commercialization";
+"O5" = "• I am a local villager and do not normally catch mangrove crabs";
+"O6" = "• I work for ICMBio and observed the andada myself";
+"O7" = "• I work for ICMBio and report results of a crab fisher";
+"O8" = "• I work for IBAMA and observed the andada myself";
+"O9" = "• I work for IBAMA and report results of a crab fisher";
+"O10" = "• I work in the city hall and observed the andada myself";
+"O11" = "• I work in the city hall and report results of a crab fisher";
+"O12" = "• I am a researcher and observed the andada myself";
+"O13" = "• I am a researcher and report results of a crab fisher";
+"O14" = "• I am a tourist";
+"O15" = "• I work in tourism";
+"O0" = "• Other";
+"O00" = "• I do not want to specify";
+
+
+//MARK: Submission Screens
+"SubmitAnswers" = "I WANT TO SUBMIT MY ANSWERS";
+"ChangeAnswers" = "I WANT TO GO BACK TO CHANGE ANSWERS";
+"TestingAnswers" = "I AM ONLY TESTING/SHOWING THE APP WITHOUT SENDING REAL DATA";
+"FindOutMore" = "If you want to contact REMAR, find out about ways to engage more with this research, ask or suggest something, please send a message to "; // Supposed to leave a space at the end as the email is added after in the view call.
+
+"ReturnRoot" = "RETURN TO FIRST PAGE";
+"FinalView" = "To view analyses of the information we receive from you and other citizen scientists, please see the REMAR website at";
+"Or" = "OR";

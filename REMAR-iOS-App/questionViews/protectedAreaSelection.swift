@@ -9,7 +9,7 @@ import SwiftUI
 
 struct protectedAreaSelection: View {
     @EnvironmentObject var QuestionManager: questionManager
-    @State var selectionn: Int = 1
+    //@State var selectionn: Int = 1
     
     var body: some View {
         GeometryReader { geom in
@@ -17,12 +17,12 @@ struct protectedAreaSelection: View {
                 uiBackgroundQuestionView()
                 
                 VStack{
-                    Text("Is the monitored locality in a protected area?").padding(.top)
+                    Text(NSLocalizedString("ProtectedSelection", comment: "")).padding(.top)
                     if (QuestionManager.otherHidden) {
                         HStack {
-                            tickButton_ProtectedArea(text: "Yes")
-                            tickButton_ProtectedArea(text: "No")
-                            tickButton_ProtectedArea(text: "I don't know")
+                            tickButton_ProtectedArea(text: NSLocalizedString("yes", comment: ""))
+                            tickButton_ProtectedArea(text: NSLocalizedString("no", comment: ""))
+                            tickButton_ProtectedArea(text: NSLocalizedString("maybe", comment: ""))
                         }
                         .frame(width: geom.size.width*0.85, height: geom.size.height/20)
                         
@@ -52,8 +52,8 @@ struct vanishingList_ProtectedArea: View {
     var body: some View {
         VStack{
             selectionList(listItems: areaLists)
-                .opacity((QuestionManager.tmpStateAnswer == "Yes") ? 1:0)
-                .disabled(!(QuestionManager.tmpStateAnswer == "Yes"))
+                .opacity((QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")) ? 1:0)
+                .disabled(!(QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")))
         }.onAppear(perform: {areaLists = generateProtectedList()})
     }
 }
@@ -66,14 +66,20 @@ struct tickButton_ProtectedArea: View {
         GeometryReader { geom in
             HStack(spacing: 10) {
                 Button(action: {
-                    if (text=="Yes"){
+                    if (text==NSLocalizedString("yes", comment: "")){
                         QuestionManager.tmpStateAnswer = text
                         QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     } else {
-                        QuestionManager.tmpAnswer = ""
-                        QuestionManager.tmpStateAnswer = text
-                        QuestionManager.nextDisabled = false
+                        if (QuestionManager.tmpStateAnswer==text) {
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.tmpStateAnswer = ""
+                            QuestionManager.nextDisabled = true
+                        } else {
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.tmpStateAnswer = text
+                            QuestionManager.nextDisabled = false
+                        }
                     }
                 }, label:{
                     ZStack {

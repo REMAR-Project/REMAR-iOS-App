@@ -21,7 +21,7 @@ struct splashscreenView: View {
                         .padding()
                     
                     Spacer()
-                    Text("Monitoring Mass Mating Events of Mangrove Crabs")
+                    Text(NSLocalizedString("appDescription", comment: ""))
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.black)

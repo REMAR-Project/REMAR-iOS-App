@@ -19,7 +19,7 @@ struct countySelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("COUNTY?")
+                    Text(NSLocalizedString("CountySelection", comment: ""))
                     
                     
                     if (QuestionManager.otherHidden){
@@ -39,7 +39,7 @@ struct countySelectionView: View {
             }
             
             
-        }.onAppear(perform: {countyOptions = generateCountyList(species: QuestionManager.answers.species)})
+        }.onAppear(perform: {countyOptions = generateCountyList(state: QuestionManager.answers.state)})
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
             .navigationBarHidden(true)

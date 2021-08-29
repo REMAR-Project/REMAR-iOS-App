@@ -6,5 +6,9 @@
   
 */
 
+// Logo and Assets
 "REMAR" = "REMAR";
 "_CITIZEN" = "_CIDADÃO";
+
+"goBack" = "Voltar";
+"goForward" = "Avançar";

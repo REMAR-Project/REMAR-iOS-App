@@ -9,7 +9,7 @@ import SwiftUI
 
 struct whenObservationQuestion: View {
     @EnvironmentObject var QuestionManager: questionManager
-    var whenOptions = ["Only at Day", "Only at Night","At day and night","I did not look"]
+    var whenOptions = generateWhens()
     
     var body: some View {
         GeometryReader { geom in
@@ -18,7 +18,7 @@ struct whenObservationQuestion: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("When did you observe andada? Touch the correct symbol with finger.")
+                    Text(NSLocalizedString("TimeOfDaySelection", comment: ""))
                     
                     whenSelectView().frame(width: geom.size.width*0.8, height: geom.size.height*0.4)
                     
@@ -40,8 +40,8 @@ struct whenSelectView: View {
         VStack {
             HStack {
                 Button(action: {
-                    if (!(QuestionManager.tmpAnswer == "Only at day")) {
-                        QuestionManager.tmpAnswer = "Only at day"
+                    if (!(QuestionManager.tmpAnswer == NSLocalizedString("OnlyD", comment: ""))) {
+                        QuestionManager.tmpAnswer = NSLocalizedString("OnlyD", comment: "")
                         QuestionManager.nextDisabled = false
                     }
                     else {
@@ -49,45 +49,45 @@ struct whenSelectView: View {
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "sun.max.fill", text: "Only at day", colour: Color.yellow, selected: QuestionManager.tmpAnswer=="Only at day")
+                    standardButtonView(icon: "sun.max.fill", text: NSLocalizedString("OnlyD", comment: ""), colour: Color.yellow, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyD", comment: ""))
                 })
                 
                 Button(action: {
-                    if (!(QuestionManager.tmpAnswer == "Only at night")) {
-                        QuestionManager.tmpAnswer = "Only at night"
+                    if (!(QuestionManager.tmpAnswer == NSLocalizedString("OnlyN", comment: ""))) {
+                        QuestionManager.tmpAnswer = NSLocalizedString("OnlyN", comment: "")
                         QuestionManager.nextDisabled = false
                     }
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "moon.stars.fill", text: "Only at night", colour: Color.black, selected: QuestionManager.tmpAnswer=="Only at night")
+                    standardButtonView(icon: "moon.stars.fill", text: NSLocalizedString("OnlyN", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyN", comment: ""))
                 })
                 
             }
             HStack {
                 Button(action: {
-                    if (!(QuestionManager.tmpAnswer == "At day and night")) {
-                        QuestionManager.tmpAnswer = "At day and night"
+                    if (!(QuestionManager.tmpAnswer == NSLocalizedString("AtD&N", comment: ""))) {
+                        QuestionManager.tmpAnswer = NSLocalizedString("AtD&N", comment: "")
                         QuestionManager.nextDisabled = false
                     }
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "cloud.sun.fill", text: "At day and night", colour: Color.orange, selected: QuestionManager.tmpAnswer=="At day and night")
+                    standardButtonView(icon: "cloud.sun.fill", text: NSLocalizedString("AtD&N", comment: ""), colour: Color.orange, selected: QuestionManager.tmpAnswer==NSLocalizedString("AtD&N", comment: ""))
                 })
                 
                 Button(action: {
-                    if (!(QuestionManager.tmpAnswer == "I did not look")) {
-                        QuestionManager.tmpAnswer = "I did not look"
+                    if (!(QuestionManager.tmpAnswer == NSLocalizedString("DidNotLook", comment: ""))) {
+                        QuestionManager.tmpAnswer = NSLocalizedString("DidNotLook", comment: "")
                         QuestionManager.nextDisabled = false
                     }
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "questionmark.circle", text: "I did not look", colour: Color.black, selected: QuestionManager.tmpAnswer=="I did not look")
+                    standardButtonView(icon: "questionmark.circle", text: NSLocalizedString("DidNotLook", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("DidNotLook", comment: ""))
                 })
             }
         }.foregroundColor(.black)

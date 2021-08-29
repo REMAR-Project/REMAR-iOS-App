@@ -11,7 +11,7 @@ struct monthSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
     
-    var monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    var monthList = generateMonths()
     
     var body: some View {
         GeometryReader { geom in
@@ -22,7 +22,7 @@ struct monthSelectionView: View {
                     
                     speciesDetailView().padding()
                     
-                    Text("Month Selection View")
+                    Text(NSLocalizedString("MonthSelection", comment: ""))
                         .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
                     selectionList(listItems: monthList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)

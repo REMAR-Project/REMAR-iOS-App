@@ -10,7 +10,7 @@ import SwiftUI
 struct berriedSelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var berriedOptions = ["Yes, I saw berried females","No, there were no berried females","I did not look"]
+    var berriedOptions = generateBerried()
     
     var body: some View {
         GeometryReader { geom in
@@ -19,7 +19,7 @@ struct berriedSelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("Berried Females?")
+                    Text(NSLocalizedString("BerriedSelection", comment: ""))
                     selectionList(listItems: berriedOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     

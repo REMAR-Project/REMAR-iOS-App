@@ -18,6 +18,7 @@
 		A9322A8A26BF2AD800920F36 /* questionHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8926BF2AD800920F36 /* questionHandlerView.swift */; };
 		A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */; };
 		A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */; };
+		A932300226D1D8CC0025465E /* submissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932300126D1D8CC0025465E /* submissionManager.swift */; };
 		A965750A26C201B200375A51 /* daySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965750926C201B200375A51 /* daySelectionView.swift */; };
 		A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */; };
 		A9689B1326C9E96B00E46CF5 /* selectionLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1226C9E96B00E46CF5 /* selectionLists.swift */; };
@@ -61,6 +62,7 @@
 		A9322A8926BF2AD800920F36 /* questionHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionHandlerView.swift; sourceTree = "<group>"; };
 		A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yearSelectionView.swift; sourceTree = "<group>"; };
 		A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthSelectionView.swift; sourceTree = "<group>"; };
+		A932300126D1D8CC0025465E /* submissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submissionManager.swift; sourceTree = "<group>"; };
 		A965750926C201B200375A51 /* daySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daySelectionView.swift; sourceTree = "<group>"; };
 		A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionOptionsLists.swift; sourceTree = "<group>"; };
 		A9689B1226C9E96B00E46CF5 /* selectionLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectionLists.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				A9100C6126C44003000BF34E /* calendarLogic.swift */,
 				A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */,
 				A9689B1426C9EB8F00E46CF5 /* questionsLogic.swift */,
+				A932300126D1D8CC0025465E /* submissionManager.swift */,
 			);
 			path = logicLayer;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				A9689B1526C9EB8F00E46CF5 /* questionsLogic.swift in Sources */,
 				A990294A26B76B7900A83582 /* menuView.swift in Sources */,
 				A919176526BCBD1E00F8B9E8 /* faqView.swift in Sources */,
+				A932300226D1D8CC0025465E /* submissionManager.swift in Sources */,
 				A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */,
 				A919178B26BD88D500F8B9E8 /* speciesSelectionView.swift in Sources */,
 				A9F461C726D1B24600D92B0B /* finalSubmissionView.swift in Sources */,

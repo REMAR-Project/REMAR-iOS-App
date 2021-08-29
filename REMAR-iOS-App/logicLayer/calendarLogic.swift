@@ -132,6 +132,6 @@ func isInAnswers(day: dayItem, dayList: [dayItem]) -> Bool {
 }
 
 func getMonthName(month: Int) -> String {
-    let monthStrings = [0 : "NO SELECTION", 1 : "January",  2 : "February", 3 : "March", 4 : "April", 5 : "May", 6 : "June", 7 : "July", 8 : "August", 9 : "September", 10 : "October", 11 : "November", 12 : "December"]
+    let monthStrings = [0 : "NO SELECTION", 1 : NSLocalizedString("January", comment: ""),  2 : NSLocalizedString("Febuary", comment: ""), 3 : NSLocalizedString("March", comment: ""), 4 : NSLocalizedString("April", comment: ""), 5 : NSLocalizedString("May", comment: ""), 6 : NSLocalizedString("June", comment: ""), 7 : NSLocalizedString("July", comment: ""), 8 : NSLocalizedString("August", comment: ""), 9 : NSLocalizedString("September", comment: ""), 10 : NSLocalizedString("October", comment: ""), 11 : NSLocalizedString("November", comment: ""), 12 : NSLocalizedString("December", comment: "")]
     return monthStrings[month]!
 }

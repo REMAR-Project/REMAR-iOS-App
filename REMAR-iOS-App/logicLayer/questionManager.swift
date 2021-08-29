@@ -36,6 +36,11 @@ class questionManager: ObservableObject {
         tmpStateAnswer = ""
     }
     
+    func submit(){
+        //submissionManager().submit()
+        submissionManager().generateJSON(answers: answers)
+    }
+    
     func qmToString() {
         print("\(currentQuestion) out of \(questionCount)")
     }
@@ -131,20 +136,35 @@ class questionManager: ObservableObject {
     }
     
     func reverseAction() {
-        if currentQuestion == 2 {answers.species = ""}
-        else if currentQuestion == 3 {answers.year = ""}
-        else if currentQuestion == 4 {answers.month = 0}
-        else if currentQuestion == 5 {answers.days = []}
-        else if currentQuestion == 6 {answers.strongestDay = dayItem.init(dayNumber: 0)}
-        else if currentQuestion == 7 {answers.intensity = ""}
-        else if currentQuestion == 8 {answers.when = ""}
-        else if currentQuestion == 9 {answers.berried = ""}
-        else if currentQuestion == 10 {answers.habitat = []}
-        else if currentQuestion == 11 {answers.state = ""}
-        else if currentQuestion == 12 {answers.county = ""}
-        else if currentQuestion == 13 {answers.protectedZone = ""}
-        else if currentQuestion == 14 {answers.occupation = ""}
-        else if currentQuestion == 15 {answers.additional = ""}
+        
+        if(questionCount==14){
+            
+            if currentQuestion == 2 {answers.species = ""}
+            else if currentQuestion == 3 {answers.year = ""}
+            else if currentQuestion == 4 {answers.month = 0}
+            else if currentQuestion == 5 {answers.days = []}
+            else if currentQuestion == 6 {answers.strongestDay = dayItem.init(dayNumber: 0)}
+            else if currentQuestion == 7 {answers.intensity = ""}
+            else if currentQuestion == 8 {answers.when = ""}
+            else if currentQuestion == 9 {answers.berried = ""}
+            else if currentQuestion == 10 {answers.habitat = []}
+            else if currentQuestion == 11 {answers.state = ""}
+            else if currentQuestion == 12 {answers.county = ""}
+            else if currentQuestion == 13 {answers.protectedZone = ""}
+            else if currentQuestion == 14 {answers.occupation = ""}
+            else if currentQuestion == 15 {answers.additional = ""}
+        } else {
+            if currentQuestion == 2 {answers.species = ""}
+            else if currentQuestion == 3 {answers.year = ""}
+            else if currentQuestion == 4 {answers.month = 0}
+            else if currentQuestion == 5 {answers.days = []}
+            else if currentQuestion == 6 {answers.intensity = ""}
+            else if currentQuestion == 7 {answers.state = ""}
+            else if currentQuestion == 8 {answers.county = ""}
+            else if currentQuestion == 9 {answers.protectedZone = ""}
+            else if currentQuestion == 10 {answers.occupation = ""}
+            else if currentQuestion == 11 {answers.additional = ""}
+        }
         
         // Either Way Execute...
         currentQuestion -= 1

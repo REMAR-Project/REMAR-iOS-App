@@ -10,7 +10,7 @@ import SwiftUI
 struct intensityObservedView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
-    var intensityOptions = ["Very Low","Low","Medium","High","Very High","I Don't Know"]
+    var intensityOptions = generateIntensity()
     
     var body: some View {
         GeometryReader { geom in

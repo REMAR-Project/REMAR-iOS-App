@@ -35,7 +35,7 @@ struct versionQuestion: View {
         GeometryReader { geom in
             VStack{
                 
-                Text("Choose one of the below options by tapping with finger.")
+                Text(NSLocalizedString("chooseOneByTapping", comment: ""))
                     .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
                     .multilineTextAlignment(.center)
                 
@@ -55,14 +55,14 @@ struct versionQuestion: View {
                 .frame(width: geom.size.width * 0.9, height: geom.size.height/3)
                 
                 
-                Text("For more information, click on the green button below.")
+                Text(NSLocalizedString("forMoreInfo", comment: ""))
                     .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.05: geom.size.height * 0.05))
                     .multilineTextAlignment(.center)
                 //.padding(.top, 70.0)
                 
                 NavigationLink(destination: faqView(), label: {
                     GeometryReader { g in
-                        Text("READ MORE")
+                        Text(NSLocalizedString("readMore", comment: ""))
                             .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
@@ -83,7 +83,7 @@ struct versionQuestion: View {
                     print("Privacy Policy Selected")
                     showingPrivacyPolicy.toggle()
                 }, label: {
-                    Text("Privacy Policy")
+                    Text(NSLocalizedString("privacyPolicy", comment: ""))
                         .foregroundColor(Color("REMAR_GREEN"))
                         .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.04: geom.size.height * 0.04))
                         .fontWeight(.semibold)
@@ -96,8 +96,8 @@ struct versionQuestion: View {
                 .position(x: geom.size.width / 2, y: geom.size.height / 2)
                 .alert(isPresented:$showingPrivacyPolicy) {
                     Alert(
-                        title: Text("Privacy Policy"),
-                        message: Text("Edinburgh Napier University complies with the data protection law. This application does not specifically collect any personal data and we ask that you do not provide any personal data in the free text fields. However, if you inadvertently provide any personal data, we will protect this data in accordance with the General Data Protection Regulation (GDPR) and other relevant data protection laws."),
+                        title: Text(NSLocalizedString("privacyPolicy", comment: "")),
+                        message: Text(NSLocalizedString("privacyPolicyDetails", comment: "")),
                         dismissButton: .default(Text("Ok"))
                     )
                 }

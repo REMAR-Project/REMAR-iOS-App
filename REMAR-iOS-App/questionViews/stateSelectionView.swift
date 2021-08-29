@@ -18,7 +18,7 @@ struct stateSelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text("State?")
+                    Text(NSLocalizedString("StateSelection", comment: ""))
                     selectionList(listItems: stateOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     
@@ -28,7 +28,7 @@ struct stateSelectionView: View {
                 .ignoresSafeArea()
                 
             }
-        }.onAppear(perform: {stateOptions = generateStateList(species: QuestionManager.answers.species)})
+        }.onAppear(perform: {stateOptions = generateStateList()})
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
