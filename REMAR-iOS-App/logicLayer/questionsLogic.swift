@@ -7,6 +7,10 @@
 
 import Foundation
 
+///  Removes target string element from string array
+///   - Parameter target: Target element to be removed
+///   - Parameter list: String array
+///   - Returns: String array without target
 func removeListSelection(target: String, list: [String]) -> [String] {
     
     var newList: [String] = []

@@ -7,22 +7,33 @@
 
 import Foundation
 
+/// Generates a list of months
+/// - Returns: List of months in correct language
 func generateMonths() -> [String] {
     return [NSLocalizedString("January", comment: ""),NSLocalizedString("February", comment: ""),NSLocalizedString("March", comment: ""),NSLocalizedString("April", comment: ""),NSLocalizedString("May", comment: ""),NSLocalizedString("June", comment: ""),NSLocalizedString("July", comment: ""),NSLocalizedString("August", comment: ""),NSLocalizedString("September", comment: ""),NSLocalizedString("October", comment: ""),NSLocalizedString("November", comment: ""),NSLocalizedString("December", comment: "")]
 }
 
+/// Generates a list of intensities
+/// - Returns: List of Intensities in correct language
 func generateIntensity() -> [String] {
     return [NSLocalizedString("VeryLow", comment: ""),NSLocalizedString("Low", comment: ""),NSLocalizedString("Medium", comment: ""),NSLocalizedString("High", comment: ""),NSLocalizedString("VeryHigh", comment: ""),NSLocalizedString("NotSure", comment: "")]
 }
 
+/// Generates list of 'whens'
+/// - Returns: list of possible 'whens' or times of day (in corrected language)
 func generateWhens() -> [String] {
     return [NSLocalizedString("OnlyD", comment: ""),NSLocalizedString("OnlyN", comment: ""),NSLocalizedString("AtD&N", comment: ""),NSLocalizedString("DidNotLook", comment: "")]
 }
 
+/// Generates berried answers list
+/// - Returns: list of answers to berried questions
 func generateBerried() -> [String] {
     return [NSLocalizedString("YesBerried", comment: ""),NSLocalizedString("NoBerried", comment: ""),NSLocalizedString("DidNotLook", comment: "")]
 }
 
+/// Generates Habitat List
+/// - Returns: List of habitats depending on the species passed in
+/// - Parameter species: Species
 func generateHabitatList(species: String) -> [String] {
     if (species == "Ucides cordatus") {
         return [NSLocalizedString("Mangrove",comment: ""),NSLocalizedString("Forest",comment: ""),NSLocalizedString("Beach",comment: ""),NSLocalizedString("Road",comment: ""),NSLocalizedString("Other",comment: "")]
@@ -31,11 +42,14 @@ func generateHabitatList(species: String) -> [String] {
     }
 }
 
-// State doesnt need to be localised as it is the same
+/// Generates State List
+/// - Returns: the list of states
 func generateStateList() -> [String] {
-    return ["Alagoas","Amapá","Bahia","Ceará","Espírito Santo","Maranhão","Paraná","Paraíba","Pará","Pernambuco","Piauí","Rio Grande do Norte","Rio de Janeiro","Santa Catarina","Sergipe","São Paulo"]
+    return ["Alagoas","Amapá","Bahia","Ceará","Espírito Santo","Maranhão","Paraná","Paraíba","Pará","Pernambuco","Piauí","Rio Grande do Norte","Rio de Janeiro","Santa Catarina","Sergipe","São Paulo"] // State doesnt need to be localised as it is the same
 }
 
+/// Generates County List
+/// - Returns: List of counties depending on the state passed in
 func generateCountyList(state: String) -> [String] {
     switch state {
     case "Rio Grande do Norte":
@@ -71,10 +85,12 @@ func generateCountyList(state: String) -> [String] {
     case "São Paulo":
         return ["Bertioga","Canané","Caraguatatuba","Guarujá","Iguape","Ilha Comprida","Ilhabela","Itanhaém","Mongaguá","Peruíbe","Praia Grande","Santos","São Sebastião","São Vicente","Ubatuba",NSLocalizedString("NotInList", comment: "")]
     default:
-        return ["Not in list"]
+        return [NSLocalizedString("NotInList", comment: "")] // Catch for errors, if none of the cases are true user can enter county manually
     }
 }
 
+/// Generates Protected Area List
+/// - Returns: List of protected areas depending on the state passed in
 func generateProtectedList(state: String) -> [String] {
     
     switch state {
@@ -111,10 +127,12 @@ func generateProtectedList(state: String) -> [String] {
     case "":
         return ["APA de Cananéia-Iguapé-Peruíbe","ARIE Ilha do Ameixal","Resex Mandira","APA Ilha Comprida","APA Marinha do Litoral Norte","ARIE do Guará","ESEC Juréia-Itatins","PE da Serra do Mar","PE do Itinguçu","PE Lagamar de Cananeia","PE Restinga de Bertioga","RDS da Barra do Una","RDS Itapanhapima","RESEX Ilha do Tumba","RESEX Taquari",NSLocalizedString("NotInList", comment: "")]
     default:
-        return [NSLocalizedString("NotInList", comment: "")]
+        return [NSLocalizedString("NotInList", comment: "")] // Catch for errors, if none of the cases are true user can enter county manually
     }
 }
 
+/// Generates the list of occupations from localised strings
+/// - Returns: list of occupations, list can be seen under the occupations section in the localizable.strings file
 func generateOccupationList() -> [String] {
     return [
         NSLocalizedString("O1", comment: ""),
