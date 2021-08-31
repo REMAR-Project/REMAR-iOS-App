@@ -6,9 +6,137 @@
   
 */
 
-// Logo and Assets
+//MARK: Logo and Main Menu
 "REMAR" = "REMAR";
 "_CITIZEN" = "_CIDADÃO";
+"appDescription" = "Monitoramento de andadas reprodutivas de caranguejos de manguezal";
 
+"chooseOneByTapping" = "Toque com dedo em uma das opções abaixo.";
+"forMoreInfo" = "Para mais informações, toques com dedo no botão verde Saiba Mais abaixo.";
+
+"fullVersion" = "Quero ajudar\nao máximo";
+"fullClicks" = "Avançada\n14 cliques";
+
+"simpleVersion" = "Quero\nsimplificar";
+"simpleClicks" = "Básica\n10 cliques";
+
+"privacyPolicy" = "Política de Privacidade";
+"privacyPolicyDetails" = "Edinburgh Napier University complies with the data protection law. This application does not specifically collect any personal data and we ask that you do not provide any personal data in the free text fields. However, if you inadvertently provide any personal data, we will protect this data in accordance with the General Data Protection Regulation (GDPR) and other relevant data protection laws.";
+
+//MARK: Toolbar
 "goBack" = "Voltar";
 "goForward" = "Avançar";
+
+
+//MARK: Multiuse
+"readMore" = "SAIBA MAIS";
+"yes" = "Sim";
+"no" = "Não";
+"maybe" = "Não sei";
+"NotInList" = "Nome não está na lista";
+
+//MARK: Species
+"speciesText" = "Ajude a monitorar as andadas reprodutivas do caranguejo-uçá e do guaiamum.\n\nEssas informações ajudarão a prever as épocas de acasalamento e a estabelecer defesos apenas nos períodos realmente necessários.\n\nPara passar informações sobre andada, toque em uma das duas espécies abaixo:";
+"UCCrab" = "Caranguejo-uçá";
+"CGCrab" = "Guaiamum";
+"Monitoring" = "Monitoramento do";
+
+//MARK: Questions
+"YearSelection" = "Quando você viu uma andada?\nDeslize o dedo sobre a tela e toque para escolher o ano.";
+"MonthSelection" = "Deslize o dedo sobre a tela para selecionar o mês em que observou a andada.\nCaso tenha observado andadas em dois períodos deste mês (ex. um em torno da lua nova, e outro em torno da lua cheia), por favor envie um questionário para cada período de andada, separadamente.";
+"DaySelection" = "Marque no calendário quando você observou a andada.\nLembre-se! Caso neste mês tenha visto andadas em dois períodos (ex. um em torno da lua nova, e outro em torno da cheia), marque somente UM período (vários dias SEGUIDOS, ou apenas um dia).";
+"StrongestDaySelection" = "Caso você saiba, marque o dia em que a andada foi mais FORTE.\nCaso você não saiba, simplesmente avançe para a próxima página.";
+"Intensity Selection" = "Como você estima a intensidade da andada observada:";
+"TimeOfDaySelection" = "Quando você viu a andada? Toque na resposta.";
+"BerriedSelection" = "Você viu alguma fêmea ovada?";
+"HabitatSelection" = "A andada foi vista em qual ambiente? Você pode marcar mais de um ambiente.";
+"StateSelection" = "Qual o estado em que foi feito o monitoramento? Deslize o dedo sobre a tela e toque para escolher.";
+"CountySelection" = "Deslize o dedo sobre a tela e toque para escolher o município onde você viu a andada.";
+"ProtectedSelection" = "A localidade monitorada está em unidade de conservação (ex. RESEX, APA, Parque)?";
+"OccupationSelection" = "Por favor, poderia informar o que você faz? Deslize o dedo sobre a tela e toque para escolher.";
+"AdditionalSelection" = "Algo mais que você gostaria de dizer?";
+
+
+//MARK: MONTHS
+"January" = "Janeiro";
+"Febuary" = "Fevereiro";
+"March" = "Março";
+"April" = "Abril";
+"May" = "Maio";
+"June" = "Junho";
+"July" = "Julho";
+"August" = "Agosto";
+"September" = "Setembro";
+"October" = "Outubro";
+"November" = "Novembro";
+"December" = "Dezembro";
+
+//MARK: ShortDay
+"Sat" = "DOM";
+"Mon" = "SEG";
+"Tue" = "TER";
+"Wed" = "QUA";
+"Thu" = "QUI";
+"Fri" = "SEX";
+"Sun" = "SÁB";
+
+//MARK: Intensities
+"VeryLow" = "Muito Baixa";
+"Low" = "Baixa";
+"Medium" = "Média";
+"High" = "Alta";
+"VeryHigh" = "Muito Alta";
+"NotSure" = "Não Sei";
+
+//MARK: Times of Day (whens)
+"OnlyD" = "Somente de dia";
+"OnlyN" = "Somente de noite";
+"AtD&N" = "Dia e noite";
+"DidNotLook" = "Não olhei";
+
+
+//MARK: Berried?
+"YesBerried" = "Sim";
+"NoBerried" = "Não";
+"DidNotLook" = "Não olhei";
+
+//MARK: Habitats
+"Mangrove" = "Manguezal";
+"Saltmarsh" = "Apicum";
+"Forest" = "Mata";
+"Beach" = "Praia";
+"Road" = "Estrada";
+"RiverBed" = "Leito de rio";
+"RockyShore" = "Costão rochoso";
+"House" = "Casa";
+"Other" = "Outro";
+
+//MARK: Occupations
+"O1" = "• Pego caranguejo-uçá ou guaiamum e dependo deste recurso para viver";
+"O2" = "• Pego caranguejo-uçá ou guaiamum apenas ocasionalmente para consumo";
+"O3" = "• Sou beneficiador de carne de caranguejo-uçá";
+"O4" = "• Sou comerciante de caranguejo-uçá ou guaiamum";
+"O5" = "• Sou morador local e normalmente não pego caranguejos ou guaiamuns";
+"O6" = "• Sou do ICMBio e observei eu mesmo";
+"O7" = "• Sou do ICMBio e relato resultados de um extrativista";
+"O8" = "• Sou do IBAMA e observei eu mesmo";
+"O9" = "• Sou do IBAMA e relato resultados de um extrativista";
+"O10" = "• Sou da Prefeitura e observei eu mesmo";
+"O11" = "• Sou da Prefeitura e relato resultados de um extrativista";
+"O12" = "• Sou pesquisador e observei eu mesmo";
+"O13" = "• Sou pesquisador e relato resultados de um extrativista";
+"O14" = "• Sou turista";
+"O15" = "• Trabalho com turismo";
+"O0" = "• Outro";
+"O00" = "• Não quero informar";
+
+
+//MARK: Submission Screens
+"SubmitAnswers" = "QUERO MANDAR AS MINHAS RESPOSTAS";
+"ChangeAnswers" = "QUERO VOLTAR PARA MUDAR AS RESPOSTAS";
+"TestingAnswers" = "ESTOU APENAS TESTANDO/MOSTRANDO O APLICATIVO SEM ENVIAR RESPOSTAS REAIS";
+"FindOutMore" = "Caso queira entrar em contato com a REMAR, saber sobre formas de atuar mais intensivamente nesta pesquisa, perguntar ou sugerir algo, envie uma mensagem para "; // Supposed to leave a space at the end as the email is added after in the view call.
+
+"ReturnRoot" = "Quero continuar informar outra andada";
+"FinalView" = "Para ver as análises das informações que recebemos de você e de outros cientistas cidadãos, por favor consulte a página da REMAR em";
+"Or" = "OU";

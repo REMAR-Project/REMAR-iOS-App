@@ -45,6 +45,7 @@ class questionManager: ObservableObject {
         print("\(currentQuestion) out of \(questionCount)")
     }
     
+    /// Records currently entered answer depending on current question property
     func logAnswer() {
         if currentQuestion == 1 {
             answers.species = tmpAnswer
@@ -135,6 +136,7 @@ class questionManager: ObservableObject {
         otherHidden = true
     }
     
+    /// Reverses last saved answer and moves back to previous question
     func reverseAction() {
         
         if(questionCount==14){
@@ -172,6 +174,7 @@ class questionManager: ObservableObject {
         otherHidden = true
     }
     
+    /// answersToString for debugView
     func answersToString() -> String {
         var string = "Species: \(answers.species)\nYear: \(answers.year)\nMonth: \(answers.month)\nIntensity: \(answers.intensity)\nWhen: \(answers.when)\nBerried: \(answers.berried)\nHabitat: \(answers.habitat)\nState: \(answers.state)\nCounty: \(answers.county)\nProtected Zone: \(answers.protectedZone)\nOccupation: \(answers.occupation)\n\n\n"
         for day in answers.days {
@@ -180,6 +183,7 @@ class questionManager: ObservableObject {
         return string
     }
     
+    /// Clears question managers answers property (reinitialises)
     func clearAnswers() {
         answers.year = "0"
         answers.month = 0
@@ -200,6 +204,7 @@ class questionManager: ObservableObject {
     
 }
 
+/// Class for storing the answers entered then confirmed by the user
 class Answers {
     
     public var species: String

@@ -57,7 +57,7 @@ struct speciesDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 130)
-            Text("Monitoring \(QuestionManager.answers.species)")
+            Text("\(NSLocalizedString("Monitoring", comment: "")) \(QuestionManager.answers.species)")
                 .multilineTextAlignment(.center)
         }
     }

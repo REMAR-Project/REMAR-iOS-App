@@ -37,15 +37,17 @@
 "NotInList" = "Not in list";
 
 //MARK: Species
-"speciesText" = "**Become a citizen scientist** and help record mass mating events of commercially important Brazilian mangrove crabs.\n\nThis information will help improve Brazilian crab fisheries legislation and fishers' livelihoods.\n\nClick on one of the below species to share your observations.";
+"speciesText" = "Become a citizen scientist and help record mass mating events of commercially important Brazilian mangrove crabs.\n\nThis information will help improve Brazilian crab fisheries legislation and fishers' livelihoods.\n\nClick on one of the below species to share your observations.";
 "UCCrab" = "Ucides cordatus";
 "CGCrab" = "Cardisoma guanhumi";
+"Monitoring" = "Monitoring";
 
 //MARK: Questions
 "YearSelection" = "Year Selection View";
 "MonthSelection" = "Month Selection View";
 "DaySelection" = "Day Selection View";
 "StrongestDaySelection" = "Strongest Day Selection View";
+"Intensity Selection" = "Intensity Selection";
 "TimeOfDaySelection" = "When did you observe andada? Touch the correct symbol with finger.";
 "BerriedSelection" = "Berried Females?";
 "HabitatSelection" = "Select Habitat(s)";
@@ -91,7 +93,7 @@
 "OnlyD" = "Only at Day";
 "OnlyN" = "Only at Night";
 "AtD&N" = "At Day and Night";
-"DidNotLook" = "I Did Not Look";
+"DidNotLook" = "I did not look";
 
 
 //MARK: Berried?
