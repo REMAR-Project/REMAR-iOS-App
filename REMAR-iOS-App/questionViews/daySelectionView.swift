@@ -21,7 +21,7 @@ struct daySelectionView: View {
                     
                     Spacer()
                     
-                    Text(NSLocalizedString("DaySelection", comment: ""))
+                    Text(NSLocalizedString("DaySelection", comment: "")).padding()
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
                         .font(.system(size: geom.size.width*0.08))

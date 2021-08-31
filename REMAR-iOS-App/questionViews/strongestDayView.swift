@@ -20,7 +20,7 @@ struct strongestDayView: View {
                     
                     Spacer()
                     
-                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color.red)
+                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color.red).padding()
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
                         .font(.system(size: geom.size.width*0.08))

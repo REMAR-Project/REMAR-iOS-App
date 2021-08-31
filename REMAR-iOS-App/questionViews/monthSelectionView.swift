@@ -23,13 +23,14 @@ struct monthSelectionView: View {
                     speciesDetailView().padding()
                     
                     Text(NSLocalizedString("MonthSelection", comment: ""))
-                        .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
-                        .multilineTextAlignment(.center)
-                    selectionList(listItems: monthList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .padding(.horizontal)
+                        //.multilineTextAlignment(.center)
+                    selectionList(listItems: monthList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.35)
                     Spacer()
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                .padding(.top, 90)
                 .ignoresSafeArea()
                 
             }

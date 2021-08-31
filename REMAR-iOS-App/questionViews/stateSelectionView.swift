@@ -18,13 +18,13 @@ struct stateSelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text(NSLocalizedString("StateSelection", comment: ""))
+                    Text(NSLocalizedString("StateSelection", comment: "")).padding()
                     selectionList(listItems: stateOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                .padding(.top, 90)
                 .ignoresSafeArea()
                 
             }

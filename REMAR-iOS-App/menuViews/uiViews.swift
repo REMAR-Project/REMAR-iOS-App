@@ -155,12 +155,12 @@ struct otherTextPrompt: View {
     var body: some View {
         ZStack{
             VStack(spacing: 5){
-                TextField("Other Answer", text: $otherText)
+                TextField(NSLocalizedString("Other Answer", comment: ""), text: $otherText)
                     .textFieldStyle(.roundedBorder)
                     .padding([.top, .leading, .trailing])
                     //.border(Color("REMAR_GREEN"), width: 5)
                 Button(action: {QuestionManager.nextDisabled = true
-                    QuestionManager.otherHidden.toggle()}, label: {Text("Back to list").foregroundColor(Color("REMAR_GREEN"))})
+                    QuestionManager.otherHidden.toggle()}, label: {Text(NSLocalizedString("Back to list", comment: "")).foregroundColor(Color("REMAR_GREEN"))})
             }.onChange(of: otherText) { newValue in
                 QuestionManager.nextDisabled = false
                 QuestionManager.tmpAnswer = otherText

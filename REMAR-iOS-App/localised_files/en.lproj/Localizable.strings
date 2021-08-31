@@ -141,3 +141,9 @@
 "ReturnRoot" = "RETURN TO FIRST PAGE";
 "FinalView" = "To view analyses of the information we receive from you and other citizen scientists, please see the REMAR website at";
 "Or" = "OR";
+
+
+//MARK: MISC
+
+"Other Answer" = "Other Answer";
+"Back to list" = "Back to list";

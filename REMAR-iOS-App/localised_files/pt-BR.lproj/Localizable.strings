@@ -140,3 +140,8 @@
 "ReturnRoot" = "Quero continuar informar outra andada";
 "FinalView" = "Para ver as análises das informações que recebemos de você e de outros cientistas cidadãos, por favor consulte a página da REMAR em";
 "Or" = "OU";
+
+//MARK: MISC
+
+"Other Answer" = "Outra Resposta";
+"Back to list" = "De volta à lista";

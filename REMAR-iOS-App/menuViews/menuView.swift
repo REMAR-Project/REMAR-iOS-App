@@ -58,6 +58,7 @@ struct versionQuestion: View {
                 Text(NSLocalizedString("forMoreInfo", comment: ""))
                     .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.05: geom.size.height * 0.05))
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal)
                 //.padding(.top, 70.0)
                 
                 NavigationLink(destination: faqView(), label: {

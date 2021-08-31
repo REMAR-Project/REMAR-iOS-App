@@ -19,7 +19,7 @@ struct countySelectionView: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text(NSLocalizedString("CountySelection", comment: ""))
+                    Text(NSLocalizedString("CountySelection", comment: "")).padding()
                     
                     
                     if (QuestionManager.otherHidden){
@@ -33,7 +33,7 @@ struct countySelectionView: View {
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                .padding(.top, 90)
                 .ignoresSafeArea()
                 
             }

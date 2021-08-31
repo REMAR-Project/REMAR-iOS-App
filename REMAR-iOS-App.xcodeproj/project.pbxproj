@@ -141,8 +141,8 @@
 		A919178626BD4D6000F8B9E8 /* menuViews */ = {
 			isa = PBXGroup;
 			children = (
-				A990294726B757DB00A83582 /* uiViews.swift */,
 				A990294926B76B7900A83582 /* menuView.swift */,
+				A990294726B757DB00A83582 /* uiViews.swift */,
 				A919176426BCBD1E00F8B9E8 /* faqView.swift */,
 				A9322A8526BF0E5D00920F36 /* questionToolBarView.swift */,
 				A9322A8726BF16C800920F36 /* NavigationButton.swift */,

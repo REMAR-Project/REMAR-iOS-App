@@ -18,7 +18,7 @@ struct whenObservationQuestion: View {
                 
                 VStack{
                     speciesDetailView().padding()
-                    Text(NSLocalizedString("TimeOfDaySelection", comment: ""))
+                    Text(NSLocalizedString("TimeOfDaySelection", comment: "")).padding()
                     
                     whenSelectView().frame(width: geom.size.width*0.8, height: geom.size.height*0.4)
                     
