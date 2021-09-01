@@ -19,6 +19,7 @@
 		A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */; };
 		A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */; };
 		A932300226D1D8CC0025465E /* submissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932300126D1D8CC0025465E /* submissionManager.swift */; };
+		A94FE26F26E048B200541E0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A94FE27126E048B200541E0B /* InfoPlist.strings */; };
 		A965750A26C201B200375A51 /* daySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965750926C201B200375A51 /* daySelectionView.swift */; };
 		A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */; };
 		A9689B1326C9E96B00E46CF5 /* selectionLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1226C9E96B00E46CF5 /* selectionLists.swift */; };
@@ -63,6 +64,7 @@
 		A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yearSelectionView.swift; sourceTree = "<group>"; };
 		A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthSelectionView.swift; sourceTree = "<group>"; };
 		A932300126D1D8CC0025465E /* submissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submissionManager.swift; sourceTree = "<group>"; };
+		A94FE27026E048B200541E0B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A965750926C201B200375A51 /* daySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daySelectionView.swift; sourceTree = "<group>"; };
 		A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionOptionsLists.swift; sourceTree = "<group>"; };
 		A9689B1226C9E96B00E46CF5 /* selectionLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectionLists.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				A919178326BCE25C00F8B9E8 /* Localizable.strings */,
 				A919177A26BCD58B00F8B9E8 /* about_us.json */,
+				A94FE27126E048B200541E0B /* InfoPlist.strings */,
 			);
 			path = localised_files;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9ECF98C26C6EDD500CC29C3 /* moons_full.csv in Resources */,
+				A94FE26F26E048B200541E0B /* InfoPlist.strings in Resources */,
 				A919178126BCE25C00F8B9E8 /* Localizable.strings in Resources */,
 				A98684BE269B62A700A72459 /* Preview Assets.xcassets in Resources */,
 				A9ECF98B26C6EDD500CC29C3 /* moons_new.csv in Resources */,
@@ -346,6 +350,14 @@
 				A919178426BCE26200F8B9E8 /* pt-BR */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A94FE27126E048B200541E0B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A94FE27026E048B200541E0B /* pt-BR */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
