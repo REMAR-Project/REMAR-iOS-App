@@ -72,9 +72,11 @@ struct calendarStrongView: View {
                     Text(NSLocalizedString("Thu", comment: ""))
                     Text(NSLocalizedString("Fri", comment: ""))
                     Text(NSLocalizedString("Sun", comment: ""))
-                }.lineLimit(1)
-                    .minimumScaleFactor(0.9)
+                }
+                .lineLimit(1)
+                .minimumScaleFactor(0.9)
                 .font(.system(size: geom.size.width/16))
+                .opacity(0.6)
                 
                 LazyVGrid (columns: layout, spacing: 0){
                     ForEach(data, id: \.self) { item in

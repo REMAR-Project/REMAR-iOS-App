@@ -72,13 +72,13 @@
 "December" = "Dezembro";
 
 //MARK: ShortDay
-"Sat" = "DOM";
-"Mon" = "SEG";
-"Tue" = "TER";
-"Wed" = "QUA";
-"Thu" = "QUI";
-"Fri" = "SEX";
-"Sun" = "SÁB";
+"Sat" = "Dom";
+"Mon" = "Seg";
+"Tue" = "Ter";
+"Wed" = "Qua";
+"Thu" = "Qui";
+"Fri" = "Sex";
+"Sun" = "Sáb";
 
 //MARK: Intensities
 "VeryLow" = "Muito Baixa";
