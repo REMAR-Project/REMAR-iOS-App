@@ -19,13 +19,14 @@ struct daySelectionView: View {
                 
                 VStack(spacing: 0.0){
                     
-                    Spacer()
+                    Text(NSLocalizedString("DaySelection", comment: ""))
+                        .padding()
+                        .font(.body)
                     
-                    Text(NSLocalizedString("DaySelection", comment: "")).padding()
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
-                        .font(.system(size: geom.size.width*0.08))
-                        .padding(.vertical)
+                        .font(.system(size: geom.size.width*0.07))
+                        .padding(.vertical, 5)
                     
                     
                     calendarView().frame(width: geom.size.width*0.9, height: geom.size.height*0.5)
@@ -33,6 +34,7 @@ struct daySelectionView: View {
                     Spacer()
                     
                 }
+                .padding(.top, 95)
                 .padding(.bottom)
                 .ignoresSafeArea()
             }
@@ -64,7 +66,10 @@ struct calendarView: View {
     
     var body: some View {
         GeometryReader { geom in
-            VStack(spacing: 0){
+            VStack(spacing: 0.0){
+                
+                calendarLegend()
+                
                 HStack(spacing: geom.size.width/26){
                     Text(NSLocalizedString("Sat", comment: ""))
                     Text(NSLocalizedString("Mon", comment: ""))
@@ -78,6 +83,8 @@ struct calendarView: View {
                 .minimumScaleFactor(0.8)
                 .font(.system(size: geom.size.width/16))
                 .opacity(0.6)
+                
+                
                 
                 LazyVGrid (columns: layout, spacing: 0){
                     ForEach(data, id: \.self) { item in
@@ -103,6 +110,21 @@ struct calendarView: View {
                 QuestionManager.nextDisabled = true
             })
         }
+    }
+}
+
+/// View that returns the calendar legend
+struct calendarLegend: View {
+    var body: some View {
+        HStack{
+            Text(NSLocalizedString("NewMoon", comment: ""))
+                .font(.caption)
+                .padding(.horizontal)
+            Text(NSLocalizedString("FullMoon", comment: ""))
+                .font(.caption)
+                .padding(.horizontal)
+        }
+        .padding(.vertical, 5)
     }
 }
 

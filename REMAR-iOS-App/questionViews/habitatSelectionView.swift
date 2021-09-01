@@ -21,7 +21,6 @@ struct habitatSelectionView: View {
                     speciesDetailView().padding()
                     Text(NSLocalizedString("HabitatSelection", comment: "")).padding()
                     selectionList_multiple(listItems: habitatOptions)
-                    
                 }
                 .padding(.bottom)
                 .padding(.top, 110)

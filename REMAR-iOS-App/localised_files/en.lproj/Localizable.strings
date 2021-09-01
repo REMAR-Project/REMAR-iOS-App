@@ -81,6 +81,10 @@
 "Fri" = "Fri";
 "Sun" = "Sun";
 
+//MARK: Moons
+"NewMoon" = "New Moon: 🌑";
+"FullMoon" = "Full Moon: 🌕";
+
 //MARK: Intensities
 "VeryLow" = "Very Low";
 "Low" = "Low";
@@ -144,6 +148,5 @@
 
 
 //MARK: MISC
-
 "Other Answer" = "Other Answer";
 "Back to list" = "Back to list";

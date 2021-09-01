@@ -18,23 +18,19 @@ struct strongestDayView: View {
                 
                 VStack(spacing: 0.0){
                     
-                    Spacer()
-                    
                     Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color.red).padding()
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
                         .font(.system(size: geom.size.width*0.08))
-                        .padding(.vertical)
-                    
                     
                     calendarStrongView().frame(width: geom.size.width*0.9, height: geom.size.height*0.5)
                     
                     Spacer()
                     
                 }
+                .padding(.top, 100)
                 .padding(.bottom)
                 .ignoresSafeArea()
-                
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -64,6 +60,9 @@ struct calendarStrongView: View {
     var body: some View {
         GeometryReader { geom in
             VStack(spacing: 0){
+                
+                calendarLegend()
+                
                 HStack(spacing: geom.size.width/26){
                     Text(NSLocalizedString("Sat", comment: ""))
                     Text(NSLocalizedString("Mon", comment: ""))

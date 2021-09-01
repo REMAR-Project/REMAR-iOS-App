@@ -43,7 +43,7 @@ struct uiBackgroundView: View {
                         .padding(.bottom, 7.0)
                         .background(Color("REMAR_GREEN"))
                         .frame(maxHeight: geom.size.height * 0.07)
-                    HStack{
+                    HStack(spacing: 5.0){
                         
                         remarLogoView()
                             .frame(width: geom.size.width/2.5)
@@ -54,13 +54,13 @@ struct uiBackgroundView: View {
                             Image("banner_ufsb")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .frame(width: geom.size.width/5)
                             Image("banner_napier")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         }
-                        .frame(width: geom.size.width/2.5)
-                    }.padding(.horizontal, 20.0)
-                        .offset(y: -10)
+                    }   .padding(.horizontal, 15.0)
+                        .offset(y: -5)
                         .frame(height: geom.size.height * 0.07)
                 }
             }

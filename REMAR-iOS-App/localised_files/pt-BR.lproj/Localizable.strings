@@ -80,6 +80,10 @@
 "Fri" = "Sex";
 "Sun" = "Sáb";
 
+//MARK: Moons
+"NewMoon" = "Lua Nova: 🌑";
+"FullMoon" = "Lua Cheia: 🌕";
+
 //MARK: Intensities
 "VeryLow" = "Muito Baixa";
 "Low" = "Baixa";
