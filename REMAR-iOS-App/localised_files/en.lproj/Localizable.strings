@@ -43,16 +43,16 @@
 "Monitoring" = "Monitoring";
 
 //MARK: Questions
-"YearSelection" = "Year Selection View";
-"MonthSelection" = "Month Selection View";
-"DaySelection" = "Day Selection View";
-"StrongestDaySelection" = "Strongest Day Selection View";
-"Intensity Selection" = "Intensity Selection";
+"YearSelection" = "When did you observe the andada? Touch screen, move finger and tap to select the year you observed the andada.";
+"MonthSelection" = "Touch screen and move finger to choose correct month. In case you saw two andadas this month (one around new moon and one around full moon), please run the app for each andada seperately.";
+"DaySelection" = "For the andada you are reporting here, touch with finger when you noted it. Remember: In case you saw andada in two periods (e.g. one around new moon and one around full moon), only mark ONE period (SEVERAL CONSECUITIVE DAYS OR ONE DAY).";
+"StrongestDaySelection" = "Touch the day with the STRONGEST andada activity. If you don't know, you can proceed without selecting a date.";
+"Intensity Selection" = "How do you estimate the intensity of the observed Andada:";
 "TimeOfDaySelection" = "When did you observe andada? Touch the correct symbol with finger.";
-"BerriedSelection" = "Berried Females?";
-"HabitatSelection" = "Select Habitat(s)";
-"StateSelection" = "Please Select State";
-"CountySelection" = "Please select county";
+"BerriedSelection" = "Did you see berried (ovigerous) females?\nTouch correct answer with finger.";
+"HabitatSelection" = "In which habitat did you observe the andada?\nTouch correct answer with finger. You can chose more than one option.";
+"StateSelection" = "Touch screen, move finger and tap to select the state where you made your observation.";
+"CountySelection" = "Touch screen, move finger and tap to select the county where you made your observation.";
 "ProtectedSelection" = "Is the monitored locality in a protected area?";
 "OccupationSelection" = "Please can you let us know what you do? Touch screen and move finger to select.";
 "AdditionalSelection" = "Any additional observations you want to share?";
