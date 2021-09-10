@@ -31,7 +31,8 @@ struct strongestDayView: View {
                 .padding(.top, 100)
                 .padding(.bottom)
                 .ignoresSafeArea()
-            }
+            }.onAppear(perform: {QuestionManager.nextDisabled = false
+                QuestionManager.tmpStrongestDay = dayItem.init(dayNumber: 0)}) // Next should always be available on this page as the selection is optional.
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
@@ -87,7 +88,6 @@ struct calendarStrongView: View {
                             } else {
                                 selectedDay = dayItem.init(dayNumber: 0)
                                 QuestionManager.tmpStrongestDay = selectedDay
-                                QuestionManager.nextDisabled = true
                             }
                         }, label: {
                             dayView(dayItem: item, selected: (selectedDay == item) ? true : false)
