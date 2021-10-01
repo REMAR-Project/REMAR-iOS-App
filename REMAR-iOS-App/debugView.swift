@@ -11,6 +11,10 @@ import SwiftUI
 ///   this MUST be disabled (by commenting the navigation link from backgroundUI View) before archiving for AppStore.
 struct debugView: View {
     @EnvironmentObject var QuestionManager: questionManager
+    
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: UserData.entity(), sortDescriptors: []) var StoredData: FetchedResults<UserData>
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -30,10 +34,59 @@ struct debugView: View {
                         Text("Exit Question Handler")
                     })
                     NavigationLink(destination: SubmissionCheckView(), label: {Text("SKIP TO SUBMISSION")})
+                    
+                    Spacer()
+                    Button(action: {
+                        print(StoredData.first?.deviceid ?? "No UUID Found")
+                    }, label: {
+                        Text("Test UUID")
+                    })
+                    Button(action: {
+                        generateUUID()
+                    }, label: {
+                        Text("Generate UUID")
+                    })
+                    Button(action: {
+                        clearUUID()
+                    }, label: {
+                        Text("Clear UUID")
+                    })
+                    Spacer()
+                    
+                    
                 }
             }.accentColor(Color("REMAR_GREEN"))
         }.padding()
             .navigationTitle("Debug View")
+    }
+    
+    private func generateUUID() {
+        
+        if StoredData.isEmpty {
+            let newUserData = UserData(context: viewContext)
+            newUserData.deviceid = UUID()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                let error = error as NSError
+                fatalError("Unexpected Error \(error)")
+            }
+            
+            print(newUserData.deviceid ?? "NAN")
+        } else {
+            print("UUID Already Exists")
+        }
+    }
+    
+    private func clearUUID() {
+        if StoredData.isEmpty {
+            print("There is no stored device UUID")
+        } else {
+            viewContext.delete(StoredData.first!)
+            try? viewContext.save()
+            print("UUID Cleared...")
+        }
     }
 }
 

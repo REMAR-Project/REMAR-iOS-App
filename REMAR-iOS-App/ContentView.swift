@@ -19,6 +19,10 @@ struct ContentView: View {
     //  Initialises the questionManager
     var QuestionManager = questionManager()
     
+    //  DataManager - Loads data model to initialise device UUID
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: UserData.entity(), sortDescriptors: []) var StoredData: FetchedResults<UserData>
+    
     var body: some View {
         ZStack {
             menuView()
@@ -32,8 +36,28 @@ struct ContentView: View {
                         }
                     }
                 }
+        }.onAppear(perform: {generateUUID()})
+    }
+    
+    /// Generates a UUID for use as device ID
+    private func generateUUID() {
+        if StoredData.isEmpty {
+            let newUserData = UserData(context: viewContext)
+            newUserData.deviceid = UUID()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                let error = error as NSError
+                fatalError("Unexpected Error \(error)")
+            }
+            
+            print("Generated UUID: \(String(describing: newUserData.deviceid))")
+        } else {
+            print("UUID Already Exists")
         }
     }
+    
 }
 
 /// _Preview Views are used for previewing the current view whilst developing.

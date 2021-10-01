@@ -19,6 +19,8 @@
 		A9322A8C26BF2D6500920F36 /* yearSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */; };
 		A9322A8E26BF2FE800920F36 /* monthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */; };
 		A932300226D1D8CC0025465E /* submissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932300126D1D8CC0025465E /* submissionManager.swift */; };
+		A93853F527078EE300F2D7CB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93853F427078EE300F2D7CB /* Persistence.swift */; };
+		A93853F92707943800F2D7CB /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A93853F72707943800F2D7CB /* dataModel.xcdatamodeld */; };
 		A94FE26F26E048B200541E0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A94FE27126E048B200541E0B /* InfoPlist.strings */; };
 		A965750A26C201B200375A51 /* daySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965750926C201B200375A51 /* daySelectionView.swift */; };
 		A9689B1126C9CB3600E46CF5 /* questionOptionsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */; };
@@ -64,6 +66,8 @@
 		A9322A8B26BF2D6500920F36 /* yearSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yearSelectionView.swift; sourceTree = "<group>"; };
 		A9322A8D26BF2FE800920F36 /* monthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthSelectionView.swift; sourceTree = "<group>"; };
 		A932300126D1D8CC0025465E /* submissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submissionManager.swift; sourceTree = "<group>"; };
+		A93853F427078EE300F2D7CB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A93853F82707943800F2D7CB /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		A94FE27026E048B200541E0B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A965750926C201B200375A51 /* daySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daySelectionView.swift; sourceTree = "<group>"; };
 		A9689B1026C9CB3600E46CF5 /* questionOptionsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionOptionsLists.swift; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 			path = logicLayer;
 			sourceTree = "<group>";
 		};
+		A93853F6270793C900F2D7CB /* persistentData */ = {
+			isa = PBXGroup;
+			children = (
+				A93853F427078EE300F2D7CB /* Persistence.swift */,
+				A93853F72707943800F2D7CB /* dataModel.xcdatamodeld */,
+			);
+			path = persistentData;
+			sourceTree = "<group>";
+		};
 		A98684AA269B62A600A72459 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 				A98684B8269B62A600A72459 /* ContentView.swift */,
 				A98684BA269B62A700A72459 /* Assets.xcassets */,
 				A919178526BD4D2C00F8B9E8 /* questionViews */,
+				A93853F6270793C900F2D7CB /* persistentData */,
 				A919178626BD4D6000F8B9E8 /* menuViews */,
 				A919176826BCCFFE00F8B9E8 /* localised_files */,
 				A98684BC269B62A700A72459 /* Preview Content */,
@@ -314,6 +328,7 @@
 				A9DB5E8226CB47DC006D0E62 /* additionalObservationSelectionView.swift in Sources */,
 				A9ECF98E26C729A200CC29C3 /* strongestDayView.swift in Sources */,
 				A9BE94E326C816ED0067C65C /* stateSelectionView.swift in Sources */,
+				A93853F527078EE300F2D7CB /* Persistence.swift in Sources */,
 				A9689B1326C9E96B00E46CF5 /* selectionLists.swift in Sources */,
 				A9689B1726C9FC2200E46CF5 /* protectedAreaSelection.swift in Sources */,
 				A9BE94DB26C80C620067C65C /* intensityObservedView.swift in Sources */,
@@ -324,6 +339,7 @@
 				A9322A8426BEFF9B00920F36 /* questionManager.swift in Sources */,
 				A9322A8826BF16C800920F36 /* NavigationButton.swift in Sources */,
 				A98684C6269B63C000A72459 /* REMAR_iOS_App.swift in Sources */,
+				A93853F92707943800F2D7CB /* dataModel.xcdatamodeld in Sources */,
 				A9CA6AE326BEDBAE00D376FE /* cleanSlateView.swift in Sources */,
 				A9BE94E126C814620067C65C /* habitatSelectionView.swift in Sources */,
 				A9100C6226C44003000BF34E /* calendarLogic.swift in Sources */,
@@ -485,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"REMAR-iOS-App/Preview Content\"";
@@ -511,6 +528,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.napier.crab.REMAR-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -523,6 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"REMAR-iOS-App/Preview Content\"";
@@ -549,6 +568,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.napier.crab.REMAR-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -577,6 +597,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A93853F72707943800F2D7CB /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A93853F82707943800F2D7CB /* dataModel.xcdatamodel */,
+			);
+			currentVersion = A93853F82707943800F2D7CB /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A98684AB269B62A600A72459 /* Project object */;
 }
