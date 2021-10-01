@@ -53,6 +53,8 @@ struct debugView: View {
                     })
                     Spacer()
                     
+                    Text("\(StoredData.first?.deviceid?.uuidString ?? "None")").font(.caption)
+                    
                     
                 }
             }.accentColor(Color("REMAR_GREEN"))
