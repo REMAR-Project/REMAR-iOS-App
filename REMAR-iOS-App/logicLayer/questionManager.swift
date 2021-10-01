@@ -37,8 +37,9 @@ class questionManager: ObservableObject {
     }
     
     func submit(){
-        //submissionManager().submit()
-        submissionManager().generateJSON(answers: answers)
+        //submissionManager().submit(answers: answers, version: "1")
+        //submissionManager().register()
+        submissionManager().generateJSON(answers: answers, version: "1")
     }
     
     func qmToString() {
