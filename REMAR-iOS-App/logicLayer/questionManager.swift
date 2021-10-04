@@ -36,10 +36,11 @@ class questionManager: ObservableObject {
         tmpStateAnswer = ""
     }
     
-    func submit(){
-        //submissionManager().submit(answers: answers, version: "1")
+    func submit(deviceID: UUID){
+        submissionManager().submit(answers: answers, version: questionCount==14 ? "1" : "0", deviceID: deviceID, bypass: "")
+        currentQuestion+=1
         //submissionManager().register()
-        submissionManager().generateJSON(answers: answers, version: "1")
+        //submissionManager().generateJSON(answers: answers, version: "1", deviceID: deviceID)
     }
     
     func qmToString() {
@@ -87,7 +88,7 @@ class questionManager: ObservableObject {
             if !(questionCount==10) {
                 answers.berried = tmpAnswer
             } else {
-                if (tmpStateAnswer == "Yes") {
+                if (tmpStateAnswer == NSLocalizedString("Yes", comment: "")) {
                     answers.protectedZone = tmpAnswer
                 } else {
                     answers.protectedZone = tmpStateAnswer
@@ -116,8 +117,9 @@ class questionManager: ObservableObject {
             answers.county = tmpAnswer
             tmpAnswer = ""
         } else if currentQuestion == 12 {
-            if (tmpStateAnswer == "Yes") {
+            if (tmpStateAnswer == NSLocalizedString("yes", comment: "")) {
                 answers.protectedZone = tmpAnswer
+                print("HMM \(tmpAnswer)")
             } else {
                 answers.protectedZone = tmpStateAnswer
             }

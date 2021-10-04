@@ -14,48 +14,65 @@ struct debugView: View {
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: UserData.entity(), sortDescriptors: []) var StoredData: FetchedResults<UserData>
+    @FetchRequest(entity: PendingSightings.entity(), sortDescriptors: []) var StoredSightings: FetchedResults<PendingSightings>
     
     var body: some View {
         ScrollView {
             VStack{
-                Text("Current Question: \(QuestionManager.currentQuestion)")
-                Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
-                Text("Temporary Offset: \(QuestionManager.tmpOffset)")
-                Text("Tmp Strongest Day: \(QuestionManager.tmpStrongestDay.dayNumber)")
-                Text("Tmp State Answer: \(QuestionManager.tmpStateAnswer)")
-                Text("--------")
+                Text("Pending: \(StoredSightings.count)")
+                VStack {
+                    Text("--------")
+                    Text("Current Question: \(QuestionManager.currentQuestion)")
+                    Text("Temporary Answer: \(QuestionManager.tmpAnswer)")
+                    Text("Temporary Offset: \(QuestionManager.tmpOffset)")
+                    Text("Tmp Strongest Day: \(QuestionManager.tmpStrongestDay.dayNumber)")
+                    Text("Tmp State Answer: \(QuestionManager.tmpStateAnswer)")
+                    Text("--------")
+                }
                 Text("Strongest Day: \(QuestionManager.answers.strongestDay.dayNumber)")
                 //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")
-                Spacer()
                 Text("\(QuestionManager.answersToString())")
                 VStack{
-                    Spacer()
                     Button(action: {QuestionManager.currentQuestion = 0}, label: {
                         Text("Exit Question Handler")
                     })
-                    NavigationLink(destination: SubmissionCheckView(), label: {Text("SKIP TO SUBMISSION")})
+                    NavigationLink(destination: SubmissionCheckView(), label: {Text("SKIP TO SUBMISSION")}).padding(.bottom)
                     
-                    Spacer()
-                    Button(action: {
-                        print(StoredData.first?.deviceid ?? "No UUID Found")
-                    }, label: {
-                        Text("Test UUID")
-                    })
-                    Button(action: {
-                        generateUUID()
-                    }, label: {
-                        Text("Generate UUID")
-                    })
-                    Button(action: {
-                        clearUUID()
-                    }, label: {
-                        Text("Clear UUID")
-                    })
-                    Spacer()
+                    HStack {
+                        Button(action: {
+                            print(StoredData.first?.deviceid ?? "No UUID Found")
+                        }, label: {
+                            Text("Test UUID")
+                        })
+                        Text("|")
+                        Button(action: {
+                            generateUUID()
+                        }, label: {
+                            Text("Generate UUID")
+                        })
+                        Text("|")
+                        Button(action: {
+                            clearUUID()
+                        }, label: {
+                            Text("Clear UUID")
+                        })
+                    }.padding().border(Color("REMAR_GREEN"))
                     
-                    Text("\(StoredData.first?.deviceid?.uuidString ?? "None")").font(.caption)
+                    Text("\(StoredData.first?.deviceid?.uuidString ?? "None")").font(.caption).padding(.bottom)
                     
-                    
+                    DisclosureGroup("Stored Sightings:") {
+                        VStack{
+                            ForEach(StoredSightings) { sighting in
+                                Text(sighting.sightingJSON ?? "Empty Record?")
+                                    .contextMenu(ContextMenu(menuItems: {Button("Copy", action: {
+                                        UIPasteboard.general.string = sighting.sightingJSON})}))
+                                    .padding()
+                                
+                            }
+                        }
+                        Button(action: {submissionManager.init().clearJSONSightings()}, label: {Text("CLEAR SIGHTINGS").foregroundColor(.red).padding()})
+                    }.padding()
+
                 }
             }.accentColor(Color("REMAR_GREEN"))
         }.padding()

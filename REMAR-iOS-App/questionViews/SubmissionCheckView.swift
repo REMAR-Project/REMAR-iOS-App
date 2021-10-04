@@ -10,6 +10,10 @@ import SwiftUI
 struct SubmissionCheckView: View {
     @EnvironmentObject var QuestionManager: questionManager
     
+    // Fetch Data Model
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: UserData.entity(), sortDescriptors: []) var StoredData: FetchedResults<UserData>
+    
     var body: some View {
         GeometryReader { geom in
             ZStack {
@@ -17,7 +21,7 @@ struct SubmissionCheckView: View {
                 VStack{
                     
                     VStack(spacing: 20){
-                        Button(action: {QuestionManager.submit()}, label: {standardButtonView_Text(text: NSLocalizedString("SubmitAnswers", comment: ""))})
+                        Button(action: {QuestionManager.submit(deviceID: (StoredData.first?.deviceid)!)}, label: {standardButtonView_Text(text: NSLocalizedString("SubmitAnswers", comment: ""))})
                         
                         Button(action: {QuestionManager.reverseAction()}, label: {standardButtonView_Text(text: NSLocalizedString("ChangeAnswers", comment: ""))})
                         

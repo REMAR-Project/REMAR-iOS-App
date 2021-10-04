@@ -10,7 +10,7 @@
 import SwiftUI
 
 //  Splash Screen Diaplay Time (in seconds)
-let splashscreen_time = 2.0
+let splashscreen_time = 2.1
 
 /// The ContentView is a View that displays the splashscreen then the content of the app. It also initialises the Question Manager object and adds it to the environment of the menuView.
 struct ContentView: View {
@@ -22,6 +22,7 @@ struct ContentView: View {
     //  DataManager - Loads data model to initialise device UUID
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: UserData.entity(), sortDescriptors: []) var StoredData: FetchedResults<UserData>
+    @FetchRequest(entity: PendingSightings.entity(), sortDescriptors: []) var StoredSightings: FetchedResults<PendingSightings>
     
     var body: some View {
         ZStack {
@@ -36,7 +37,33 @@ struct ContentView: View {
                         }
                     }
                 }
-        }.onAppear(perform: {generateUUID()})
+        }
+        .onAppear(perform: {onStartUp()})
+    }
+    
+    /// Function that runs on start up of app
+    private func onStartUp() {
+        // Check if device has a stored UUID, if not create one and store it.
+        generateUUID()
+        // Check for pending sightings
+        submitPendingSightings()
+    }
+    
+    private func submitPendingSightings() {
+        if !StoredSightings.isEmpty {
+            for sighting in StoredSightings {
+                submissionManager.init().submit(answers: Answers.init(), version: "", deviceID: UUID(), bypass: sighting.sightingJSON!)
+                print("Attempting Stored Sighting: \(sighting.sightingJSON!)")
+                
+                viewContext.delete(sighting)
+            }
+            do {
+                try viewContext.save()
+            } catch {
+                let error = error as NSError
+                fatalError("Unexpected Error \(error)")
+            }
+        }
     }
     
     /// Generates a UUID for use as device ID

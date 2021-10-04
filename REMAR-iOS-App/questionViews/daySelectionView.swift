@@ -131,6 +131,7 @@ struct calendarLegend: View {
 struct dayItem: Identifiable, Hashable {
     var id = UUID()
     var dayNumber: Int
+    //var month: String = ""
     var targetMonth: Bool = false
     var monthOffset: Int = 0
     var isNewMoon: Bool = false

@@ -10,9 +10,9 @@ import SwiftUI
 /// Function returns a list of strings from Current Year to Current Year-10
 func getYearList() -> [String] {
     let currentYear = Calendar.current.component(.year, from: Date())
-    let yearListInt = Array(currentYear-10...currentYear)
+    let yearListInt = Array(currentYear-5...currentYear)
     let yearListString = yearListInt.map { String($0) }
-    return yearListString.reversed()
+    return yearListString
 }
 
 struct yearSelectionView: View {
