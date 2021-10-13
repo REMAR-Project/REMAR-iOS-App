@@ -49,7 +49,7 @@ struct whenSelectView: View {
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "sun.max.fill", text: NSLocalizedString("OnlyD", comment: ""), colour: Color.yellow, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyD", comment: ""))
+                    standardButtonView(icon: "DayOnly", text: NSLocalizedString("OnlyD", comment: ""), colour: Color.yellow, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyD", comment: ""))
                 })
                 
                 Button(action: {
@@ -61,7 +61,7 @@ struct whenSelectView: View {
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "moon.stars.fill", text: NSLocalizedString("OnlyN", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyN", comment: ""))
+                    standardButtonView(icon: "NightOnly", text: NSLocalizedString("OnlyN", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyN", comment: ""))
                 })
                 
             }
@@ -75,7 +75,7 @@ struct whenSelectView: View {
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "cloud.sun.fill", text: NSLocalizedString("AtD&N", comment: ""), colour: Color.orange, selected: QuestionManager.tmpAnswer==NSLocalizedString("AtD&N", comment: ""))
+                    standardButtonView(icon: "AtBoth", text: NSLocalizedString("AtD&N", comment: ""), colour: Color.orange, selected: QuestionManager.tmpAnswer==NSLocalizedString("AtD&N", comment: ""))
                 })
                 
                 Button(action: {
@@ -87,7 +87,7 @@ struct whenSelectView: View {
                         QuestionManager.nextDisabled = true
                     }
                 }, label: {
-                    standardButtonView(icon: "questionmark.circle", text: NSLocalizedString("DidNotLook", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("DidNotLook", comment: ""))
+                    standardButtonView(icon: "IDK", text: NSLocalizedString("DidNotLook", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("DidNotLook", comment: ""))
                 })
             }
         }.foregroundColor(.black)
@@ -103,10 +103,12 @@ struct standardButtonView: View {
         GeometryReader { geom in
             ZStack{
                 RoundedRectangle(cornerRadius: 20).foregroundColor( selected ? Color("REMAR_GREEN") : Color.white)
-                VStack {
+                VStack(spacing: 0) {
                     Text(text).font(.system(size: geom.size.width*0.15))
-                    Image(systemName: icon)
+                    Image(icon)
                         //.renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
                         .font(.system(size: geom.size.width*0.5))
                         
                     .foregroundColor(colour)
