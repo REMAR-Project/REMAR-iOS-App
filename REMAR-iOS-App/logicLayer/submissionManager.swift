@@ -131,7 +131,7 @@ class submissionManager {
         let managedObjectContext = PersistenceController.shared.container.viewContext
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PendingSightings")
-            fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.returnsObjectsAsFaults = false
         
         let results = try? managedObjectContext.fetch(fetchRequest)
         for object in results! {
@@ -229,17 +229,19 @@ class submissionManager {
     func generateHabitat(habitats: [String], species: String) -> String {
         
         let allHabitats = generateHabitatList(species: species)
-        var questionResponse: [String] = []
+        var string: String = ""
         
         for habitat in allHabitats {
             if habitats.contains(habitat) {
-                questionResponse.append("true")
+                string = string + "true, "
             } else {
-                questionResponse.append("false")
+                string = string + "false, "
             }
         }
+        // Remove trailing ", " - two characters
+        string = String(string.dropLast(2))
         
-        return "\(questionResponse)"
+        return "\(string)"
     }
     
     
@@ -263,7 +265,7 @@ class submissionManager {
             "\"7\": [\"\(answers.intensity)\"]," + // Intensity
             "\"8\": [\"\(timeOfDay(when: answers.when))\"]," + // index of time of day
             "\"9\": [\"\(answers.berried)\"]," + // Berried question
-            "\"10\": [\(generateHabitat(habitats: answers.habitat, species: answers.species))]," + // Habitats
+            "\"10\": [\"\(generateHabitat(habitats: answers.habitat, species: answers.species))\"]," + // Habitats
             "\"11\": [\"\(answers.state)\"]," + // State as string
             "\"12\": [\"\(answers.county)\"]," + // County as string
             "\"13\": \(protectedArea(area: answers.protectedZone))," + // Protected area
