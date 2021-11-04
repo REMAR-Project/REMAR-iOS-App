@@ -18,7 +18,7 @@ struct strongestDayView: View {
                 
                 VStack(spacing: 0.0){
                     
-                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color.red).padding()
+                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color("NAPIER_RED")).padding()
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
                         .font(.system(size: geom.size.width*0.08))
