@@ -19,9 +19,12 @@ struct remarLogoView: View {
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .minimumScaleFactor(0.1)
+                    VStack{
                     Text(NSLocalizedString("_CITIZEN", comment: ""))
-                        .font(.title)
+                        .font(.title3)
                         .minimumScaleFactor(0.1)
+                        .padding(.top, 3.0)
+                    }
                 }.frame(
                     width: geom.size.width,
                     height: geom.size.height
