@@ -21,7 +21,7 @@
 "simpleClicks" = "Básica\n10 cliques";
 
 "privacyPolicy" = "Política de Privacidade";
-"privacyPolicyDetails" = "Edinburgh Napier University complies with the data protection law. This application does not specifically collect any personal data and we ask that you do not provide any personal data in the free text fields. However, if you inadvertently provide any personal data, we will protect this data in accordance with the General Data Protection Regulation (GDPR) and other relevant data protection laws.";
+"privacyPolicyDetails" = "A Edinburgh Napier University está em conformidade com a lei de proteção de dados. Este aplicativo não coleta especificamente quaisquer dados pessoais e pedimos que você não forneça quaisquer dados pessoais nos campos de texto livre enviados. No entanto, se você fornecer inadvertidamente quaisquer dados pessoais, iremos proteger estes dados em conformidade com o Regulamento Geral de Proteção de Dados (GDPR) e outras leis de proteção de dados relevantes.";
 
 //MARK: Toolbar
 "goBack" = "Voltar";

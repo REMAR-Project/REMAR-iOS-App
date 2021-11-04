@@ -59,7 +59,7 @@ struct faqView: View {
                         self.presentationMode.wrappedValue.dismiss()  //  
                     }, label: {
                         GeometryReader { g in
-                            Text("Go Back")
+                            Text(NSLocalizedString("goBack", comment: ""))
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
