@@ -36,7 +36,7 @@ struct versionQuestion: View {
             VStack{
                 
                 Text(NSLocalizedString("chooseOneByTapping", comment: ""))
-                    .font(.system(size: geom.size.width * 0.045, weight: .bold, design: .default))
+                    .font(.system(size: geom.size.width * 0.045, weight: .semibold, design: .default))
                     .multilineTextAlignment(.center)
                 
                 HStack{

@@ -94,7 +94,7 @@ struct crabSelectionButton: View {
                     Text(type == 0 ? NSLocalizedString("UCCrab", comment: "") : NSLocalizedString("CGCrab", comment: ""))
                         .foregroundColor(Color.black)
                         .font(.system(size: geom.size.height > geom.size.width ? geom.size.width * 0.08: geom.size.height * 0.08))
-                        .fontWeight(.heavy)
+                        .fontWeight(.bold)
                         .padding(.horizontal)
                         .lineLimit(1)
                     ZStack{
