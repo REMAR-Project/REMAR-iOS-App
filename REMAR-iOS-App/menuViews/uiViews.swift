@@ -21,7 +21,7 @@ struct remarLogoView: View {
                         .minimumScaleFactor(0.1)
                     VStack{
                     Text(NSLocalizedString("_CITIZEN", comment: ""))
-                        .font(.title3)
+                            .font(.subheadline)
                         .minimumScaleFactor(0.1)
                         .padding(.top, 3.0)
                     }
