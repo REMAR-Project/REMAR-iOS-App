@@ -82,8 +82,8 @@
 "Sun" = "Sun";
 
 //MARK: Moons
-"NewMoon" = "New Moon: 🌑";
-"FullMoon" = "Full Moon: 🌕";
+"NewMoon" = "New Moon 🌑";
+"FullMoon" = "Full Moon 🌕";
 
 //MARK: Intensities
 "VeryLow" = "Very Low";
