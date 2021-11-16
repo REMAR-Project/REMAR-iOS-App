@@ -103,7 +103,7 @@
 //MARK: Berried?
 "YesBerried" = "Yes, I saw berried females";
 "NoBerried" = "No, there were no berried females";
-"DidNotLook" = "I Did Not Look";
+"DidNotLook" = "I did not look";
 
 //MARK: Habitats
 "Mangrove" = "Mangrove";
