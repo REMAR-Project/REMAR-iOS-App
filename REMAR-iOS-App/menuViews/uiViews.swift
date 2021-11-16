@@ -35,6 +35,33 @@ struct remarLogoView: View {
     }
 }
 
+//  REMAR Logo View - Splashscreen
+struct remarLogoSplashView: View {
+    var body: some View {
+        NavigationLink(destination: debugView(), label: {
+            GeometryReader { geom in
+                HStack(spacing: 0.0){
+                    Text(NSLocalizedString("REMAR", comment: ""))
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .minimumScaleFactor(0.1)
+                    VStack{
+                    Text(NSLocalizedString("_CITIZEN", comment: ""))
+                        .font(.subheadline)
+                        .minimumScaleFactor(0.1)
+                        .padding(.top, 10.0)
+                    }
+                }.frame(
+                    width: geom.size.width,
+                    height: geom.size.height
+                )
+            }
+        }).foregroundColor(.black)
+        
+    }
+}
+
+
 struct uiBackgroundView: View {
     
     var body: some View {
@@ -179,9 +206,10 @@ struct otherTextPrompt: View {
 struct mainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
         //menuView()
+        splashscreenView()
         //simpleMenuButton()
         //uiBackgroundView()
-        countySelectionView()
+        //countySelectionView()
             .environmentObject(questionManager.init())
     }
 }

@@ -16,7 +16,7 @@ struct splashscreenView: View {
                     .edgesIgnoringSafeArea(.top)
                     .foregroundColor(Color("REMAR_GREEN"))
                 VStack{
-                    remarLogoView()
+                    remarLogoSplashView()
                         .frame(maxHeight: 50)
                         .padding()
                     
