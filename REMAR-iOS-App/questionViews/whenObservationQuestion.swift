@@ -104,13 +104,15 @@ struct standardButtonView: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 20).foregroundColor( selected ? Color("REMAR_GREEN") : Color.white)
                 VStack(spacing: 0) {
-                    Text(text).font(.system(size: geom.size.width*0.15))
+                    Text(text)
+                        .font(.system(size: geom.size.width*0.16))
+                        .fixedSize()
                     Image(icon)
                         //.renderingMode(.original)
                         .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .font(.system(size: geom.size.width*0.5))
-                        
+                        .aspectRatio(contentMode: .fit)
+                        //.font(.system(size: geom.size.width*0.5, geom.size.height*0.1))
+                        .frame(width: geom.size.width*0.9, height: geom.size.height*0.6)
                     .foregroundColor(colour)
                        
                 }

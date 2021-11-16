@@ -96,7 +96,7 @@
 //MARK: Times of Day (whens)
 "OnlyD" = "Only at Day";
 "OnlyN" = "Only at Night";
-"AtD&N" = "At Day and Night";
+"AtD&N" = "At Day\nand Night";
 "DidNotLook" = "I did not look";
 
 

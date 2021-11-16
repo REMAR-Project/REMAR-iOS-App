@@ -93,8 +93,8 @@
 "NotSure" = "Não Sei";
 
 //MARK: Times of Day (whens)
-"OnlyD" = "Somente de dia";
-"OnlyN" = "Somente de noite";
+"OnlyD" = "Somente\nde dia";
+"OnlyN" = "Somente\nde noite";
 "AtD&N" = "Dia e noite";
 "DidNotLook" = "Não olhei";
 
