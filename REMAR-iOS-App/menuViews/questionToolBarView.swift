@@ -42,9 +42,9 @@ struct questionToolBarView: View {
                     })
                     
                     Text(NSLocalizedString("goBack", comment: ""))
-                        .font(.title2)
-                        .minimumScaleFactor(0.1)
-                        .frame(width: geom.size.width/6)
+                        .font(.system(size: geom.size.width*0.05))
+                        .minimumScaleFactor(0.3)
+                        .frame(width: geom.size.width/5.5)
                         .lineLimit(2)
                     
                     
@@ -54,10 +54,11 @@ struct questionToolBarView: View {
                         .frame(width: geom.size.width/5)
                     
                     Text(NSLocalizedString("goForward", comment: ""))
-                        .font(.title)
+                        .font(.system(size: geom.size.width*0.05))
                         .minimumScaleFactor(0.3)
-                        .lineLimit(2)
                         .frame(width: geom.size.width/5.5)
+                        .lineLimit(2)
+                        
                     
                     Button(action: {QuestionManager.logAnswer()}, label: {
                         Image(systemName: "chevron.right.circle.fill")
