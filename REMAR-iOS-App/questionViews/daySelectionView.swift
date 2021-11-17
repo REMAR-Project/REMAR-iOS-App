@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct daySelectionView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
+    @State var questionPrompt = NSMutableAttributedString() //NSLocalizedString("DaySelection", comment: "")
+    
+    var normalText = NSLocalizedString("DaySelection1", comment: "")
+    var boldText = NSLocalizedString("DaySelection2", comment: "")
+    var lastText = NSLocalizedString("DaySelection3", comment: "")
+
     
     var body: some View {
         GeometryReader { geom in
@@ -19,7 +26,7 @@ struct daySelectionView: View {
                 
                 VStack(spacing: 0.0){
                     
-                    Text(NSLocalizedString("DaySelection", comment: ""))
+                    Text("\(questionPrompt)")
                         .padding()
                         .font(.body)
                     
@@ -37,12 +44,23 @@ struct daySelectionView: View {
                 .padding(.top, 95)
                 .padding(.bottom)
                 .ignoresSafeArea()
-            }
+            }.onAppear(perform: {questionPrompt = createDayQuestionString(normalText: normalText, boldText: boldText, lastText: lastText)})
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }
+}
+
+// Work around for having localized text with inline bold
+func createDayQuestionString(normalText: String, boldText: String, lastText: String) -> NSMutableAttributedString {
+    let attributedString = NSMutableAttributedString(string:normalText)
+    let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]
+    let boldString = NSMutableAttributedString(string: boldText, attributes:attrs)
+    let lastString = NSMutableAttributedString(string: lastText)
+    attributedString.append(boldString)
+    attributedString.append(lastString)
+    return attributedString
 }
 
 /// View for selection of a date or range of dates in a calendar.

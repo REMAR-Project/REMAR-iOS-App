@@ -45,7 +45,11 @@
 //MARK: Questions
 "YearSelection" = "When did you observe the andada? Touch screen, move finger and tap to select the year you observed the andada.";
 "MonthSelection" = "Touch screen and move finger to choose correct month. In case you saw two andadas this month (one around new moon and one around full moon), please run the app for each andada seperately.";
-"DaySelection" = "For the andada you are reporting here, touch with finger when you noted it. Remember: In case you saw andada in two periods (e.g. one around new moon and one around full moon), only mark ONE period (SEVERAL CONSECUITIVE DAYS OR ONE DAY).";
+
+"DaySelection1" = "For the andada you are reporting here, touch with finger when you noted it.\n";
+"DaySelection2" = "Remember:";
+"DaySelection3" = " In case you saw andada in two periods (e.g. one around new moon and one around full moon), only mark ONE period (SEVERAL CONSECUITIVE DAYS OR ONE DAY).";
+
 "StrongestDaySelection" = "Touch the day with the STRONGEST andada activity. If you don't know, you can proceed without selecting a date.";
 "Intensity Selection" = "How do you estimate the intensity of the observed Andada:";
 "TimeOfDaySelection" = "When did you observe andada? Touch the correct symbol with finger.";

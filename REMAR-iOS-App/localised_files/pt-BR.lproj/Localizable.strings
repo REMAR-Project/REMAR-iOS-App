@@ -44,7 +44,12 @@
 //MARK: Questions
 "YearSelection" = "Quando você viu uma andada?\nDeslize o dedo sobre a tela e toque para escolher o ano.";
 "MonthSelection" = "Deslize o dedo sobre a tela para selecionar o mês em que observou a andada.\nCaso tenha observado andadas em dois períodos deste mês (ex. um em torno da lua nova, e outro em torno da lua cheia), por favor envie um questionário para cada período de andada, separadamente.";
-"DaySelection" = "Marque no calendário quando você observou a andada.\n*Lembre-se!* Caso neste mês tenha visto andadas em dois períodos (ex. um em torno da lua nova, e outro em torno da cheia), marque somente UM período (vários dias SEGUIDOS, ou apenas um dia).";
+
+"DaySelection1" = "Marque no calendário quando você observou a andada.\n";
+"DaySelection2" = "Lembre-se!";
+"DaySelection3" = " Caso neste mês tenha visto andadas em dois períodos (ex. um em torno da lua nova, e outro em torno da cheia), marque somente UM período (vários dias SEGUIDOS, ou apenas um dia).";
+
+
 "StrongestDaySelection" = "Caso você saiba, marque o dia em que a andada foi mais FORTE.\nCaso você não saiba, simplesmente avançe para a próxima página.";
 "Intensity Selection" = "Como você estima a intensidade da andada observada:";
 "TimeOfDaySelection" = "Quando você viu a andada? Toque na resposta.";
