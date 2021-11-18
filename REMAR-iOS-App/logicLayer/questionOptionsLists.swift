@@ -124,7 +124,7 @@ func generateProtectedList(state: String) -> [String] {
         return ["APA da Baleia Franca","APA de Anhatomirim","ESEC de Carijós","Resex do Pirajubaé","PE Acarai","PE da Serra do Tabuleiro","PNM da Caieira","RDS da Ilha do Morro do Amaral",NSLocalizedString("NotInList", comment: "")]
     case "Sergipe":
         return ["Rebio de Santa Izabel","FLONA do Ibura","RPPN do Caju",NSLocalizedString("NotInList", comment: "")]
-    case "":
+    case "São Paulo":
         return ["APA de Cananéia-Iguapé-Peruíbe","ARIE Ilha do Ameixal","Resex Mandira","APA Ilha Comprida","APA Marinha do Litoral Norte","ARIE do Guará","ESEC Juréia-Itatins","PE da Serra do Mar","PE do Itinguçu","PE Lagamar de Cananeia","PE Restinga de Bertioga","RDS da Barra do Una","RDS Itapanhapima","RESEX Ilha do Tumba","RESEX Taquari",NSLocalizedString("NotInList", comment: "")]
     default:
         return [NSLocalizedString("NotInList", comment: "")] // Catch for errors, if none of the cases are true user can enter county manually

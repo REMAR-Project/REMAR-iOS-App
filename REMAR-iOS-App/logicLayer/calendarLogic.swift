@@ -155,10 +155,23 @@ func isInAnswers(day: dayItem, dayList: [dayItem]) -> Bool {
     return false
 }
 
+/// Converts cached day list into current instance of calendar
+func correctDayList(cachedList: [dayItem], calendarList: [dayItem]) -> [dayItem] {
+    var newDayList: [dayItem] = []
+    for calendarDay in calendarList {
+        for dayStored in cachedList {
+            if (dayStored.monthOffset == calendarDay.monthOffset && dayStored.dayNumber == calendarDay.dayNumber) {
+                newDayList.append(calendarDay)
+            }
+        }
+    }
+    return newDayList
+}
+
 /// Gets month name from localised strings
 /// - Parameter month: month number
 /// - Returns: Localised string of month name
 func getMonthName(month: Int) -> String {
-    let monthStrings = [0 : "NO SELECTION", 1 : NSLocalizedString("January", comment: ""),  2 : NSLocalizedString("Febuary", comment: ""), 3 : NSLocalizedString("March", comment: ""), 4 : NSLocalizedString("April", comment: ""), 5 : NSLocalizedString("May", comment: ""), 6 : NSLocalizedString("June", comment: ""), 7 : NSLocalizedString("July", comment: ""), 8 : NSLocalizedString("August", comment: ""), 9 : NSLocalizedString("September", comment: ""), 10 : NSLocalizedString("October", comment: ""), 11 : NSLocalizedString("November", comment: ""), 12 : NSLocalizedString("December", comment: "")]
+    let monthStrings = [0 : "NO SELECTION", 1 : NSLocalizedString("January", comment: ""),  2 : NSLocalizedString("February", comment: ""), 3 : NSLocalizedString("March", comment: ""), 4 : NSLocalizedString("April", comment: ""), 5 : NSLocalizedString("May", comment: ""), 6 : NSLocalizedString("June", comment: ""), 7 : NSLocalizedString("July", comment: ""), 8 : NSLocalizedString("August", comment: ""), 9 : NSLocalizedString("September", comment: ""), 10 : NSLocalizedString("October", comment: ""), 11 : NSLocalizedString("November", comment: ""), 12 : NSLocalizedString("December", comment: "")]
     return monthStrings[month]!
 }

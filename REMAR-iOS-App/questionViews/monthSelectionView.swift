@@ -33,7 +33,9 @@ struct monthSelectionView: View {
                 .padding(.top, 90)
                 .ignoresSafeArea()
                 
-            }
+            }.onAppear(perform: {
+                QuestionManager.tmpOffset = getMonthIndex(month: QuestionManager.tmpAnswer)
+            })
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")

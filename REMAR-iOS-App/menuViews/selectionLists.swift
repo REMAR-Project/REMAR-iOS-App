@@ -24,6 +24,12 @@ struct selectionList: View {
                             if (selectedItem != item.element) {
                                 selectedItem = item.element
                                 
+                                if (QuestionManager.currentQuestion == 3) { // Will always be question 3
+                                    QuestionManager.prevCache[QuestionManager.currentQuestion] =  item.element
+                                } else {
+                                    QuestionManager.prevCache[QuestionManager.currentQuestion] = selectedItem
+                                }
+                                
                                 QuestionManager.tmpOffset = item.offset
                                 QuestionManager.tmpAnswer = selectedItem
                                 QuestionManager.nextDisabled = false
@@ -34,6 +40,7 @@ struct selectionList: View {
                                 QuestionManager.tmpOffset = 0
                                 QuestionManager.nextDisabled = true
                                 print("Selected item cleared")
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
                             }
                             
                             // If is an 'other' selection then notify qmanager
@@ -68,6 +75,24 @@ struct selectionList: View {
                             //.border(Color.blue)
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
                     }
+                    // Return to cached state...
+                    .onAppear(perform: {
+                        
+                        if (QuestionManager.currentQuestion == 12 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 8) {
+                            QuestionManager.tmpStateAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as?  String ?? ""
+                        }
+                        
+                        if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String != ""){
+                            QuestionManager.tmpAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
+                            selectedItem = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
+                        }
+                        
+                        if (QuestionManager.tmpAnswer != "") {
+                            QuestionManager.nextDisabled = false
+                        } else {
+                            QuestionManager.nextDisabled = true
+                        }
+                    })
                 }//.border(Color(.gray))
             }//.frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height)
             .frame(width: geom.size.width)
@@ -75,6 +100,7 @@ struct selectionList: View {
     }
 }
 
+// MARK: Selection List - Multi
 struct selectionList_multiple: View {
     
     @EnvironmentObject var QuestionManager: questionManager
@@ -92,12 +118,17 @@ struct selectionList_multiple: View {
                             if !(selectedItemList.contains(item.element)) {
                                 selectedItemList.append(item.element)
                                 
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = selectedItemList // Update Local Cache
+                                
                                 QuestionManager.tmpOffset = item.offset
                                 QuestionManager.tmpAnswerList = selectedItemList
                                 QuestionManager.nextDisabled = false
                                 print("\(selectedItemList) Selected")
                             } else {
                                 selectedItemList = removeListSelection(target: item.element, list: selectedItemList)
+                                
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = selectedItemList // Update Local Cache
+                                
                                 QuestionManager.tmpAnswer = ""
                                 QuestionManager.tmpOffset = 0
                                 if (selectedItemList.isEmpty) { QuestionManager.nextDisabled = true }
@@ -124,7 +155,21 @@ struct selectionList_multiple: View {
                             .frame(width: geom.size.width*0.92, height: 45)
                             //.border(Color.red)
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
-                    }
+                    }                    // Return to cached state...
+                    .onAppear(perform: {
+                        
+                        if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String != ""){
+                            QuestionManager.tmpAnswerList = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [String] ?? []
+                            selectedItemList = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [String] ?? []
+                        }
+                        
+                        if (QuestionManager.tmpAnswerList.isEmpty) {
+                            QuestionManager.nextDisabled = true
+                        } else {
+                            QuestionManager.nextDisabled = false
+                        }
+                        
+                    })
                 }//.border(Color(.gray))
             }.frame(width: geom.size.width, height: geom.size.height/1.5)
         }

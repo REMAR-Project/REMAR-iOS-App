@@ -109,11 +109,24 @@ struct calendarView: View {
                         Button(action: {
                             if (!QuestionManager.tmpDayList.contains(item)) {
                                 QuestionManager.tmpDayList.append(item)
+                                
+                                // Assuming month hasnt changed (list will have been cleared if month changed)
+                                var tmp = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [dayItem]
+                                tmp?.append(item)
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = tmp ?? QuestionManager.prevCache[QuestionManager.currentQuestion]
+                                
                                 QuestionManager.nextDisabled = false
                             } else {
                                 QuestionManager.tmpDayList = removeDay(target: item.id, selectedDays: QuestionManager.tmpDayList)
                                 QuestionManager.nextDisabled = (QuestionManager.tmpDayList.count>=1) ? false
-                                :true // If list is empty then prevent going next
+                                : true // If list is empty then prevent going next
+                                
+                                // Assuming month hasnt changed (list will have been cleared if month changed)
+                                var tmp = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [dayItem]
+                                tmp = correctDayList(cachedList: tmp ?? [], calendarList: data)
+                                tmp = removeDay(target: item.id, selectedDays: tmp ?? [])
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = tmp ?? QuestionManager.prevCache[QuestionManager.currentQuestion]
+                                
                             }
                         }, label: {
                             dayView(dayItem: item, selected: (QuestionManager.tmpDayList.contains(item)) ? true : false)
@@ -124,8 +137,14 @@ struct calendarView: View {
                 // Correct calendar dates will load after view
                 .onAppear(perform: {data = calculateDates(year: Int(QuestionManager.answers.year)!, month: QuestionManager.answers.month)})
             }.onAppear(perform: {
-                QuestionManager.tmpDayList = []
-                QuestionManager.nextDisabled = true
+                
+                QuestionManager.tmpDayList = correctDayList(cachedList: QuestionManager.prevCache[QuestionManager.currentQuestion] as? [dayItem] ?? [], calendarList: data)
+                
+                if (QuestionManager.tmpDayList) == [] {
+                    QuestionManager.nextDisabled = true
+                } else {
+                    QuestionManager.nextDisabled = false
+                }
             })
         }
     }

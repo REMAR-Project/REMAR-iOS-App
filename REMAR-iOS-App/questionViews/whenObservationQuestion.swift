@@ -26,7 +26,16 @@ struct whenObservationQuestion: View {
                 .padding(.bottom, 110.0)
                 .ignoresSafeArea()
                 
-            }
+            }.onAppear(perform: {
+                QuestionManager.tmpAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
+                
+                // Check is next button should be disabled
+                if (QuestionManager.tmpAnswer != "") {
+                    QuestionManager.nextDisabled = false
+                } else {
+                    QuestionManager.nextDisabled = true
+                }
+            })
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
@@ -48,6 +57,7 @@ struct whenSelectView: View {
                         QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
+                    QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpAnswer // Update cached answer
                 }, label: {
                     standardButtonView(icon: "DayOnly", text: NSLocalizedString("OnlyD", comment: ""), colour: Color.yellow, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyD", comment: ""))
                 })
@@ -60,6 +70,7 @@ struct whenSelectView: View {
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
+                    QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpAnswer // Update cached answer
                 }, label: {
                     standardButtonView(icon: "NightOnly", text: NSLocalizedString("OnlyN", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("OnlyN", comment: ""))
                 })
@@ -74,6 +85,7 @@ struct whenSelectView: View {
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
+                    QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpAnswer // Update cached answer
                 }, label: {
                     standardButtonView(icon: "AtBoth", text: NSLocalizedString("AtD&N", comment: ""), colour: Color.orange, selected: QuestionManager.tmpAnswer==NSLocalizedString("AtD&N", comment: ""))
                 })
@@ -86,6 +98,7 @@ struct whenSelectView: View {
                     else {QuestionManager.tmpAnswer = ""
                         QuestionManager.nextDisabled = true
                     }
+                    QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpAnswer // Update cached answer
                 }, label: {
                     standardButtonView(icon: "IDK", text: NSLocalizedString("DidNotLook", comment: ""), colour: Color.black, selected: QuestionManager.tmpAnswer==NSLocalizedString("DidNotLook", comment: ""))
                 })

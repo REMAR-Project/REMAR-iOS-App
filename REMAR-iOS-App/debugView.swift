@@ -32,7 +32,13 @@ struct debugView: View {
                 Text("Strongest Day: \(QuestionManager.answers.strongestDay.dayNumber)")
                 //Text("Temporary Day List: \(String(QuestionManager.tmpDayList))")
                 Text("\(QuestionManager.answersToString())")
+                
+                DisclosureGroup("Prev Cache:") {
+                    Text(QuestionManager.prevCache.description)
+                }.padding([.leading, .bottom, .trailing])
+                
                 VStack{
+                    
                     Button(action: {QuestionManager.currentQuestion = 0}, label: {
                         Text("Exit Question Handler")
                     })

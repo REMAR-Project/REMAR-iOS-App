@@ -74,8 +74,25 @@ struct speciesSelectionView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .onAppear(perform: {
-            checkNextValid()
+            
             QuestionManager.clearAnswers()
+        
+                print("Returning to cached state...")
+                if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String == NSLocalizedString("CGCrab", comment: "")){
+                    CGSelected = true
+                    UCSelected = false
+                    QuestionManager.tmpAnswer = NSLocalizedString("CGCrab", comment: "")
+                }
+                
+                else if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String == NSLocalizedString("UCCrab", comment: "")){
+                    CGSelected = false
+                    UCSelected = true
+                    QuestionManager.tmpAnswer = NSLocalizedString("UCCrab", comment: "")
+                }
+
+            
+            
+            checkNextValid()
         })
     }
 }

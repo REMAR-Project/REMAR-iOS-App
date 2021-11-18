@@ -33,7 +33,12 @@ struct protectedAreaSelection: View {
                         Spacer()
                     }
                     
-                }
+                }.onAppear(perform: {
+                    if (QuestionManager.tmpStateAnswer != NSLocalizedString("no", comment: "") && QuestionManager.tmpStateAnswer != NSLocalizedString("maybe", comment: "") && QuestionManager.tmpStateAnswer != "") {
+                        QuestionManager.tmpAnswer = QuestionManager.tmpStateAnswer
+                        QuestionManager.tmpStateAnswer = NSLocalizedString("yes", comment: "")
+                    }
+                })
                 .padding(.bottom)
                 .padding(.top, 100)
                 .ignoresSafeArea()
@@ -66,6 +71,7 @@ struct tickButton_ProtectedArea: View {
         GeometryReader { geom in
             HStack(spacing: 10) {
                 Button(action: {
+                    
                     if (text==NSLocalizedString("yes", comment: "")){
                         QuestionManager.tmpStateAnswer = text
                         QuestionManager.tmpAnswer = ""
@@ -81,6 +87,11 @@ struct tickButton_ProtectedArea: View {
                             QuestionManager.nextDisabled = false
                         }
                     }
+                    
+                    // Update Local Cache
+                    QuestionManager.prevCache[QuestionManager.currentQuestion
+                    ] = QuestionManager.tmpStateAnswer
+                    
                 }, label:{
                     ZStack {
                         RoundedRectangle(cornerRadius: 5)
