@@ -150,6 +150,11 @@
 "FinalView" = "To view analyses of the information we receive from you and other citizen scientists, please see the REMAR website at";
 "Or" = "OR";
 
+//MARK: Completion Screen
+"Done" = "Done!";
+"tyMessage" = "Thank you for participating!";
+"YoureAScientist" = "You are now a citizen scientist!";
+
 
 //MARK: MISC
 "Other Answer" = "Type here";

@@ -150,6 +150,11 @@
 "FinalView" = "Para ver as análises das informações que recebemos de você e de outros cientistas cidadãos, por favor consulte a página da REMAR em";
 "Or" = "OU";
 
+//MARK: Completion Screen
+"Done" = "Concluído!";
+"tyMessage" = "Muito obrigado pela participação!";
+"YoureAScientist" = "Parabéns: Agora você é um cientista cidadão!";
+
 //MARK: MISC
 
 "Other Answer" = "Digite aqui";

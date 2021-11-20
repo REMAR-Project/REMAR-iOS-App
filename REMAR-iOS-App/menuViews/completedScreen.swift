@@ -18,11 +18,11 @@ struct completedScreen: View {
                 
                 VStack{
                     Spacer()
-                    Text("Done!")
+                    Text(NSLocalizedString("Done", comment: ""))
                         .font(.title)
                         .padding(.bottom, 20)
-                    Text("Thank you for participating!")
-                    Text("You are now a citizen scientist!").bold()
+                    Text(NSLocalizedString("tyMessage", comment: ""))
+                    Text(NSLocalizedString("YoureAScientist", comment: "")).bold()
                     Image("crabs_both")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
