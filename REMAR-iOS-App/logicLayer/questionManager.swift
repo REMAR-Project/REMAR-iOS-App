@@ -38,6 +38,20 @@ class questionManager: ObservableObject {
         prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // to always have two leading 0's
     }
     
+    func reset() {
+        answers = Answers();
+        questionCount = 0
+        currentQuestion = 0
+        nextDisabled = true
+        tmpAnswer = ""
+        tmpOffset = 1
+        tmpDayList = []
+        tmpStrongestDay = dayItem.init(dayNumber: 0)
+        tmpAnswerList = []
+        tmpStateAnswer = ""
+        prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // to always have two leading 0's
+    }
+    
     func submit(deviceID: UUID){
         submissionManager().submit(answers: answers, version: questionCount==14 ? "1" : "0", deviceID: deviceID, bypass: "")
         currentQuestion+=1

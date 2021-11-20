@@ -102,7 +102,7 @@ struct versionQuestion: View {
                         dismissButton: .default(Text("Ok"))
                     )
                 }
-        }
+        }.onAppear(perform: {QuestionManager.reset()})
     }
 }
 
