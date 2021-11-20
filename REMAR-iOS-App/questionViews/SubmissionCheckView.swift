@@ -17,7 +17,6 @@ struct SubmissionCheckView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundView()
                 VStack{
                     
                     VStack(spacing: 20){
@@ -39,6 +38,8 @@ struct SubmissionCheckView: View {
                     
                 }.frame(width: geom.size.width*0.9)
                   .ignoresSafeArea()
+                
+                uiBackgroundView()
                 
             }
         }

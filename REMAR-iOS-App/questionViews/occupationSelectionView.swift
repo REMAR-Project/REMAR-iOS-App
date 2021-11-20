@@ -15,8 +15,6 @@ struct occupationSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding([.leading, .bottom, .trailing])
                     Text(NSLocalizedString("OccupationSelection", comment: "")).padding(.horizontal)
@@ -33,6 +31,8 @@ struct occupationSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 115)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }.onAppear(perform: {occupationOptions = generateOccupationList()})
         }

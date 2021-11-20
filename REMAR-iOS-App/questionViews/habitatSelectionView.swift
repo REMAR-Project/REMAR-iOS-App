@@ -15,8 +15,6 @@ struct habitatSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("HabitatSelection", comment: "")).padding()
@@ -25,6 +23,8 @@ struct habitatSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 110)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }.onAppear(perform: {habitatOptions = generateHabitatList(species: QuestionManager.answers.species)})

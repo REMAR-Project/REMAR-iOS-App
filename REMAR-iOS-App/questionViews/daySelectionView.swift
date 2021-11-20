@@ -21,9 +21,6 @@ struct daySelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                
-                uiBackgroundQuestionView()
-                
                 VStack(spacing: 0.0){
                     
                     Text("\(questionPrompt)")
@@ -44,6 +41,9 @@ struct daySelectionView: View {
                 .padding(.top, 95)
                 .padding(.bottom)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
+                
             }.onAppear(perform: {questionPrompt = createDayQuestionString(normalText: normalText, boldText: boldText, lastText: lastText)})
         }
         .navigationBarBackButtonHidden(true)

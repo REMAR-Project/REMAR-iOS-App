@@ -15,8 +15,6 @@ struct berriedSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("BerriedSelection", comment: "")).padding()
@@ -27,6 +25,8 @@ struct berriedSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 110)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }

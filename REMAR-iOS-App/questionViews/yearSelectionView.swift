@@ -26,8 +26,6 @@ struct yearSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     
                     speciesDetailView().padding()
@@ -44,6 +42,7 @@ struct yearSelectionView: View {
                 .ignoresSafeArea()
                 
             }
+            uiBackgroundQuestionView()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")

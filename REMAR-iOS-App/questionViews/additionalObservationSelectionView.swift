@@ -15,8 +15,6 @@ struct additionalObservationSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("AdditionalSelection", comment: ""))
@@ -31,6 +29,8 @@ struct additionalObservationSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 100)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }

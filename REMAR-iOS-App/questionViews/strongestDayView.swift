@@ -14,8 +14,6 @@ struct strongestDayView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack(spacing: 0.0){
                     
                     Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color("NAPIER_RED")).padding()
@@ -31,6 +29,9 @@ struct strongestDayView: View {
                 .padding(.top, 100)
                 .padding(.bottom)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
+                
             }.onAppear(perform: {QuestionManager.nextDisabled = false
                 QuestionManager.tmpStrongestDay = dayItem.init(dayNumber: 0)}) // Next should always be available on this page as the selection is optional.
         }

@@ -14,8 +14,6 @@ struct protectedAreaSelection: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     Text(NSLocalizedString("ProtectedSelection", comment: "")).padding(.top)
                     if (QuestionManager.otherHidden) {
@@ -42,6 +40,8 @@ struct protectedAreaSelection: View {
                 .padding(.bottom)
                 .padding(.top, 100)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }

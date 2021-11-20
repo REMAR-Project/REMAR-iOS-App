@@ -14,8 +14,6 @@ struct stateSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("StateSelection", comment: "")).padding()
@@ -26,6 +24,8 @@ struct stateSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 90)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }.onAppear(perform: {stateOptions = generateStateList()})

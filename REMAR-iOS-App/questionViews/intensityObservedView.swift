@@ -15,8 +15,6 @@ struct intensityObservedView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack(spacing: 0.0){
                     speciesDetailView().padding()
                     Text("Intensity Selection").padding(.bottom)
@@ -29,6 +27,8 @@ struct intensityObservedView: View {
                 .padding(.bottom)
                 .padding(.top, 110)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
         }

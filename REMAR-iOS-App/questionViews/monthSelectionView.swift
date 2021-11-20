@@ -16,8 +16,6 @@ struct monthSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     
                     speciesDetailView().padding()
@@ -32,6 +30,8 @@ struct monthSelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 90)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }.onAppear(perform: {
                 QuestionManager.tmpOffset = getMonthIndex(month: QuestionManager.tmpAnswer)

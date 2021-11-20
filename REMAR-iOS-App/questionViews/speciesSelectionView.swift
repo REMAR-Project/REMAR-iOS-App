@@ -26,7 +26,6 @@ struct speciesSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
                 
                 VStack {
                     
@@ -68,6 +67,7 @@ struct speciesSelectionView: View {
                     //questionToolBarView()
                     
                 } .padding(.top,70)
+                uiBackgroundQuestionView()
             }
         }
         .navigationBarBackButtonHidden(true)

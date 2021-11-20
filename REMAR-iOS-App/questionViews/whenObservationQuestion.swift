@@ -14,8 +14,6 @@ struct whenObservationQuestion: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("TimeOfDaySelection", comment: "")).padding()
@@ -25,6 +23,8 @@ struct whenObservationQuestion: View {
                 }
                 .padding(.bottom, 110.0)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }.onAppear(perform: {
                 QuestionManager.tmpAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""

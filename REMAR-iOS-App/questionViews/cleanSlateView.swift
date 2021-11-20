@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-//  Question page template
+//  Boilerplate question page
 struct cleanSlateView: View {
     
     @EnvironmentObject var QuestionManager: questionManager
@@ -18,8 +18,6 @@ struct cleanSlateView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text("CLEAN SLATE Page Template\nEnd of questions (so far).")
@@ -31,6 +29,7 @@ struct cleanSlateView: View {
                 .ignoresSafeArea()
                 
             }
+            uiBackgroundQuestionView()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")

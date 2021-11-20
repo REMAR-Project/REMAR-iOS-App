@@ -15,8 +15,6 @@ struct countySelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                uiBackgroundQuestionView()
-                
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("CountySelection", comment: "")).padding()
@@ -35,6 +33,8 @@ struct countySelectionView: View {
                 .padding(.bottom)
                 .padding(.top, 90)
                 .ignoresSafeArea()
+                
+                uiBackgroundQuestionView()
                 
             }
             
