@@ -35,7 +35,7 @@ func generateBerried() -> [String] {
 /// - Returns: List of habitats depending on the species passed in
 /// - Parameter species: Species
 func generateHabitatList(species: String) -> [String] {
-    if (species == "Ucides cordatus") {
+    if (species == NSLocalizedString("UCCrab", comment: "")) {
         return [NSLocalizedString("Mangrove",comment: ""),NSLocalizedString("Forest",comment: ""),NSLocalizedString("Beach",comment: ""),NSLocalizedString("Road",comment: ""),NSLocalizedString("Other",comment: "")]
     } else {
         return [NSLocalizedString("Mangrove",comment: ""),NSLocalizedString("Saltmarsh",comment: ""),NSLocalizedString("Forest",comment: ""),NSLocalizedString("Beach",comment: ""),NSLocalizedString("Road",comment: ""),NSLocalizedString("RiverBed",comment: ""),NSLocalizedString("RockyShore",comment: ""),NSLocalizedString("House",comment: ""),NSLocalizedString("Other",comment: "")]
