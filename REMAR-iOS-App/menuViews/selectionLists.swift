@@ -49,6 +49,7 @@ struct selectionList: View {
                                 QuestionManager.otherHidden = false
                                 QuestionManager.tmpAnswer = ""
                                 QuestionManager.nextDisabled = true
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
                             } else {
                                 QuestionManager.otherHidden = true
                             }
@@ -78,10 +79,50 @@ struct selectionList: View {
                     // Return to cached state...
                     .onAppear(perform: {
                         
-                        if (QuestionManager.currentQuestion == 12 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 8) {
-                            QuestionManager.tmpStateAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as?  String ?? ""
+                        // Is county selection question
+                        if (QuestionManager.currentQuestion == 11 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 7) {
+                            
+                            let counties = generateCountyList(state: QuestionManager.answers.state)
+                            
+                            if !(counties.contains(QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? Int != 0) {
+                                QuestionManager.otherHidden = false
+                            }
                         }
                         
+                        // Is Occupation Selection Page
+                        if (QuestionManager.currentQuestion == 13 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 9) {
+                            
+                            let occupations = generateOccupationList()
+                            
+                            if !(occupations.contains(QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? Int != 0) {
+                                QuestionManager.otherHidden = false
+                                QuestionManager.tmpAnswer = ""
+                            }
+                            
+                        }
+                        
+                        // Is Addiitonal Information Page
+                        if (QuestionManager.currentQuestion == 14 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 10) {
+                            
+                            if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String != NSLocalizedString("no", comment: "") && QuestionManager.prevCache[QuestionManager.currentQuestion] as? Int != 0){
+                                QuestionManager.otherHidden = false
+                            }
+                        }
+                        
+                        // Is protected area question
+                        if (QuestionManager.currentQuestion == 12 && QuestionManager.questionCount == 14 || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 8) {
+                            
+                            // Restore State Answer
+                            QuestionManager.tmpStateAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as?  String ?? ""
+                            
+                            // If state is not no or maybe, show hidden field
+                            let protectedZones = generateProtectedList(state: QuestionManager.answers.state)
+                            if !(QuestionManager.prevCache[QuestionManager.currentQuestion] as? String == NSLocalizedString("no", comment: "")) && !(QuestionManager.prevCache[QuestionManager.currentQuestion] as? String == NSLocalizedString("maybe", comment: "")) && !(protectedZones.contains(QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? Int != 0) {
+                                QuestionManager.otherHidden = false
+                            }
+                        }
+                        
+                        // Always Runs
                         if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String != ""){
                             QuestionManager.tmpAnswer = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
                             selectedItem = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
@@ -155,7 +196,8 @@ struct selectionList_multiple: View {
                             .frame(width: geom.size.width*0.92, height: 45)
                             //.border(Color.red)
                         }).disabled((Int(QuestionManager.answers.year) == Calendar.current.component(.year, from: Date())) ? validateMonth(month: item.offset) : false)
-                    }                    // Return to cached state...
+                    }
+                    // Return to cached state...
                     .onAppear(perform: {
                         
                         if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String != ""){

@@ -19,7 +19,7 @@ struct debugView: View {
     var body: some View {
         ScrollView {
             VStack{
-                Text("Pending: \(StoredSightings.count)")
+                Text("Pending Sighings: \(StoredSightings.count)")
                 VStack {
                     Text("--------")
                     Text("Current Question: \(QuestionManager.currentQuestion)")

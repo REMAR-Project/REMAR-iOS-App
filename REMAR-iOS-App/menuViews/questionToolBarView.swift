@@ -29,8 +29,40 @@ struct questionToolBarView: View {
                             presentationMode.wrappedValue.dismiss()
                         } //  Dismiss subpage
                         
-                        QuestionManager.reverseAction()
-                        print(QuestionManager.answersToString())
+                        // Check if coming out of other list
+                        //  Is county selection question
+                        if (QuestionManager.currentQuestion == 11 && QuestionManager.questionCount == 14 && QuestionManager.otherHidden == false || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 7 && QuestionManager.otherHidden == false) {
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.otherHidden = true
+                            QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
+                        }
+                        
+                        // Is Occupation Selection Page
+                        else if (QuestionManager.currentQuestion == 13 && QuestionManager.questionCount == 14 && QuestionManager.otherHidden == false || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 9 && QuestionManager.otherHidden == false) {
+                            QuestionManager.otherHidden = true
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
+                        }
+                        
+                        // Is Addiitonal Information Page
+                        else if (QuestionManager.currentQuestion == 14 && QuestionManager.questionCount == 14 && QuestionManager.otherHidden == false || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 10 && QuestionManager.otherHidden == false) {
+                            QuestionManager.otherHidden = true
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
+                        }
+                        
+                        // Is protected area question
+                        else if (QuestionManager.currentQuestion == 12 && QuestionManager.questionCount == 14 && QuestionManager.otherHidden == false || QuestionManager.questionCount == 10 && QuestionManager.currentQuestion == 8 && QuestionManager.otherHidden == false) {
+                            QuestionManager.otherHidden = true
+                            QuestionManager.tmpAnswer = ""
+                            QuestionManager.prevCache[QuestionManager.currentQuestion] = 0
+                        }
+                        
+                        else {
+                            // Reverse Action
+                            QuestionManager.reverseAction()
+                            print(QuestionManager.answersToString())
+                        }
                         
                     }, label: {
                         Image(systemName: "chevron.left.circle.fill")

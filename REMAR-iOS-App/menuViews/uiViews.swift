@@ -70,7 +70,7 @@ struct uiBackgroundView: View {
                 ZStack{
                     Rectangle()
                         .fill(Color.white)
-                        .padding(.bottom, 7.0)
+                        .padding(.bottom, 5)
                         .background(Color("REMAR_GREEN"))
                         .frame(maxHeight: geom.size.height * 0.07)
                     HStack(spacing: 5.0){
@@ -179,23 +179,30 @@ struct simpleMenuButton: View {
     }
 }
 
+/// Other Answer Entry Field 
 struct otherTextPrompt: View {
     @EnvironmentObject var QuestionManager: questionManager
     @State var otherText: String = ""
     var body: some View {
         ZStack{
-            VStack(spacing: 5){
+            VStack(spacing: 0){
+                Text(NSLocalizedString("TapTheSpace", comment: "")).padding([.top, .leading, .trailing])
                 TextField(NSLocalizedString("Other Answer", comment: ""), text: $otherText)
                     .textFieldStyle(.roundedBorder)
                     .padding([.top, .leading, .trailing])
                     //.border(Color("REMAR_GREEN"), width: 5)
-                Button(action: {QuestionManager.nextDisabled = true
-                    QuestionManager.otherHidden.toggle()}, label: {Text(NSLocalizedString("Back to list", comment: "")).foregroundColor(Color("REMAR_GREEN"))})
+                //Button(action: {QuestionManager.nextDisabled = true
+                    //QuestionManager.otherHidden.toggle()}, label: {Text(NSLocalizedString("Back to list", comment: "")).foregroundColor(Color("REMAR_GREEN"))})
             }.onChange(of: otherText) { newValue in
                 QuestionManager.nextDisabled = false
                 QuestionManager.tmpAnswer = otherText
+                QuestionManager.prevCache[QuestionManager.currentQuestion] = otherText
             }
-        }
+        }.onAppear(perform: {
+            if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "" != NSLocalizedString("NotInList", comment: "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "" != "") {
+                otherText = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
+            }
+        })
         .opacity(QuestionManager.otherHidden ? 0:1)
         .disabled(QuestionManager.otherHidden)
     }

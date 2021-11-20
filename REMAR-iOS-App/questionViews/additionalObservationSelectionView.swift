@@ -24,7 +24,6 @@ struct additionalObservationSelectionView: View {
                         selectionList(listItems: xOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
                         Spacer()
                     } else {
-                        Text(NSLocalizedString("TapTheSpace", comment: "")).padding([.top, .leading, .trailing])
                         otherTextPrompt().padding(.horizontal)
                         Spacer()
                     }

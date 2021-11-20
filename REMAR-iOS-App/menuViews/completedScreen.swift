@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct completedScreen: View {
+    @EnvironmentObject var QuestionManager: questionManager
     var body: some View {
         GeometryReader { geom in
             ZStack{
@@ -29,7 +30,7 @@ struct completedScreen: View {
                     Spacer()
                 }.padding(.top, 20)
             }
-        }
+        }.onAppear(perform: {QuestionManager.clearLocalCache()})
     }
 }
 

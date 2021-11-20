@@ -35,7 +35,7 @@ class questionManager: ObservableObject {
         tmpStrongestDay = dayItem.init(dayNumber: 0)
         tmpAnswerList = []
         tmpStateAnswer = ""
-        prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // to always have two leading 0's
+        prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] // to always have two leading 0's
     }
     
     func submit(deviceID: UUID){
@@ -163,10 +163,15 @@ class questionManager: ObservableObject {
         otherHidden = true
     }
     
+    /// Clears the prevCache property of the questionManager
+    func clearLocalCache() {
+        prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    }
+    
     /// Reverses last saved answer and moves back to previous question
     func reverseAction() {
         
-        if (currentQuestion == 1) {prevCache = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+        if (currentQuestion == 1) {clearLocalCache()}
             
         if(questionCount==14){
             if currentQuestion == 2 {prevCache[currentQuestion-1] = answers.species ; answers.species = ""}
