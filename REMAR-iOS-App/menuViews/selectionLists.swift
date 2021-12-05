@@ -434,7 +434,7 @@ struct SelectionListNew: View {
                         }
                         
                         // If tmpAnswer is empty or if on restoration of no/maybe in question 12
-                        if (QuestionManager.tmpAnswer != "" || (QuestionManager.currentQuestion == 12 && (QuestionManager.tmpStateAnswer == NSLocalizedString("no", comment: "") || QuestionManager.tmpStateAnswer == NSLocalizedString("maybe", comment: "")))) {
+                        if (QuestionManager.tmpAnswer != "" || ((QuestionManager.currentQuestion == 12 && QuestionManager.questionCount == 14) || (QuestionManager.currentQuestion == 8 && QuestionManager.questionCount == 10) && (QuestionManager.tmpStateAnswer == NSLocalizedString("no", comment: "") || QuestionManager.tmpStateAnswer == NSLocalizedString("maybe", comment: "")))) {
                             QuestionManager.nextDisabled = false // Unlock button
                         } else {
                             QuestionManager.nextDisabled = true

@@ -188,7 +188,7 @@ class questionManager: ObservableObject {
         
         if (currentQuestion == 1) {clearLocalCache()}
         
-        if (currentQuestion == 12) {
+        if (currentQuestion == 12 && questionCount == 14 || currentQuestion == 8 && questionCount == 10) {
             
             if tmpStateAnswer == NSLocalizedString("yes", comment: "") && tmpAnswer == "" {
                 answers.protectedZone = ""
