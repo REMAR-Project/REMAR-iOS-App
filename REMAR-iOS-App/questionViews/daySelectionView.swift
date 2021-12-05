@@ -103,17 +103,14 @@ struct calendarView: View {
                 .opacity(0.6)
                 
                 
-                
                 LazyVGrid (columns: layout, spacing: 0){
                     ForEach(data, id: \.self) { item in
                         Button(action: {
                             if (!QuestionManager.tmpDayList.contains(item)) {
                                 QuestionManager.tmpDayList.append(item)
                                 
-                                // Assuming month hasnt changed (list will have been cleared if month changed)
-                                var tmp = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [dayItem]
-                                tmp?.append(item)
-                                QuestionManager.prevCache[QuestionManager.currentQuestion] = tmp ?? QuestionManager.prevCache[QuestionManager.currentQuestion]
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpDayList
+                            
                                 
                                 QuestionManager.nextDisabled = false
                             } else {
@@ -121,11 +118,9 @@ struct calendarView: View {
                                 QuestionManager.nextDisabled = (QuestionManager.tmpDayList.count>=1) ? false
                                 : true // If list is empty then prevent going next
                                 
-                                // Assuming month hasnt changed (list will have been cleared if month changed)
-                                var tmp = QuestionManager.prevCache[QuestionManager.currentQuestion] as? [dayItem]
-                                tmp = correctDayList(cachedList: tmp ?? [], calendarList: data)
-                                tmp = removeDay(target: item.id, selectedDays: tmp ?? [])
-                                QuestionManager.prevCache[QuestionManager.currentQuestion] = tmp ?? QuestionManager.prevCache[QuestionManager.currentQuestion]
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = QuestionManager.tmpDayList
+                                
+                                if (QuestionManager.tmpDayList.isEmpty) {QuestionManager.prevCache[QuestionManager.currentQuestion] = 0}
                                 
                             }
                         }, label: {

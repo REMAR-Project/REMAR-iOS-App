@@ -8,10 +8,10 @@
 import SwiftUI
 
 /// Function returns a list of strings from Current Year to Current Year-10
-func getYearList() -> [String] {
+func getYearList() -> [MyItem] {
     let currentYear = Calendar.current.component(.year, from: Date())
     let yearListInt = Array(currentYear-5...currentYear)
-    let yearListString = yearListInt.map { String($0) }
+    let yearListString = yearListInt.map { MyItem($0.description) }
     return yearListString.reversed()
 }
 
@@ -21,7 +21,7 @@ struct yearSelectionView: View {
     
     
     var yearList = getYearList()
-    @State var selectedItem = ""
+    @State var selectedItem: MyItem? = nil
     
     var body: some View {
         GeometryReader { geom in
@@ -34,7 +34,7 @@ struct yearSelectionView: View {
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
                         .padding()
                         //.multilineTextAlignment(.center)
-                    selectionList(listItems: yearList, selectedItem: selectedItem).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    SelectionListNew(listItems: yearList, selectedItem: selectedItem).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                 }
                 .padding(.bottom)

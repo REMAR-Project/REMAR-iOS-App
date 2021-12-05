@@ -21,7 +21,7 @@ struct countySelectionView: View {
                     
                     
                     if (QuestionManager.otherHidden){
-                        selectionList(listItems: countyOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        SelectionListNew(listItems: countyOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                         //otherTextPrompt().padding()
                         Spacer()
                     } else {

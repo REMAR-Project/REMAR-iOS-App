@@ -168,6 +168,17 @@ func correctDayList(cachedList: [dayItem], calendarList: [dayItem]) -> [dayItem]
     return newDayList
 }
 
+/// Converts cached day into current instance of calendar
+func correctDay(cachedDay: dayItem, calendarList: [dayItem]) -> dayItem {
+    var newDay: dayItem = dayItem.init(dayNumber: 0)
+    for calendarDay in calendarList {
+        if (cachedDay.monthOffset == calendarDay.monthOffset && cachedDay.dayNumber == calendarDay.dayNumber) {
+            newDay = calendarDay
+        }
+    }
+    return newDay
+}
+
 /// Gets month name from localised strings
 /// - Parameter month: month number
 /// - Returns: Localised string of month name

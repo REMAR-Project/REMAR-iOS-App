@@ -17,7 +17,7 @@ struct stateSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("StateSelection", comment: "")).padding()
-                    selectionList(listItems: stateOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    SelectionListNew(listItems: stateOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     
                 }

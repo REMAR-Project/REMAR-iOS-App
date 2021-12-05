@@ -199,13 +199,25 @@ struct otherTextPrompt: View {
                 QuestionManager.prevCache[QuestionManager.currentQuestion] = otherText
             }
         }.onAppear(perform: {
-            if (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "" != NSLocalizedString("NotInList", comment: "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "" != "") {
+            if isOtherPrompt(QuestionManager: QuestionManager) {
                 otherText = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
             }
         })
         .opacity(QuestionManager.otherHidden ? 0:1)
         .disabled(QuestionManager.otherHidden)
     }
+}
+
+func isOtherPrompt(QuestionManager: questionManager) -> Bool {
+    
+    let prev = QuestionManager.prevCache[QuestionManager.currentQuestion] as? MyItem
+    
+    if (prev?.name != NSLocalizedString("NotInList", comment: "")) && (QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? "" != "") {
+        return true
+    } else {
+        return false
+    }
+    
 }
 
 

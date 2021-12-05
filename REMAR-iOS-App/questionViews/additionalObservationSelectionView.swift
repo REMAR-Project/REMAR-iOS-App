@@ -19,7 +19,7 @@ struct additionalObservationSelectionView: View {
                     speciesDetailView().padding()
                     Text(NSLocalizedString("AdditionalSelection", comment: ""))
                     if (QuestionManager.otherHidden){
-                        selectionList(listItems: xOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
+                        SelectionListNew(listItems: xOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
                         Spacer()
                     } else {
                         otherTextPrompt().padding(.horizontal)

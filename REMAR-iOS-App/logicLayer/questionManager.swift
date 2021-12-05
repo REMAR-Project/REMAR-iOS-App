@@ -71,13 +71,13 @@ class questionManager: ObservableObject {
             tmpAnswer = ""
         } else if currentQuestion == 2 {
             answers.year = tmpAnswer
-            prevCache[currentQuestion] = tmpAnswer
+            //prevCache[currentQuestion] = tmpAnswer
             tmpAnswer = ""
         } else if currentQuestion == 3 {
-            answers.month = tmpOffset+1 // Offset starts at 0
-            let tmp = generateMonths()
-            prevCache[currentQuestion] = tmp[tmpOffset] // +0 as starts at 0, tmp var shoud NOT add one
-            tmpOffset = 0
+            answers.month = tmpOffset+1 // Offset starts at 0 but months start at 1
+            //let tmp = generateMonths()
+            //prevCache[currentQuestion] = tmp[tmpOffset] // +0 as starts at 0, tmp var shoud NOT add one
+            //tmpOffset = 0
             tmpAnswer = ""
         } else if currentQuestion == 4 {
             answers.days = tmpDayList
@@ -86,41 +86,41 @@ class questionManager: ObservableObject {
         } else if currentQuestion == 5 {
             if !(questionCount == 10) {
                 answers.strongestDay = tmpStrongestDay
-                prevCache[currentQuestion] = tmpStrongestDay
+                //prevCache[currentQuestion] = tmpStrongestDay
             } else {
                 answers.intensity = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
             tmpAnswer = ""
         } else if currentQuestion == 6 {
             if !(questionCount == 10) {
                 answers.intensity = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             } else {
                 answers.state = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
             tmpAnswer = ""
         } else if currentQuestion == 7 {
             if !(questionCount==10) {
                 answers.when = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             } else {
                 answers.county = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
             tmpAnswer = ""
         } else if currentQuestion == 8 {
             if !(questionCount==10) { // this if is asking "is long version?"
                 answers.berried = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             } else {
                 if (tmpStateAnswer == NSLocalizedString("yes", comment: "")) {
                     answers.protectedZone = tmpAnswer
-                    prevCache[currentQuestion] = tmpAnswer
+                    //prevCache[currentQuestion] = tmpAnswer
                 } else {
                     answers.protectedZone = tmpStateAnswer
-                    prevCache[currentQuestion] = tmpStateAnswer
+                    //prevCache[currentQuestion] = tmpStateAnswer
                 }
                 tmpStateAnswer = ""
             }
@@ -128,50 +128,51 @@ class questionManager: ObservableObject {
         } else if currentQuestion == 9 {
             if !(questionCount==10) {
                 answers.habitat = tmpAnswerList
-                prevCache[currentQuestion] = tmpAnswerList
+                //prevCache[currentQuestion] = tmpAnswerList
                 tmpAnswerList = []
             } else {
                 answers.occupation = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
                 tmpAnswer = ""
             }
         } else if currentQuestion == 10 {
             if !(questionCount==10){
                 answers.state = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
             else {
                 answers.additional = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
             tmpAnswer = ""
         } else if currentQuestion == 11 {
             otherHidden = true
             answers.county = tmpAnswer
-            prevCache[currentQuestion] = tmpAnswer
+            //prevCache[currentQuestion] = tmpAnswer
             tmpAnswer = ""
         } else if currentQuestion == 12 {
             if (tmpStateAnswer == NSLocalizedString("yes", comment: "")) {
                 answers.protectedZone = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
                 print("HMM \(tmpAnswer)")
             } else {
                 answers.protectedZone = tmpStateAnswer
-                prevCache[currentQuestion] = tmpStateAnswer
+                //prevCache[currentQuestion] = tmpStateAnswer
             }
             tmpAnswer = ""
             tmpStateAnswer = ""
         } else if currentQuestion == 13 {
             answers.occupation = tmpAnswer
-            prevCache[currentQuestion] = tmpAnswer
+            //prevCache[currentQuestion] = tmpAnswer
         } else if currentQuestion == 14 {
             if !(questionCount == 10) {
                 answers.additional = tmpAnswer
-                prevCache[currentQuestion] = tmpAnswer
+                //prevCache[currentQuestion] = tmpAnswer
             }
         }
         
         // Either Way Execute...
+        tmpAnswer = ""
         currentQuestion += 1
         nextDisabled.toggle()
         otherHidden = true
@@ -186,37 +187,48 @@ class questionManager: ObservableObject {
     func reverseAction() {
         
         if (currentQuestion == 1) {clearLocalCache()}
+        
+        if (currentQuestion == 12) {
             
-        if(questionCount==14){
-            if currentQuestion == 2 {prevCache[currentQuestion-1] = answers.species ; answers.species = ""}
-            else if currentQuestion == 3 {prevCache[currentQuestion-1] = answers.year ; answers.year = ""}
-            else if currentQuestion == 4 {answers.month = 0}
-            else if currentQuestion == 5 {prevCache[currentQuestion-1] = answers.days ; answers.days = []}
-            else if currentQuestion == 6 {prevCache[currentQuestion-1] = answers.strongestDay ; answers.strongestDay = dayItem.init(dayNumber: 0)}
-            else if currentQuestion == 7 {prevCache[currentQuestion-1] = answers.intensity ; answers.intensity = ""}
-            else if currentQuestion == 8 {prevCache[currentQuestion-1] = answers.when ; answers.when = ""}
-            else if currentQuestion == 9 {prevCache[currentQuestion-1] = answers.berried ; answers.berried = ""}
-            else if currentQuestion == 10 {prevCache[currentQuestion-1] = answers.habitat ; answers.habitat = []}
-            else if currentQuestion == 11 {prevCache[currentQuestion-1] = answers.state ; answers.state = ""}
-            else if currentQuestion == 12 {prevCache[currentQuestion-1] = answers.county ; answers.county = ""}
-            else if currentQuestion == 13 {prevCache[currentQuestion-1] = answers.protectedZone ; answers.protectedZone = ""}
-            else if currentQuestion == 14 {prevCache[currentQuestion-1] = answers.occupation ; answers.occupation = ""}
-            else if currentQuestion == 15 {prevCache[currentQuestion-1] = answers.additional ; answers.additional = ""}
-        } else {
-            if currentQuestion == 2 {prevCache[currentQuestion-1] = answers.species; answers.species = ""}
-            else if currentQuestion == 3 {prevCache[currentQuestion-1] = answers.year ; answers.year = ""}
-            else if currentQuestion == 4 {answers.month = 0}
-            else if currentQuestion == 5 {prevCache[currentQuestion-1] = answers.days ; answers.days = []}
-            else if currentQuestion == 6 {prevCache[currentQuestion-1] = answers.intensity ; answers.intensity = ""}
-            else if currentQuestion == 7 {prevCache[currentQuestion-1] = answers.state ; answers.state = ""}
-            else if currentQuestion == 8 {prevCache[currentQuestion-1] = answers.county ; answers.county = ""}
-            else if currentQuestion == 9 {prevCache[currentQuestion-1] = answers.protectedZone ; answers.protectedZone = ""}
-            else if currentQuestion == 10 {prevCache[currentQuestion-1] = answers.occupation ; answers.occupation = ""}
-            else if currentQuestion == 11 {prevCache[currentQuestion-1] = answers.additional ; answers.additional = ""}
+            if tmpStateAnswer == NSLocalizedString("yes", comment: "") && tmpAnswer == "" {
+                answers.protectedZone = ""
+                prevCache[currentQuestion] = 0
+                tmpStateAnswer = ""
+            }
+            
         }
+            
+       // if(questionCount==14){
+//            if currentQuestion == 2 {prevCache[currentQuestion-1] = answers.species ; answers.species = ""}
+//            //else if currentQuestion == 3 {prevCache[currentQuestion-1] = answers.year ; answers.year = ""}
+//            else if currentQuestion == 4 {answers.month = 0}
+//            else if currentQuestion == 5 {prevCache[currentQuestion-1] = answers.days ; answers.days = []}
+//            else if currentQuestion == 6 {prevCache[currentQuestion-1] = answers.strongestDay ; answers.strongestDay = dayItem.init(dayNumber: 0)}
+//            else if currentQuestion == 7 {prevCache[currentQuestion-1] = answers.intensity ; answers.intensity = ""}
+//            else if currentQuestion == 8 {prevCache[currentQuestion-1] = answers.when ; answers.when = ""}
+//            else if currentQuestion == 9 {prevCache[currentQuestion-1] = answers.berried ; answers.berried = ""}
+//            else if currentQuestion == 10 {prevCache[currentQuestion-1] = answers.habitat ; answers.habitat = []}
+//            else if currentQuestion == 11 {prevCache[currentQuestion-1] = answers.state ; answers.state = ""}
+//            else if currentQuestion == 12 {prevCache[currentQuestion-1] = answers.county ; answers.county = ""}
+//            else if currentQuestion == 13 {prevCache[currentQuestion-1] = answers.protectedZone ; answers.protectedZone = ""}
+//            else if currentQuestion == 14 {prevCache[currentQuestion-1] = answers.occupation ; answers.occupation = ""}
+//            else if currentQuestion == 15 {prevCache[currentQuestion-1] = answers.additional ; answers.additional = ""}
+//        } else {
+//            if currentQuestion == 2 {prevCache[currentQuestion-1] = answers.species; answers.species = ""}
+//            else if currentQuestion == 3 {prevCache[currentQuestion-1] = answers.year ; answers.year = ""}
+//            else if currentQuestion == 4 {answers.month = 0}
+//            else if currentQuestion == 5 {prevCache[currentQuestion-1] = answers.days ; answers.days = []}
+//            else if currentQuestion == 6 {prevCache[currentQuestion-1] = answers.intensity ; answers.intensity = ""}
+//            else if currentQuestion == 7 {prevCache[currentQuestion-1] = answers.state ; answers.state = ""}
+//            else if currentQuestion == 8 {prevCache[currentQuestion-1] = answers.county ; answers.county = ""}
+//            else if currentQuestion == 9 {prevCache[currentQuestion-1] = answers.protectedZone ; answers.protectedZone = ""}
+//            else if currentQuestion == 10 {prevCache[currentQuestion-1] = answers.occupation ; answers.occupation = ""}
+//            else if currentQuestion == 11 {prevCache[currentQuestion-1] = answers.additional ; answers.additional = ""}
+//        }
         
         // Either Way Execute...
         print(prevCache)
+        tmpAnswer = ""
         currentQuestion -= 1
         nextDisabled = true
         otherHidden = true

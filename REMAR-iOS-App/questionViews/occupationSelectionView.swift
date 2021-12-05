@@ -20,7 +20,7 @@ struct occupationSelectionView: View {
                     Text(NSLocalizedString("OccupationSelection", comment: "")).padding(.horizontal)
                     
                     if (QuestionManager.otherHidden) {
-                        selectionList(listItems: occupationOptions).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        SelectionListNew(listItems: occupationOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                         Spacer()
                     } else {
                         otherTextPrompt().padding(.horizontal)

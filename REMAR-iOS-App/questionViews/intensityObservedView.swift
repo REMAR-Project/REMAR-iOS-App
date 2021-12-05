@@ -18,7 +18,7 @@ struct intensityObservedView: View {
                 VStack(spacing: 0.0){
                     speciesDetailView().padding()
                     Text("Intensity Selection").padding(.bottom)
-                    selectionList(listItems: intensityOptions)//.frame(width: geom.size.width, height: geom.size.height/2)
+                    SelectionListNew(listItems: intensityOptions.map{MyItem($0)})//.frame(width: geom.size.width, height: geom.size.height/2)
                         .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                         //.border(Color.red)
                     Spacer()

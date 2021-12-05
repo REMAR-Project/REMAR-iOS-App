@@ -40,7 +40,8 @@ struct cleanSlateView: View {
 
 struct cleanSlateView_Previews: PreviewProvider {
     static var previews: some View {
-        cleanSlateView()
+        //cleanSlateView()
+        SelectionListNew()
             .environmentObject(questionManager())
     }
 }

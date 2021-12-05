@@ -56,7 +56,7 @@ struct vanishingList_ProtectedArea: View {
     @State var areaLists: [String] = []
     var body: some View {
         VStack{
-            selectionList(listItems: areaLists)
+            SelectionListNew(listItems: areaLists.map{MyItem($0)})
                 .opacity((QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")) ? 1:0)
                 .disabled(!(QuestionManager.tmpStateAnswer == NSLocalizedString("yes", comment: "")))
         }.onAppear(perform: {areaLists = generateProtectedList(state: QuestionManager.answers.state)})
@@ -101,6 +101,7 @@ struct tickButton_ProtectedArea: View {
                             Image(systemName: "checkmark")
                                 .font(.title)
                                 .foregroundColor(Color.white)
+                                
                         }
                     }.frame(width: geom.size.width/4)
                 })

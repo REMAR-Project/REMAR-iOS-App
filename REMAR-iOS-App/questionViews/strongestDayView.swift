@@ -86,9 +86,13 @@ struct calendarStrongView: View {
                                 selectedDay = item
                                 QuestionManager.tmpStrongestDay = selectedDay
                                 QuestionManager.nextDisabled = false
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = selectedDay
+                                QuestionManager.answers.strongestDay = selectedDay
                             } else {
                                 selectedDay = dayItem.init(dayNumber: 0)
                                 QuestionManager.tmpStrongestDay = selectedDay
+                                QuestionManager.prevCache[QuestionManager.currentQuestion] = selectedDay
+                                QuestionManager.answers.strongestDay = selectedDay
                             }
                         }, label: {
                             dayView(dayItem: item, selected: (selectedDay == item) ? true : false)
@@ -102,7 +106,18 @@ struct calendarStrongView: View {
                 }
                 // Correct calendar dates will load after view
                 .onAppear(perform: {data = calculateDates(year: Int(QuestionManager.answers.year)!, month: QuestionManager.answers.month)})
-            }
+            }.onAppear(perform: {
+
+                let cachedDay = correctDay(cachedDay: QuestionManager.prevCache[QuestionManager.currentQuestion] as? dayItem ?? dayItem.init(dayNumber: 0), calendarList: data)
+                //let storedDay = correctDay(cachedDay: QuestionManager.answers.strongestDay, calendarList: data)
+                
+                //if (cachedDay == storedDay){
+                    selectedDay = cachedDay
+                    QuestionManager.tmpStrongestDay = cachedDay
+                    QuestionManager.answers.strongestDay = cachedDay
+                    QuestionManager.prevCache[QuestionManager.currentQuestion] = cachedDay
+                //}
+            })
         }
     }
 }

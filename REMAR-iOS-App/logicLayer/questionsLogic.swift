@@ -25,7 +25,9 @@ func removeListSelection(target: String, list: [String]) -> [String] {
 
 func getMonthIndex(month: String) -> Int {
     
-    var response: Int = 0
+    var response: Int
+    
+    print("//DEBUG/ \(month)")
     
     if (month == NSLocalizedString("January", comment: "")) {
         response = 0
@@ -51,6 +53,8 @@ func getMonthIndex(month: String) -> Int {
         response = 10
     } else if (month == NSLocalizedString("December", comment: "")) {
         response = 11
+    } else {
+        response = 0
     }
     
     return response

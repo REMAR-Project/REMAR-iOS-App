@@ -24,7 +24,7 @@ struct monthSelectionView: View {
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
                         .padding(.horizontal)
                         //.multilineTextAlignment(.center)
-                    selectionList(listItems: monthList).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.35)
+                    SelectionListNew(listItems: monthList.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.35)
                     Spacer()
                 }
                 .padding(.bottom)
@@ -34,7 +34,8 @@ struct monthSelectionView: View {
                 uiBackgroundQuestionView()
                 
             }.onAppear(perform: {
-                QuestionManager.tmpOffset = getMonthIndex(month: QuestionManager.tmpAnswer)
+                //let month = QuestionManager.prevCache[QuestionManager.currentQuestion] as? MyItem
+                //QuestionManager.tmpOffset = getMonthIndex(month: month!.name)
             })
         }
         .navigationBarBackButtonHidden(true)
