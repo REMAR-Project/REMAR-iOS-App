@@ -23,7 +23,7 @@ class submissionManager {
     func register() {
         
         let session = URLSession.shared
-        let url = URL(string: "http://127.0.0.1:5000/api/0.1/auth")!
+        let url = URL(string: "http://crab.napier.ac.uk/api/0.1/auth")!
         
         let phone_id = UUID()
         print("Registering Device " + phone_id.uuidString)
@@ -70,7 +70,7 @@ class submissionManager {
         var json: String
         
         let session = URLSession.shared
-        let url = URL(string: "http://127.0.0.1:5000/api/0.2/sightings")!
+        let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")!
         var success: Bool = false
         
         // Set up the request
