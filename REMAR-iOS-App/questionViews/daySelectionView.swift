@@ -24,10 +24,10 @@ struct daySelectionView: View {
                 VStack(spacing: 0.0){
                     
                     Text("\(questionPrompt)")
-                        .padding()
+                        .padding([.top, .leading, .trailing])
                         .font(.body)
                         .lineLimit(7)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.6)
                     
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
@@ -36,7 +36,7 @@ struct daySelectionView: View {
                         .padding(.vertical, 5)
                     
                     
-                    calendarView().frame(width: geom.size.width*0.86, height: geom.size.height*0.5)
+                    calendarView().frame(width: geom.size.width*0.84, height: geom.size.height*0.5)
                     
                     Spacer()
                     
