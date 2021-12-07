@@ -16,8 +16,11 @@ struct countySelectionView: View {
         GeometryReader { geom in
             ZStack {
                 VStack{
-                    speciesDetailView().padding()
-                    Text(NSLocalizedString("CountySelection", comment: "")).padding()
+                    speciesDetailView()
+                    Text(NSLocalizedString("CountySelection", comment: ""))
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .padding(.horizontal)
+                        .lineLimit(5)
                     
                     
                     if (QuestionManager.otherHidden){
@@ -31,9 +34,10 @@ struct countySelectionView: View {
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 90)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

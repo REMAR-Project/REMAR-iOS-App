@@ -18,19 +18,22 @@ struct monthSelectionView: View {
             ZStack {
                 VStack{
                     
-                    speciesDetailView().padding()
+                    speciesDetailView().padding(.horizontal)
                     
                     Text(NSLocalizedString("MonthSelection", comment: ""))
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
                         .padding(.horizontal)
+                        .lineLimit(7)
+                        .minimumScaleFactor(0.5)
                         //.multilineTextAlignment(.center)
                     SelectionListNew(listItems: monthList.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.35)
                     Spacer()
                 }
                 .padding(.bottom)
-                .padding(.top, 90)
-                .ignoresSafeArea()
-                
+                //.padding(.top, 20) // Allow for header
+                //.ignoresSafeArea()
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }.onAppear(perform: {

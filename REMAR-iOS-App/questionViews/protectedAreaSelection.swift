@@ -15,7 +15,17 @@ struct protectedAreaSelection: View {
         GeometryReader { geom in
             ZStack {
                 VStack{
-                    Text(NSLocalizedString("ProtectedSelection", comment: "")).padding(.top)
+                    Spacer()
+                    Text(NSLocalizedString("ProtectedSelection", comment: ""))
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        //.font(.title)
+                        .lineLimit(3)
+                        .padding()
+                        //
+                        
+                    
+                    
                     if (QuestionManager.otherHidden) {
                         HStack {
                             tickButton_ProtectedArea(text: NSLocalizedString("yes", comment: ""))
@@ -24,7 +34,7 @@ struct protectedAreaSelection: View {
                         }
                         .frame(width: geom.size.width*0.85, height: geom.size.height/20)
                         
-                        vanishingList_ProtectedArea().frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.6).padding(.top)
+                        vanishingList_ProtectedArea().frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.5).padding(.top)
                         Spacer()
                     } else {
                         otherTextPrompt().padding(.horizontal)
@@ -38,9 +48,10 @@ struct protectedAreaSelection: View {
                     }
                 })
                 .padding(.bottom)
-                .padding(.top, 100)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

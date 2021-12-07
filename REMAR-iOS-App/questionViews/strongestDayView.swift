@@ -16,20 +16,26 @@ struct strongestDayView: View {
             ZStack {
                 VStack(spacing: 0.0){
                     
-                    Text(NSLocalizedString("StrongestDaySelection", comment: "")).foregroundColor(Color("NAPIER_RED")).padding()
+                    Text(NSLocalizedString("StrongestDaySelection", comment: ""))
+                        .foregroundColor(Color("NAPIER_RED"))
+                        .padding()
+                        .lineLimit(7)
+                        .minimumScaleFactor(0.5)
                     
                     Text("\(getMonthName(month: QuestionManager.answers.month)) \(QuestionManager.answers.year)")
-                        .font(.system(size: geom.size.width*0.08))
+                        .font(.system(size: geom.size.width*0.05))
+                        .bold()
                     
-                    calendarStrongView().frame(width: geom.size.width*0.9, height: geom.size.height*0.5)
+                    calendarStrongView().frame(width: geom.size.width*0.86, height: geom.size.height*0.5)
                     
                     Spacer()
                     
                 }
-                .padding(.top, 100)
+                .padding(.top, 15)
                 .padding(.bottom)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }.onAppear(perform: {QuestionManager.nextDisabled = false

@@ -16,18 +16,19 @@ struct intensityObservedView: View {
         GeometryReader { geom in
             ZStack {
                 VStack(spacing: 0.0){
-                    speciesDetailView().padding()
-                    Text("Intensity Selection").padding(.bottom)
+                    speciesDetailView().padding([.top, .leading, .trailing])
+                    Text("Intensity Selection").padding([.leading, .bottom, .trailing])
                     SelectionListNew(listItems: intensityOptions.map{MyItem($0)})//.frame(width: geom.size.width, height: geom.size.height/2)
-                        .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                        .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.44)
                         //.border(Color.red)
                     Spacer()
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

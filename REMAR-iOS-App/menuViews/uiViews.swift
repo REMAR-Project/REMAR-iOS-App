@@ -101,11 +101,13 @@ struct uiBackgroundView: View {
 
 struct uiBackgroundQuestionView: View {
     var body: some View {
+        //GeometryReader { geom in
         VStack {
             uiBackgroundView()
             Spacer()
             questionToolBarView()
         }
+    //}
     }
 }
 
@@ -184,9 +186,14 @@ struct otherTextPrompt: View {
     @EnvironmentObject var QuestionManager: questionManager
     @State var otherText: String = ""
     var body: some View {
+        GeometryReader { geom in
         ZStack{
             VStack(spacing: 0){
-                Text(NSLocalizedString("TapTheSpace", comment: "")).padding([.top, .leading, .trailing])
+                Text(NSLocalizedString("TapTheSpace", comment: ""))
+                    .padding([.top, .leading, .trailing])
+                    .font(.title3)
+                    .fixedSize(horizontal: false, vertical: true)
+                    
                 TextField(NSLocalizedString("Other Answer", comment: ""), text: $otherText)
                     .textFieldStyle(.roundedBorder)
                     .padding([.top, .leading, .trailing])
@@ -198,13 +205,16 @@ struct otherTextPrompt: View {
                 QuestionManager.tmpAnswer = otherText
                 QuestionManager.prevCache[QuestionManager.currentQuestion] = otherText
             }
-        }.onAppear(perform: {
+        }
+        .frame(width: geom.size.width, height: geom.size.height*0.5)
+        .onAppear(perform: {
             if isOtherPrompt(QuestionManager: QuestionManager) {
                 otherText = QuestionManager.prevCache[QuestionManager.currentQuestion] as? String ?? ""
             }
         })
         .opacity(QuestionManager.otherHidden ? 0:1)
         .disabled(QuestionManager.otherHidden)
+    }
     }
 }
 
@@ -225,9 +235,9 @@ func isOtherPrompt(QuestionManager: questionManager) -> Bool {
 struct mainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
         //menuView()
-        splashscreenView()
+        //splashscreenView()
         //simpleMenuButton()
-        //uiBackgroundView()
+        uiBackgroundView()
         //countySelectionView()
             .environmentObject(questionManager.init())
     }

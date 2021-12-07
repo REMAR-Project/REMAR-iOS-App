@@ -38,7 +38,7 @@ struct SubmissionCheckView: View {
                     
                 }.frame(width: geom.size.width*0.9)
                   .ignoresSafeArea()
-                
+                //.frame(width: geom.size.width, height: geom.size.height*0.98, alignment: .top)
                 uiBackgroundView()
                 
             }

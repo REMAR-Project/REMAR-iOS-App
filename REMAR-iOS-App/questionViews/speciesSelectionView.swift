@@ -66,7 +66,7 @@ struct speciesSelectionView: View {
                     //Button(action: {self.presentationMode.wrappedValue.dismiss()}, label: {Text("TMP BACK BTN")})
                     //questionToolBarView()
                     
-                } .padding(.top,70)
+                }.padding(.top,geom.size.height*0.1)
                 uiBackgroundQuestionView()
             }
         }

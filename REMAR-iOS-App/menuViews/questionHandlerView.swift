@@ -13,13 +13,14 @@ struct questionHandlerView: View {
     @EnvironmentObject var QuestionManager: questionManager
     
     var body: some View {
-        ZStack{
-            if (QuestionManager.questionCount == 10) {
-                simpleQuestions()
-            } else {
-                fullQuestions()
+            ZStack{
+                if (QuestionManager.questionCount == 10) {
+                    simpleQuestions()
+                } else {
+                    fullQuestions()
+                }
             }
-        }.navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }
 

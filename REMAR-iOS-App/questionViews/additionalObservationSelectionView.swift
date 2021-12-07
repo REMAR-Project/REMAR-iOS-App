@@ -15,21 +15,30 @@ struct additionalObservationSelectionView: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                VStack{
-                    speciesDetailView().padding()
+                VStack(spacing:0){
+                    Spacer()
+                    speciesDetailView().padding([.leading, .trailing, .bottom])
                     Text(NSLocalizedString("AdditionalSelection", comment: ""))
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .padding(.horizontal)
+                        .lineLimit(5)
+
                     if (QuestionManager.otherHidden){
-                        SelectionListNew(listItems: xOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.15)
+                        SelectionListNew(listItems: xOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                            .padding(.top)
                         Spacer()
                     } else {
-                        otherTextPrompt().padding(.horizontal)
+                        otherTextPrompt()
+                            .padding(.horizontal)
+                            .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                         Spacer()
                     }
                 }
                 .padding(.bottom)
-                .padding(.top, 100)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

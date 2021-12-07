@@ -17,15 +17,18 @@ struct berriedSelectionView: View {
             ZStack {
                 VStack{
                     speciesDetailView().padding()
-                    Text(NSLocalizedString("BerriedSelection", comment: "")).padding()
+                    Text(NSLocalizedString("BerriedSelection", comment: ""))
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .lineLimit(4)
+                        .padding([.leading, .bottom, .trailing])
                     SelectionListNew(listItems: berriedOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     
                 }
-                .padding(.bottom)
-                .padding(.top, 110)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

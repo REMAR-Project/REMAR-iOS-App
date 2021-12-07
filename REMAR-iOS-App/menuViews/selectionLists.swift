@@ -215,7 +215,8 @@ struct selectionList_multiple: View {
                         
                     })
                 }//.border(Color(.gray))
-            }.frame(width: geom.size.width, height: geom.size.height/1.5)
+            }//.frame(width: geom.size.width, height: geom.size.height/1.5)
+                .frame(width: geom.size.width)
         }
     }
 }

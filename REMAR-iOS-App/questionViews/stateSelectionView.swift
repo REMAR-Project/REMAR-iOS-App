@@ -15,16 +15,20 @@ struct stateSelectionView: View {
         GeometryReader { geom in
             ZStack {
                 VStack{
-                    speciesDetailView().padding()
-                    Text(NSLocalizedString("StateSelection", comment: "")).padding()
+                    speciesDetailView()
+                    Text(NSLocalizedString("StateSelection", comment: ""))
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .padding(.horizontal)
+                        .lineLimit(5)
                     SelectionListNew(listItems: stateOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
                     Spacer()
                     
                 }
                 .padding(.bottom)
-                .padding(.top, 90)
+                //.padding(.top, 5)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

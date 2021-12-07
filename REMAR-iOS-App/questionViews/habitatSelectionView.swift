@@ -16,14 +16,19 @@ struct habitatSelectionView: View {
         GeometryReader { geom in
             ZStack {
                 VStack{
-                    speciesDetailView().padding()
-                    Text(NSLocalizedString("HabitatSelection", comment: "")).padding()
+                    speciesDetailView()
+                    Text(NSLocalizedString("HabitatSelection", comment: "")).padding(.horizontal)
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        
                     selectionList_multiple(listItems: habitatOptions)
+                        .frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.4)
+                        .padding(.bottom)
                 }
                 .padding(.bottom)
-                .padding(.top, 110)
+                //.padding(.top, 10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }

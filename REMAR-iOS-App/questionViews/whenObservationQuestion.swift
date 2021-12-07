@@ -14,16 +14,19 @@ struct whenObservationQuestion: View {
     var body: some View {
         GeometryReader { geom in
             ZStack {
-                VStack{
-                    speciesDetailView().padding()
-                    Text(NSLocalizedString("TimeOfDaySelection", comment: "")).padding()
-                    
-                    whenSelectView().frame(width: geom.size.width*0.8, height: geom.size.height*0.4)
-                    
+                VStack(spacing: 0){
+                    speciesDetailView()
+                        .frame(width: geom.size.width, height: geom.size.height*0.2)
+                    Text(NSLocalizedString("TimeOfDaySelection", comment: ""))
+                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .padding([.leading, .bottom, .trailing])
+                    whenSelectView().frame(width: geom.size.width*0.75, height: geom.size.height*0.35).padding(.top)
+                    Spacer()
                 }
-                .padding(.bottom, 110.0)
+                //.padding(.top,10)
                 .ignoresSafeArea()
-                
+                .frame(width: geom.size.width, height: geom.size.height*0.80, alignment: .top)
+                .offset(y:-30)
                 uiBackgroundQuestionView()
                 
             }.onAppear(perform: {
