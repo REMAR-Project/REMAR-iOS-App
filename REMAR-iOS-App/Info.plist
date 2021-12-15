@@ -8,6 +8,13 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>crab.napier.ac.uk</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

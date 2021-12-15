@@ -265,7 +265,7 @@ class submissionManager {
             
             
             let sighting = "{\"sightings\":[{\"valid\": true, \"seen_by\": \"\(deviceID)\" ," + "\"answers\": [{" +
-            "\"0\": [\"1.0\"]," + // App Version
+            "\"0\": [\"2.0\"]," + // App Version
             "\"1\": [\"\(version)\"]," +   //Version Index - nuestion count
             "\"2\": [\((answers.species == NSLocalizedString("UCCrab", comment: "") ? "\"0\"" : "\"1\""))]," + // Species
             "\"3\": [\"\(yearIndex(year: answers.year))\"]," + // Index of Year
@@ -300,7 +300,7 @@ class submissionManager {
             print("Basic Version...")
             
             let sighting = "{\"sightings\":[{\"valid\": true, \"seen_by\": \"\(deviceID)\" ," + "\"answers\": [{" +
-            "\"0\": [\"1.0\"]," + // App Version
+            "\"0\": [\"2.0\"]," + // App Version
             "\"1\": [\"\(version)\"]," +   //Version Index - question count
             "\"2\": [\((answers.species == NSLocalizedString("UCCrab", comment: "") ? "\"0\"" : "\"1\""))]," + // Species
             "\"3\": [\"\(yearIndex(year: answers.year))\"]," + // Index of Year
