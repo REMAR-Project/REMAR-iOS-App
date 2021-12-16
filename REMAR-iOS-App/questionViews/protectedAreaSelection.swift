@@ -106,7 +106,8 @@ struct tickButton_ProtectedArea: View {
                 }, label:{
                     ZStack {
                         RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(Color("REMAR_GREEN"))
+                            .foregroundColor((QuestionManager.tmpStateAnswer == text) ? Color("REMAR_GREEN") : .white)
+                            .border(Color("REMAR_GREEN"), width: 3)
                             .aspectRatio(1, contentMode: .fill)
                         if (QuestionManager.tmpStateAnswer == text){
                             Image(systemName: "checkmark")
