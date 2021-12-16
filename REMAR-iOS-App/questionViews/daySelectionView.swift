@@ -195,6 +195,27 @@ struct dayView: View {
     }
 }
 
+struct dayView_strong: View {
+    var dayItem: dayItem
+    var selected: Bool = false
+    var disabled: Bool = false
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(selected ? .yellow : .white)
+            //.border(Color(.gray))
+                .aspectRatio(1, contentMode: .fill)
+            HStack(spacing: 0){
+                if (dayItem.isNewMoon) {Text("🌑").font(.footnote)}
+                if (dayItem.isFullMoon) {Text("🌕").font(.footnote)}
+                Text("\(dayItem.dayNumber)")
+                    .lineLimit(1)
+                    .foregroundColor(.black)
+            }
+        }.opacity(dayItem.targetMonth ? 1:0.4)
+    }
+}
+
 struct daySelectionView_Previews: PreviewProvider {
     static var previews: some View {
         daySelectionView()

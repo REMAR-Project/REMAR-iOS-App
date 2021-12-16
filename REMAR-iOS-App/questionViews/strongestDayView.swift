@@ -101,7 +101,7 @@ struct calendarStrongView: View {
                                 QuestionManager.answers.strongestDay = selectedDay
                             }
                         }, label: {
-                            dayView(dayItem: item, selected: (selectedDay == item) ? true : false)
+                            dayView_strong(dayItem: item, selected: (selectedDay == item) ? true : false)
                                 .border(Color.gray)
                                 
                                 
