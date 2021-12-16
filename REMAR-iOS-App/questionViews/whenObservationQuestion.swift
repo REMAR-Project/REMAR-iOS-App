@@ -18,7 +18,7 @@ struct whenObservationQuestion: View {
                     speciesDetailView()
                         .frame(width: geom.size.width, height: geom.size.height*0.2)
                     Text(NSLocalizedString("TimeOfDaySelection", comment: ""))
-                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .font(.system(size: geom.size.width * 0.045, weight: .semibold, design: .default))
                         .padding([.leading, .bottom, .trailing])
                     whenSelectView().frame(width: geom.size.width*0.75, height: geom.size.height*0.35).padding(.top)
                     Spacer()
@@ -121,7 +121,7 @@ struct standardButtonView: View {
                 RoundedRectangle(cornerRadius: 20).foregroundColor( selected ? Color("REMAR_GREEN") : Color.white)
                 VStack(spacing: 0) {
                     Text(text)
-                        .font(.system(size: geom.size.width*0.16))
+                        .font(.system(size: geom.size.width*0.13))
                         .fixedSize()
                     Image(icon)
                         //.renderingMode(.original)

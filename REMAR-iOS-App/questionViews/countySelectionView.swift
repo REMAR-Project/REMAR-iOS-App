@@ -18,7 +18,7 @@ struct countySelectionView: View {
                 VStack{
                     speciesDetailView()
                     Text(NSLocalizedString("CountySelection", comment: ""))
-                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .font(.system(size: geom.size.width * 0.045, weight: .semibold, design: .default))
                         .padding(.horizontal)
                         .lineLimit(5)
                     

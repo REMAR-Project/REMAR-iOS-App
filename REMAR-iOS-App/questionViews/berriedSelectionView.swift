@@ -18,7 +18,7 @@ struct berriedSelectionView: View {
                 VStack{
                     speciesDetailView().padding()
                     Text(NSLocalizedString("BerriedSelection", comment: ""))
-                        .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
+                        .font(.system(size: geom.size.width * 0.045, weight: .semibold, design: .default))
                         .lineLimit(4)
                         .padding([.leading, .bottom, .trailing])
                     SelectionListNew(listItems: berriedOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)

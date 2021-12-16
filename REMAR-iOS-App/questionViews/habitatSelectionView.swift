@@ -17,7 +17,7 @@ struct habitatSelectionView: View {
             ZStack {
                 VStack{
                     speciesDetailView()
-                    Text(NSLocalizedString("HabitatSelection", comment: "")).padding(.horizontal)
+                    Text(NSLocalizedString("HabitatSelection", comment: "")).bold().padding(.horizontal)
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
                         
                     selectionList_multiple(listItems: habitatOptions)
