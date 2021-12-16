@@ -45,7 +45,7 @@ struct faqView: View {
                     List(faqs, id: \.self) { faq in
                         VStack{
                             DisclosureGroup(faq.title, content: {
-                                Text("\n\(faq.content)")
+                                Text(.init(faq.content))
                             }).accentColor(Color("REMAR_GREEN"))
                         }
                     }
