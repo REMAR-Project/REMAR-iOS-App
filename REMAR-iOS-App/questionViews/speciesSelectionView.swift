@@ -18,9 +18,15 @@ struct speciesSelectionView: View {
     @State var CGSelected = false
     
     // If both options are false, disable next button
-    func checkNextValid() {
-        if CGSelected == UCSelected {QuestionManager.nextDisabled = true}
-            else {QuestionManager.nextDisabled = false}
+    // Flag disabled auto jump to next page
+    func checkNextValid(flag: Bool = true) {
+        if flag {
+            if CGSelected == UCSelected {QuestionManager.nextDisabled = true}
+            else {QuestionManager.nextDisabled = false ; QuestionManager.logAnswer()}
+        } else {
+            if CGSelected == UCSelected {QuestionManager.nextDisabled = true}
+                else {QuestionManager.nextDisabled = false}
+        }
     }
     
     var body: some View {
@@ -92,7 +98,7 @@ struct speciesSelectionView: View {
 
             
             
-            checkNextValid()
+            checkNextValid(flag: false) //  Flag disables jump to next page
         })
     }
 }
