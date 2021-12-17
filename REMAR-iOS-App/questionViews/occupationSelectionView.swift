@@ -20,15 +20,10 @@ struct occupationSelectionView: View {
                     
                     Text(NSLocalizedString("OccupationSelection", comment: "")).padding(.horizontal)
                         .font(.system(size: geom.size.width * 0.045, weight: .regular, design: .default))
-                        
                     
-                    if (QuestionManager.otherHidden) {
-                        SelectionListNew(listItems: occupationOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
-                        Spacer()
-                    } else {
-                        otherTextPrompt().padding(.horizontal)
-                        Spacer()
-                    }
+                    SelectionListNew(listItems: occupationOptions.map{MyItem($0)}).frame(width: geom.frame(in: .global).width, height: geom.frame(in: .global).height*0.45)
+                    Spacer()
+                    
                     
                 }
                 .padding(.bottom)

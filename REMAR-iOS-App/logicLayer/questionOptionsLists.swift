@@ -150,7 +150,7 @@ func generateOccupationList() -> [String] {
         NSLocalizedString("O13", comment: ""),
         NSLocalizedString("O14", comment: ""),
         NSLocalizedString("O15", comment: ""),
-        NSLocalizedString("O0", comment: ""),
+        NSLocalizedString("O16", comment: ""),
         NSLocalizedString("O00", comment: "")
       ]
 }
