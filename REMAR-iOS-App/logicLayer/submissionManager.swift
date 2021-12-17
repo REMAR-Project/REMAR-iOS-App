@@ -226,13 +226,23 @@ class submissionManager {
         
     }
     
+    // Generates string for county
+    func generateCounty(state: String, county: String) -> String {
+        let countyList = generateCountyList(state: state)
+        if countyList.contains(county) {
+            return "[\"\(county)\"]"
+        } else {
+            return "[\"\(NSLocalizedString("NotInList", comment: ""))\", \"\(county)\"]"
+        }
+    }
+    
     func protectedArea(area: String) -> String {
         if area == NSLocalizedString("no", comment: "") {
             return "[\"1\",\"-1\"]"
         } else if area == NSLocalizedString("IDontKnow", comment: "") {
             return "[\"2\",\"-1\"]"
         } else {
-            return "[\"0\",\"\(area)\"]"
+            return "[\"0\",\"15\",\"\(area)\"]"
         }
     }
     
@@ -277,7 +287,7 @@ class submissionManager {
             "\"9\": [\"\(answers.berried)\"]," + // Berried question
             "\"10\": [\"\(generateHabitat(habitats: answers.habitat, species: answers.species))\"]," + // Habitats
             "\"11\": [\"\(answers.state)\"]," + // State as string
-            "\"12\": [\"\(answers.county)\"]," + // County as string
+            "\"12\": \(generateCounty(state: answers.state, county: answers.county))," + // County as string
             "\"13\": \(protectedArea(area: answers.protectedZone))," + // Protected area
             "\"14\": [\"\(answers.occupation)\"]," + // Occupation as string
             "\"15\": \(additionalObservation(observation: answers.additional))," + // Additional Observation
@@ -308,17 +318,11 @@ class submissionManager {
             "\"5\": \(generateDaysString(dayList: answers.days, month: answers.month, year: answers.year))," + //Days
             "\"6\": [\"\(answers.intensity)\"]," + // Intensity
             "\"7\": [\"\(answers.state)\"]," + // State as string
-            "\"8\": [\"\(answers.county)\"]," + // County as string
+            "\"8\": \(generateCounty(state: answers.state, county: answers.county))," + // County as string
             "\"9\": \(protectedArea(area: answers.protectedZone))," + // Protected area
             "\"10\": [\"\(answers.occupation)\"]," + // Occupation as string
             "\"11\": \(additionalObservation(observation: answers.additional))," + // Additional Observation
-            "\"12\": \(generateSubmissionDateTime())," + // Submission date and time
-            "\"13\": []," + // Unused
-            "\"14\": []," + // Unused
-            "\"15\": []," + // Unused
-            "\"16\": []," + // Unused
-            "\"17\": []," + // Unused
-            "\"18\": []}]}]}" // Unused
+            "\"12\": \(generateSubmissionDateTime())}]}]}" // Submission date and time
             
             do {
                 let encodedDictionary = try JSONEncoder().encode(sighting)
@@ -334,6 +338,8 @@ class submissionManager {
         //print(shape)
     }
     
+
+    
     /// Returns current date/time of in an array of strings - to be used by the generate JSON method
     func generateSubmissionDateTime() -> [String] {
         
@@ -346,3 +352,4 @@ class submissionManager {
         return [submissionDate]
     }
 }
+
