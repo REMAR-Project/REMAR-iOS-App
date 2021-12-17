@@ -160,3 +160,9 @@
 "Other Answer" = "Digite aqui";
 "Back to list" = "De volta à lista";
 "TapTheSpace" = "Toque no espaço para escrever e depois clique em avançar.";
+
+//MARK: Testing Confirmation
+"alerttitle" = "Testando o aplicativo";
+"alertmessage" = "Obrigado por testar o REMAR CIDADÃO. Entendemos que as respostas enviadasnão são reais e não iremos analisá-las.";
+"alertback" = "VOLTAR";
+"alertcontinue" = "CONTINUAR";

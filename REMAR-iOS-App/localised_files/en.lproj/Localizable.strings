@@ -160,3 +160,9 @@
 "Other Answer" = "Type here";
 "Back to list" = "Back to list";
 "TapTheSpace" = "Tap the space to write and then click next.";
+
+//MARK: Testing Confirmation
+"alerttitle" = "Application Testing";
+"alertmessage" = "Thank you for testing REMAR_CIDADÃO. We understand that the responses you entered are not real and we will not analyze them.";
+"alertback" = "BACK";
+"alertcontinue" = "PROCEED";
