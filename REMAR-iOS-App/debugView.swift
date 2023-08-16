@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// This view can be accessed by clicking on the remar logo in from any page
-///   this MUST be disabled (by commenting the navigation link from backgroundUI View) before archiving for AppStore.
+///   this MUST be disabled (by commenting the navigation link from backgroundUI View in uiViews.swift) before archiving for AppStore.
 struct debugView: View {
     @EnvironmentObject var QuestionManager: questionManager
     

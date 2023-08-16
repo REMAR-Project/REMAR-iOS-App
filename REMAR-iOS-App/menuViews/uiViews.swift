@@ -30,7 +30,7 @@ struct remarLogoView: View {
                     height: geom.size.height
                 )
             }
-        //}).foregroundColor(.black)
+        //}).foregroundColor(.black) // this is the end tag for debug
         
     }
 }
@@ -38,7 +38,8 @@ struct remarLogoView: View {
 //  REMAR Logo View - Splashscreen
 struct remarLogoSplashView: View {
     var body: some View {
-        NavigationLink(destination: debugView(), label: {
+        // Wrong one, use view above
+        //NavigationLink(destination: debugView(), label: {
             GeometryReader { geom in
                 HStack(spacing: 0.0){
                     Text(NSLocalizedString("REMAR", comment: ""))
@@ -56,7 +57,7 @@ struct remarLogoSplashView: View {
                     height: geom.size.height
                 )
             }
-        }).foregroundColor(.black)
+        //})//.foregroundColor(.black)
         
     }
 }
