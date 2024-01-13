@@ -22,9 +22,14 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>remar-dev.watson.vc</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>

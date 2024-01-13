@@ -20,10 +20,12 @@ class submissionManager {
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: PendingSightings.entity(), sortDescriptors: []) var StoredData: FetchedResults<PendingSightings>
     
+    // Included for reference - not required code.
     func register() {
         
         let session = URLSession.shared
-        let url = URL(string: "http://crab.napier.ac.uk/api/0.1/auth")!
+        //let url = URL(string: "http://crab.napier.ac.uk/api/0.1/auth")! DO NOT USE - FOR PRODUCTION ONLY, MISUSE MAY LEAD TO POLUTION OF RESEARCH DATA.
+        let url = URL(string: "http://remar-dev.watson.vc/submission")!
         
         let phone_id = UUID()
         print("Registering Device " + phone_id.uuidString)
@@ -70,7 +72,8 @@ class submissionManager {
         var json: String
         
         let session = URLSession.shared
-        let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")!
+        //let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")! DO NOT USE - FOR PRODUCTION ONLY, MISUSE MAY LEAD TO POLUTION OF RESEARCH DATA.
+        let url = URL(string: "http://remar-dev.watson.vc/submission")!
         var success: Bool = false
         
         // Set up the request
@@ -186,6 +189,8 @@ class submissionManager {
         }
     }
     
+    // This should be changed to logic: String(2016 - Int(year))
+    //
     func yearIndex(year: String) -> String {
         
         // This really isnt the best way to do this but have to match the way the android app/api functions

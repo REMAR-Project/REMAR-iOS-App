@@ -12,7 +12,7 @@ import SwiftUI
 //  REMAR Logo View
 struct remarLogoView: View {
     var body: some View {
-        //NavigationLink(destination: debugView(), label: {
+        NavigationLink(destination: debugView(), label: {
             GeometryReader { geom in
                 HStack(spacing: 0.0){
                     Text(NSLocalizedString("REMAR", comment: ""))
@@ -30,7 +30,7 @@ struct remarLogoView: View {
                     height: geom.size.height
                 )
             }
-        //}).foregroundColor(.black) // this is the end tag for debug
+        }).foregroundColor(.black) // this is the end tag for debug
         
     }
 }
@@ -39,7 +39,7 @@ struct remarLogoView: View {
 struct remarLogoSplashView: View {
     var body: some View {
         // Wrong one, use view above
-        //NavigationLink(destination: debugView(), label: {
+        //NavigationLink(destination: NOTdebugView(), label: {
             GeometryReader { geom in
                 HStack(spacing: 0.0){
                     Text(NSLocalizedString("REMAR", comment: ""))
