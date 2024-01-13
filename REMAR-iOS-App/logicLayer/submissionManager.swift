@@ -25,7 +25,7 @@ class submissionManager {
         
         let session = URLSession.shared
         //let url = URL(string: "http://crab.napier.ac.uk/api/0.1/auth")! DO NOT USE - FOR PRODUCTION ONLY, MISUSE MAY LEAD TO POLUTION OF RESEARCH DATA.
-        let url = URL(string: "http://remar-dev.watson.vc/submission")!
+        let url = URL(string: "http://remar-dev.watson.vc:80/submission")!
         
         let phone_id = UUID()
         print("Registering Device " + phone_id.uuidString)
@@ -73,7 +73,7 @@ class submissionManager {
         
         let session = URLSession.shared
         //let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")! DO NOT USE - FOR PRODUCTION ONLY, MISUSE MAY LEAD TO POLUTION OF RESEARCH DATA.
-        let url = URL(string: "http://remar-dev.watson.vc/submission")!
+        let url = URL(string: "http://remar-dev.watson.vc:80/submission")!
         var success: Bool = false
         
         // Set up the request
