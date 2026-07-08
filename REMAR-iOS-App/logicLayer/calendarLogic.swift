@@ -8,6 +8,20 @@
 import Foundation
 import SwiftUI
 
+func resolvedCalendarMonthYear(month: Int, year: Int, monthOffset: Int) -> (month: Int, year: Int) {
+    var resolvedMonth = month + monthOffset
+    var resolvedYear = year
+    
+    if resolvedMonth < 1 {
+        resolvedMonth = 12
+        resolvedYear -= 1
+    } else if resolvedMonth > 12 {
+        resolvedMonth = 1
+        resolvedYear += 1
+    }
+    
+    return (resolvedMonth, resolvedYear)
+}
 
 /// Generates a list of 42 dayItems, consisting of a 6 week period including the full target month passed into the function
 /// - Parameter year: target year
@@ -32,10 +46,11 @@ func calculateDates(year: Int, month: Int) -> [dayItem] {
     
     // Create date components for the previous month
     var lastMonthComp = DateComponents()
+    let previousMonth = resolvedCalendarMonthYear(month: month, year: year, monthOffset: -1)
     lastMonthComp.calendar = calendar
     lastMonthComp.timeZone = TimeZone(secondsFromGMT: 0)
-    lastMonthComp.month = month-1
-    lastMonthComp.year = year
+    lastMonthComp.month = previousMonth.month
+    lastMonthComp.year = previousMonth.year
     
     // Create calendar using components, get count of number of days in previous month
     let lastMonth = calendar.date(from: lastMonthComp)
@@ -50,8 +65,8 @@ func calculateDates(year: Int, month: Int) -> [dayItem] {
     while counterBuffer > 0 {
         dayList.append(dayItem.init(dayNumber: (rangePrev+1)-counterBuffer,
                                     monthOffset: -1,
-                                    isNewMoon: isNewMoon(day: (rangePrev+1)-counterBuffer, month: month-1, year: year),
-                                    isFullMoon: isFullMoon(day: (rangePrev+1)-counterBuffer, month: month-1, year: year)))
+                                    isNewMoon: isNewMoon(day: (rangePrev+1)-counterBuffer, month: previousMonth.month, year: previousMonth.year),
+                                    isFullMoon: isFullMoon(day: (rangePrev+1)-counterBuffer, month: previousMonth.month, year: previousMonth.year)))
         counterBuffer-=1
     }
     
@@ -68,12 +83,13 @@ func calculateDates(year: Int, month: Int) -> [dayItem] {
     
     // Append next month
     var overflowBuffer = 0
+    let nextMonth = resolvedCalendarMonthYear(month: month, year: year, monthOffset: 1)
     while (dayList.count != 42) {
         overflowBuffer += 1
         dayList.append(dayItem.init(dayNumber: overflowBuffer,
                                     monthOffset: 1,
-                                    isNewMoon: isNewMoon(day: overflowBuffer, month: month+1, year: year),
-                                    isFullMoon: isFullMoon(day: overflowBuffer, month: month+1, year: year)))
+                                    isNewMoon: isNewMoon(day: overflowBuffer, month: nextMonth.month, year: nextMonth.year),
+                                    isFullMoon: isFullMoon(day: overflowBuffer, month: nextMonth.month, year: nextMonth.year)))
     }
     
     //print(dayList)

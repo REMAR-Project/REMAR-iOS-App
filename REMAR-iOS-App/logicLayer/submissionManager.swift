@@ -155,7 +155,7 @@ class submissionManager {
         var returnList: [String] = []
         
         for day in dayList {
-            returnList.append("\(day.dayNumber)/\(month-day.monthOffset)/\(year) 00:00")
+            returnList.append(generateDayString(day: day, month: month, year: year))
         }
         return returnList
         
@@ -163,7 +163,9 @@ class submissionManager {
     
     func generateDayString(day: dayItem, month: Int, year: String) -> String {
         
-        let string = "\(day.dayNumber)/\(month-day.monthOffset)/\(year) 00:00"
+        let resolvedDate = resolvedCalendarMonthYear(month: month, year: Int(year)!, monthOffset: day.monthOffset)
+        
+        let string = "\(day.dayNumber)/\(resolvedDate.month)/\(resolvedDate.year) 00:00"
         return string
         
     }
@@ -357,4 +359,3 @@ class submissionManager {
         return [submissionDate]
     }
 }
-
