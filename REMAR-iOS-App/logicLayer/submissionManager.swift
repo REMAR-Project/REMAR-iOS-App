@@ -169,6 +169,12 @@ class submissionManager {
         return string
         
     }
+
+    func generateStrongestDayString(day: dayItem, month: Int, year: String) -> String {
+        // Day zero represents an unselected optional answer, not a calendar date.
+        guard day.dayNumber != 0 else { return "" }
+        return generateDayString(day: day, month: month, year: year)
+    }
     
     func additionalObservation(observation: String) -> String {
         if !observation.isEmpty {
@@ -288,7 +294,7 @@ class submissionManager {
             "\"3\": [\"\(yearIndex(year: answers.year))\"]," + // Index of Year
             "\"4\": [\"\(answers.month-1)\"]," + // Index of Month
             "\"5\": \(generateDaysString(dayList: answers.days, month: answers.month, year: answers.year))," + //Days
-            "\"6\": [\"\(generateDayString(day: answers.strongestDay, month: answers.month, year: answers.year))\"]," + // Strongest Day
+            "\"6\": [\"\(generateStrongestDayString(day: answers.strongestDay, month: answers.month, year: answers.year))\"]," + // Strongest Day
             "\"7\": [\"\(answers.intensity)\"]," + // Intensity
             "\"8\": [\"\(timeOfDay(when: answers.when))\"]," + // index of time of day
             "\"9\": [\"\(answers.berried)\"]," + // Berried question
