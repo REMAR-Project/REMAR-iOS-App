@@ -72,8 +72,8 @@ class submissionManager {
         var json: String
         
         let session = URLSession.shared
-        //let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")! DO NOT USE - FOR PRODUCTION ONLY, MISUSE MAY LEAD TO POLUTION OF RESEARCH DATA.
-        let url = URL(string: "http://remar-dev.watson.vc:80/submission")!
+        // Production sightings endpoint. Do not send test submissions here.
+        let url = URL(string: "http://crab.napier.ac.uk/api/0.2/sightings")!
         var success: Bool = false
         
         // Set up the request
